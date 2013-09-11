@@ -3,8 +3,12 @@
 @import "variables";
 @import "utilities/mixins";
 
-// CSS Reset
-@import "base/normalize";
+// CSS Base
+@import "base/normalize-2";
+@import "base/forms";
+@import "base/buttons";
+@import "base/tables";
+
 
 // Print
 @import "base/print";
