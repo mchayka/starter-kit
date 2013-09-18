@@ -1,7 +1,7 @@
 
 // Core variables and mixins
 @import "variables";
-@import "utilities/mixins";
+@import "utilities/bourbon/bourbon";
 
 // CSS Base
 @import "base/normalize-2";
@@ -11,4 +11,4 @@
 
 
 // Print
-@import "base/print";
+//@import "base/print";
