@@ -1,4 +1,4 @@
-starter
+starter kit
 =======
 
-Folder structure and files to use for project. Common base settings, utilities, components.
+CSS kit to start project
