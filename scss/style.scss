@@ -6,9 +6,11 @@
 // CSS Base
 @import "base/normalize";
 @import "base/forms";
-@import "base/buttons";
-@import "base/tables";
+@import "base/scaffolding";
 
+// Components
+@import "components/buttons";
+@import "components/tables";
 
 // Print
-//@import "base/print";
+@import "base/print";
