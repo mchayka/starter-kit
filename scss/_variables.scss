@@ -1,2 +1,45 @@
-//forms
+//colors
+
+$color-white: #fff;
+$color-white-muted: #f8f8f8;
+$color-gray: #bababa;
+$color-gray-light: #e6e6e6;
+$color-gray-dark: #333;
+$color-purple: #4f3557;
+$color-purple-light: #785d7b;
+$color-purple-dark: #362028;
+$color-green: #526e20;
+$color-red: #af0000;
+$color-orange: #dba452;
+$color-orange-light: #f7f0e7;
+
+
+//site general settings
+
+$site-width: 1140px;
+$site-color: $color-gray;
+$site-bg-color: $color-white;
+
+
+//scaffolding
+
+$font-family-base: 'Ubuntu', sans-serif;
+$font-size-base: 14px;
+$font-size-h1: 32px;
+$font-size-h2: 24px;
+$font-size-h3: 18px;
+$line-height-base: 1.2;
+
+
+//
+
+$space-horizontal-base: 43px;
+$space-vertical-base: 25px;
+$border-radius-base: 4px;
+
+
+//components
+
+$grid-gutter: 20px;
+$grid-cols-number: 12;
 
