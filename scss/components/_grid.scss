@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+.grid {
+    display: block;
+    margin-left: -$grid-gutter/2;
+    margin-right: -$grid-gutter/2;
+    text-align: left;
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+
+    /*
+    The following font stack makes grid work on all known environments.
+    */
+
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+
+    /*
+    Use flexbox when possible to avoid `letter-spacing` side-effects.
+
+    NOTE: Firefox (as of 25) does not currently support flex-wrap, so the
+    `-moz-` prefix version is omitted.
+    */
+
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+
+    /* IE10 uses display: flexbox */
+    display: -ms-flexbox;
+    -ms-flex-flow: row wrap;
+}
+
+
+/* Opera hack */
+
+.opera-only :-o-prefocus,
+.grid {
+    word-spacing: -0.43em;
+}
+
+
+/*
+1. Resets the font family
+*/
+
+.grid-cell {
+    @include box-sizing(border-box);
+    display: inline-block;
+    padding-left: $grid-gutter/2;
+    padding-right: $grid-gutter/2;
+    vertical-align: top;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-align: left;
+    font-family: $font-family-base; /* 1 */
+}
+
+
+/**
+ * Sizes
+ */
+
+@for $i from 1 through $grid-cols-number {
+    .grid-cell-#{$i}of#{$grid-cols-number} {
+        @extend .grid-cell;
+        width: $grid-cols-width * $i;
+    }
+}
+
+/**
+ * Sizes
+ */
+
+.u-size1of2 {
+    width: 50%;
+}
+
+.u-size1of3 {
+    width: 33.3%;
+}
+
+.u-size1of4 {
+    width: 25%;
+}
+
