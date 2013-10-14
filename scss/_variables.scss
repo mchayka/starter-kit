@@ -1,3 +1,8 @@
+// ==========================================================================
+//  Variables
+// ==========================================================================
+
+
 //colors
 
 $color-white: #fff;
@@ -38,8 +43,24 @@ $space-vertical-base: 25px;
 $border-radius-base: 4px;
 
 
-//components
+//  Components
+// ==========================================================================
 
-$grid-gutter: 20px;
+//btn
+
+$btn-border-radius: $border-radius-base;
+
+
+//grid
+
+$grid-gutter: 43px;
 $grid-cols-number: 12;
 
+
+//table
+
+$table-color: $color-gray-dark;
+$table-border-color: $color-gray;
+$table-bg-color: transparent;
+$table-odd-bg-color: $color-gray-light;
+$table-head-bg-color: $color-gray;

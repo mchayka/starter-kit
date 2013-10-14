@@ -1,6 +1,25 @@
 /* ==========================================================================
-   Tables
+   Scaffoling
    ========================================================================== */
+
+body {
+    min-width: 320px;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $site-color;
+    background-color: $site-bg-color;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
 
 table {
     max-width: 100%;
@@ -8,4 +27,11 @@ table {
 
 th {
     text-align: left;
+}
+
+hr {
+    margin-top: $space-vertical-base;
+    margin-bottom: $space-vertical-base;
+    border: 0;
+    border-top: 1px solid $color-gray;
 }
