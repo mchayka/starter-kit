@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Helper mixins
+   ========================================================================== */
+
+/* Responsive mixins
+   ========================================================================== */
+
+/* small devices */
+
+@mixin breakpoint-sm
+{
+    @media #{$devices-small} {
+        @content;
+    }
+}
+
+/* medium devices */
+
+@mixin breakpoint-md
+{
+    @media #{$devices-medium} {
+        @content;
+    }
+}
+
+/* large devices */
+
+@mixin breakpoint-lg
+{
+    @media #{$devices-large} {
+        @content;
+    }
+}

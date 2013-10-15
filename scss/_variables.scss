@@ -22,7 +22,7 @@ $color-orange-light: #f7f0e7;
 //site general settings
 
 $site-width: 1140px;
-$site-color: $color-gray;
+$site-color: $color-gray-dark;
 $site-bg-color: $color-white;
 
 
@@ -43,6 +43,13 @@ $space-vertical-base: 25px;
 $border-radius-base: 4px;
 
 
+//media queries
+
+$devices-small: "only screen and (max-width: 460px)";
+$devices-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
+$devices-large: "only screen and (min-width: 1024px)";
+
+
 //  Components
 // ==========================================================================
 
@@ -55,12 +62,13 @@ $btn-border-radius: $border-radius-base;
 
 $grid-gutter: 43px;
 $grid-cols-number: 12;
+$grid-cols-width: 100%/$grid-cols-number;
 
 
 //table
 
 $table-color: $color-gray-dark;
 $table-border-color: $color-gray;
-$table-bg-color: transparent;
+$table-bg-color: $color-white;
 $table-odd-bg-color: $color-gray-light;
 $table-head-bg-color: $color-gray;
