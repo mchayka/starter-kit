@@ -9,7 +9,7 @@
 
 @mixin breakpoint-sm
 {
-    @media #{$devices-small} {
+    @media #{$screen-small} {
         @content;
     }
 }
@@ -18,7 +18,7 @@
 
 @mixin breakpoint-md
 {
-    @media #{$devices-medium} {
+    @media #{$screen-medium} {
         @content;
     }
 }
@@ -27,7 +27,7 @@
 
 @mixin breakpoint-lg
 {
-    @media #{$devices-large} {
+    @media #{$screen-large} {
         @content;
     }
 }

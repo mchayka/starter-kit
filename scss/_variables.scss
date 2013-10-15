@@ -45,9 +45,9 @@ $border-radius-base: 4px;
 
 //media queries
 
-$devices-small: "only screen and (max-width: 460px)";
-$devices-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
-$devices-large: "only screen and (min-width: 1024px)";
+$screen-small: "only screen and (max-width: 460px)";
+$screen-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
+$screen-large: "only screen and (min-width: 1024px)";
 
 
 //  Components

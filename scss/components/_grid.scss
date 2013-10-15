@@ -79,7 +79,7 @@
  * Responsive sizes
  */
 
-@media #{$devices-large} {
+@media #{$screen-large} {
     .lg-size-full {
         @include box-sizing(border-box);
         display: block;
@@ -104,7 +104,7 @@
     }
 }
 
-@media #{$devices-medium} {
+@media #{$screen-medium} {
     .md-size-full {
         @include box-sizing(border-box);
         display: block;
@@ -129,7 +129,7 @@
     }
 }
 
-@media #{$devices-small} {
+@media #{$screen-small} {
     .sm-size-full {
         @include box-sizing(border-box);
         display: block;
