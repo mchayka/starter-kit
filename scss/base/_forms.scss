@@ -98,6 +98,17 @@ textarea {
     }
 }
 
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+select optgroup {
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+}
+
 .checkbox,
 .radio {
     margin: 0.5em 0;
