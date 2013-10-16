@@ -56,6 +56,11 @@ $screen-large: "only screen and (min-width: 1024px)";
 $control-padding-horizontal: .6em;
 $control-padding-vertical: .55em;
 $control-margin-bottom: .5em;
+$control-border-color: $color-gray;
+$control-invalid-color: $color-red;
+$control-success-color: $color-green;
+$control-readonly-color: $color-gray;
+$control-disabled-color: $color-gray;
 
 
 //  Components

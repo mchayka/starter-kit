@@ -3,9 +3,10 @@
    ========================================================================== */
 
 /**
- * Prevent IOS forms styling
+ * Prevent IOS forms default styling
  */
 
+%webkit-no-appearance,
 input,
 select,
 textarea {
@@ -43,7 +44,7 @@ textarea {
     padding: $control-padding-vertical $control-padding-horizontal;
     margin-bottom: $control-margin-bottom;
     font-size: $font-size-base;
-    border: 1px solid $color-gray;
+    border: 1px solid $control-border-color;
     border-radius: $border-radius-base;
     -webkit-border-radius: $border-radius-base;
     background-color: $color-white;
@@ -51,13 +52,13 @@ textarea {
     &:focus {
         outline: 0;
         outline: thin dotted \9; /* IE6-9 */
-        border-color: darken( $color-gray, 20% );
+        border-color: darken( $control-border-color, 20% );
     }
 
     &[disabled] {
         cursor: not-allowed;
-        background-color: $color-gray-light;
-        color: $color-gray;
+        background-color: lighten( $control-disabled-color, 20% );
+        color: $control-disabled-color;
     }
 }
 
@@ -70,7 +71,7 @@ input[type="checkbox"]:focus {
 
     &:invalid:focus,
     &.is-invalid {
-        outline-color: $color-red;
+        outline-color: $control-invalid-color
     }
 }
 
@@ -78,23 +79,22 @@ input,
 select,
 textarea {
     &[readonly] {
-        background: $color-gray-light;
-        color: $color-gray-dark;
-        border-color: $color-gray;
+        color: $control-readonly-color;
+        border-color: $control-readonly-color;
     }
 
     &.is-invalid,
     &:invalid {
-        color: $color-red;
-        border: 1px solid $color-red;
+        color: $control-invalid-color;
+        border: 1px solid $control-invalid-color;
 
         &:focus {
-            border-color: $color-red;
+            border-color: $control-invalid-color;
         }
     }
 
     &.is-success {
-        border: 1px solid $color-green;
+        border: 1px solid $control-success-color;
     }
 }
 
@@ -107,12 +107,6 @@ select optgroup {
     font-size: inherit;
     font-style: inherit;
     font-family: inherit;
-}
-
-.checkbox,
-.radio {
-    margin: 0.5em 0;
-    display: block;
 }
 
 textarea {
@@ -137,5 +131,11 @@ legend {
     font-size: 100%;
     font-weight: bold;
     color: inherit;
-    border-bottom: 1px solid $color-gray-light;
+    border-bottom: 1px solid $control-border-color;
+}
+
+.checkbox,
+.radio {
+    margin: 0.5em 0;
+    display: block;
 }
