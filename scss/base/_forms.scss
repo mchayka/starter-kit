@@ -45,8 +45,8 @@ textarea {
     margin-bottom: $control-margin-bottom;
     font-size: $font-size-base;
     border: 1px solid $control-border-color;
-    border-radius: $border-radius-base;
-    -webkit-border-radius: $border-radius-base;
+    border-radius: $control-border-radius;
+    -webkit-border-radius: $control-border-radius;
     background-color: $color-white;
 
     &:focus {
