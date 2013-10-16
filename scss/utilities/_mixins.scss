@@ -31,3 +31,28 @@
         @content;
     }
 }
+
+
+/* Additional CSS3 mixins
+   ========================================================================== */
+
+/* Opacity */
+
+@mixin opacity($opacity) {
+    zoom: 1;
+    opacity: $opacity / 100;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity})";
+}
+
+/* rgba bg */
+
+@mixin rgba-bg($color, $opacity: 0.5) {
+    $rgba: rgba($color, $opacity);
+    $ie-hex-str: ie-hex-str($rgba);
+
+    background: $color;
+    background: transparent;
+    background: $rgba;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+    zoom: 1;
+}

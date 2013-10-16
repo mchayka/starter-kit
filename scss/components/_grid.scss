@@ -73,23 +73,34 @@
     font-family: $font-family-base; /* 1 */
 }
 
+.grid-cell-example {
+    @include rgba-bg(#000, 0.1);
+    min-height: 200px;
+    padding: $grid-gutter/2;
+
+    .grid-nogutter > .grid-cell > & {
+        border: 1px solid $color-gray;
+    }
+}
+
+
 /**
  * Responsive sizes
  */
 
 @media #{$screen-large} {
     @for $i from 1 through $grid-cols-number {
-        .lg-size#{$i}of#{$grid-cols-number} { width: $grid-cols-width * $i; }
+        .lg-size#{$i} { width: $grid-cols-width * $i; }
     }
 }
 @media #{$screen-medium} {
     @for $i from 1 through $grid-cols-number {
-        .md-size#{$i}of#{$grid-cols-number} { width: $grid-cols-width * $i; }
+        .md-size#{$i} { width: $grid-cols-width * $i; }
     }
 }
 
 @media #{$screen-small} {
     @for $i from 1 through $grid-cols-number {
-        .sm-size#{$i}of#{$grid-cols-number} { width: $grid-cols-width * $i; }
+        .sm-size#{$i} { width: $grid-cols-width * $i; }
     }
 }
