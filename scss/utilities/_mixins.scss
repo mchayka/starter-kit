@@ -2,7 +2,7 @@
    Helper mixins
    ========================================================================== */
 
-/* Responsive mixins
+/* Media queries mixins
    ========================================================================== */
 
 /* small devices */
@@ -28,6 +28,17 @@
 @mixin breakpoint-lg
 {
     @media #{$screen-large} {
+        @content;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Retina screens */
+
+@mixin screen-retina
+{
+    @media #{$screen-retina} {
         @content;
     }
 }

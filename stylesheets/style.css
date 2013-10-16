@@ -1,3 +1,145 @@
+/* ==========================================================================
+   Helper mixins
+   ========================================================================== */
+/* Media queries mixins
+   ========================================================================== */
+/* small devices */
+/* medium devices */
+/* large devices */
+/* -------------------------------------------------------------------------- */
+/* Retina screens */
+/* Additional CSS3 mixins
+   ========================================================================== */
+/* Opacity */
+/* rgba bg */
+/* ==========================================================================
+   States utilities
+   ========================================================================== */
+/**
+ * Global states.
+ * JavaScript may add/remove/toggle these classes.
+ * All other states are component-scoped and use the `is-` prefix.
+ */
+/**
+ * Completely remove from the flow and screen readers.
+ */
+.u-is-hidden {
+  display: none !important;
+  visibility: hidden !important; }
+
+/**
+ * Completely remove from the flow but leave available to screen readers.
+ */
+.u-is-hidden-visually {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/**
+ * Control visibility without affecting flow.
+ */
+.u-is-visible {
+  visibility: visible !important; }
+
+.u-is-invisible {
+  visibility: hidden !important; }
+
+/**
+ * Indicate that interaction will result in an (in)action.
+ */
+.u-is-actionable {
+  cursor: pointer; }
+
+.u-is-draggable {
+  cursor: move; }
+
+.u-is-disabled {
+  cursor: default; }
+
+/* ==========================================================================
+   Layout utilities
+   ========================================================================== */
+.u-cf:before,
+.u-cf:after {
+  content: " ";
+  display: table; }
+
+.u-cf:after {
+  clear: both; }
+
+.u-nbfc {
+  overflow: hidden; }
+
+/**
+ * Floats
+ */
+.u-pull-left {
+  float: left !important; }
+
+.u-pull-right {
+  float: right !important; }
+
+/**
+ * Object floats
+ */
+.u-object-left {
+  float: left !important;
+  margin-right: 43px; }
+
+.u-object-right {
+  float: right !important;
+  margin-left: 43px; }
+
+/* ==========================================================================
+   Text utilities
+   ========================================================================== */
+/**
+ * Text truncation
+ *
+ * Prevent text from wrapping onto multiple lines, and truncate with an
+ * ellipsis.
+ *
+ * 1. Ensure that the node has a maximum width after which truncation can
+ *    occur.
+ * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
+ *    nodes.
+ */
+.u-text-truncate {
+  max-width: 100%;
+  /* 1 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  /* 2 */ }
+
+/**
+ * Word breaking
+ *
+ * Break strings when their length exceeds the width of their container.
+ */
+.u-text-break {
+  word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word; }
+
+/* -------------------------------------------------------------------------- */
+/**
+ * Horizontal text alignment
+ */
+.u-text-center {
+  text-align: center; }
+
+.u-text-left {
+  text-align: left; }
+
+.u-text-right {
+  text-align: right; }
+
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -341,6 +483,20 @@ table {
 /* ==========================================================================
    Forms
    ========================================================================== */
+/**
+ * Prevent IOS forms default styling
+ */
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  box-shadow: none;
+  -webkit-border-radius: 0; }
+
+/**
+ * General forms styling
+ */
+.form-control,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -357,104 +513,98 @@ input[type="tel"],
 input[type="color"],
 select,
 textarea {
-  -webkit-transition: 0.3s linear border;
-  -moz-transition: 0.3s linear border;
-  transition: 0.3s linear border;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  display: inline-block;
+  -webkit-transition: 0.3s linear border;
+  -moz-transition: 0.3s linear border;
+  transition: 0.3s linear border;
+  display: block;
   width: 100%;
-  padding: 0.5em 0.6em;
-  margin-bottom: .5em;
-  border: 1px solid #ccc;
-  font-size: 0.8em;
-  box-shadow: inset 0 1px 3px #ddd;
-  border-radius: 4px; }
-
-input[type="file"] {
-  font-size: 0.8em; }
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-select:focus,
-textarea:focus {
-  outline: 0;
-  outline: thin dotted \9;
-  /* IE6-9 */
-  border-color: #129FEA; }
+  padding: 0.55em 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  border: 1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: white; }
+  .form-control:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    border-color: #878787; }
+  .form-control[disabled],
+  input[type="text"][disabled],
+  input[type="password"][disabled],
+  input[type="email"][disabled],
+  input[type="url"][disabled],
+  input[type="date"][disabled],
+  input[type="month"][disabled],
+  input[type="time"][disabled],
+  input[type="datetime"][disabled],
+  input[type="datetime-local"][disabled],
+  input[type="week"][disabled],
+  input[type="number"][disabled],
+  input[type="search"][disabled],
+  input[type="tel"][disabled],
+  input[type="color"][disabled],
+  select[disabled],
+  textarea[disabled] {
+    cursor: not-allowed;
+    background-color: #ededed;
+    color: #bababa; }
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted #333;
-  outline: 1px auto #129fea; }
-
-.checkbox,
-.radio {
-  margin: 0.5em 0;
-  display: block; }
-
-input[type="text"][disabled],
-input[type="password"][disabled],
-input[type="email"][disabled],
-input[type="url"][disabled],
-input[type="date"][disabled],
-input[type="month"][disabled],
-input[type="time"][disabled],
-input[type="datetime"][disabled],
-input[type="datetime-local"][disabled],
-input[type="week"][disabled],
-input[type="number"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="color"][disabled],
-select[disabled],
-textarea[disabled] {
-  cursor: not-allowed;
-  background-color: #eaeded;
-  color: #cad2d3; }
+  font-size: 14px;
+  outline: thin dotted #f7f0e7;
+  outline: 1px auto #f7f0e7; }
+  input[type="file"]:focus:invalid:focus, input[type="file"]:focus.is-invalid,
+  input[type="radio"]:focus:invalid:focus,
+  input[type="radio"]:focus.is-invalid,
+  input[type="checkbox"]:focus:invalid:focus,
+  input[type="checkbox"]:focus.is-invalid {
+    outline-color: #af0000; }
 
 input[readonly],
 select[readonly],
 textarea[readonly] {
-  background: #eee;
-  /* menu hover bg color */
-  color: #777;
-  /* menu text color */
-  border-color: #ccc; }
-
-input:focus:invalid,
-textarea:focus:invalid,
-select:focus:invalid {
-  color: #b94a48;
-  border: 1px solid #ee5f5b; }
-
-input:focus:invalid:focus,
-textarea:focus:invalid:focus,
-select:focus:invalid:focus {
-  border-color: #e9322d; }
-
-input[type="file"]:focus:invalid:focus,
-input[type="radio"]:focus:invalid:focus,
-input[type="checkbox"]:focus:invalid:focus {
-  outline-color: #e9322d; }
-
-select {
-  border: 1px solid #ccc;
-  background-color: white; }
+  color: #bababa;
+  border-color: #bababa; }
+input.is-invalid, input:invalid,
+select.is-invalid,
+select:invalid,
+textarea.is-invalid,
+textarea:invalid {
+  color: #af0000;
+  border: 1px solid #af0000; }
+  input.is-invalid:focus, input:invalid:focus,
+  select.is-invalid:focus,
+  select:invalid:focus,
+  textarea.is-invalid:focus,
+  textarea:invalid:focus {
+    border-color: #af0000; }
+input.is-success,
+select.is-success,
+textarea.is-success {
+  border: 1px solid #526e20; }
 
 select[multiple],
 select[size] {
@@ -465,185 +615,389 @@ select optgroup {
   font-style: inherit;
   font-family: inherit; }
 
+textarea {
+  min-height: 105px; }
+
 label {
-  margin: 0.5em 0 0.2em;
-  font-size: 90%; }
+  margin: 0.5em 0 0.2em; }
 
 fieldset {
   margin: 0;
-  padding: 0.35em 0 0.75em;
+  padding: 0 0 0.75em;
   border: 0; }
 
 legend {
   display: block;
   width: 100%;
   padding: 0.3em 0;
-  margin-bottom: 0.3em;
-  font-size: 125%;
-  color: #333;
-  border-bottom: 1px solid #e5e5e5; }
+  margin-bottom: 1em;
+  font-size: 100%;
+  font-weight: bold;
+  color: inherit;
+  border-bottom: 1px solid #bababa; }
+
+.checkbox,
+.radio {
+  margin: 0.5em 0;
+  display: block; }
 
 /* ==========================================================================
-   Tables
+   Scaffolding
    ========================================================================== */
+body {
+  min-width: 320px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #333333;
+  background-color: white; }
+
+/**
+ * Link
+ */
+a {
+  color: inherit;
+  text-decoration: underline; }
+  a:hover, a:focus {
+    text-decoration: none; }
+
+/**
+ * Headers
+ */
+h1 {
+  font-size: 32px; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 18px; }
+
+/**
+ * Tables
+ */
 table {
   max-width: 100%; }
 
-th {
-  text-align: left; }
+/**
+ * Horizontal rule
+ */
+hr {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 0;
+  border-top: 1px solid #bababa; }
 
 /* ==========================================================================
-   Section comment block
+   Buttons
    ========================================================================== */
-.btn {
+.btn-default, .btn-succes {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   display: inline-block;
+  border: 0 solid transparent;
+  border: none rgba(0, 0, 0, 0);
   line-height: normal;
   white-space: nowrap;
   vertical-align: baseline;
   text-align: center;
+  text-decoration: none;
   cursor: pointer;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-image: none; }
-
-/* Firefox: Get rid of the inner focus border */
-.btn::-moz-focus-inner {
-  padding: 0;
-  border: 0; }
-
-.btn {
-  font-size: 100%;
-  padding: 0.5em 1.5em 0.5em;
-  color: #444;
-  /* rgba not supported (IE 8) */
-  color: rgba(0, 0, 0, 0.8);
-  /* rgba supported */
-  border: 0 solid transparent;
-  /*IE 6/7/8*/
-  border: none rgba(0, 0, 0, 0);
-  /*IE9 + everything else*/
-  background-color: #E6E6E6;
-  text-decoration: none;
-  border-radius: 2px;
-  /* Transitions */
-  -webkit-transition: 0.1s linear -webkit-box-shadow;
-  -moz-transition: 0.1s linear -moz-box-shadow;
-  -ms-transition: 0.1s linear box-shadow;
-  -o-transition: 0.1s linear box-shadow;
-  transition: 0.1s linear box-shadow; }
-
-.btn-hover,
-.btn:hover,
-.btn:focus {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.1)));
-  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1));
-  background-image: -ms-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
-  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
-  background-image: linear, false, transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1); }
-
-.btn:focus {
-  outline: 0; }
-
-.btn-active,
-.btn:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
-
-.btn[disabled],
-.btn-disabled,
-.btn-disabled:hover,
-.btn-disabled:focus,
-.btn-disabled:active {
-  border: none;
   background-image: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  filter: alpha(opacity=40);
-  -khtml-opacity: 0.40;
-  -moz-opacity: 0.40;
-  opacity: 0.40;
-  cursor: not-allowed;
-  box-shadow: none; }
+  /* Firefox: Get rid of the inner focus border */ }
+  .btn-default::-moz-focus-inner, .btn-succes::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+  .btn-default:focus, .btn-succes:focus {
+    outline: 0; }
+  .btn-default:active, .btn-succes:active {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
+  [disabled].btn-default, [disabled].btn-succes {
+    border: none;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none; }
 
-.btn-hidden {
-  display: none; }
+.btn-default {
+  min-width: 140px;
+  padding: .7em .5em;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background-color: #785d7b; }
 
-.btn-primary,
-.btn-selected,
-a.btn-primary,
-a.btn-selected {
-  background-color: #0078e7;
-  color: #fff; }
+.btn-succes {
+  min-width: 140px;
+  padding: .7em .5em;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background-color: #526e20; }
 
 /* ==========================================================================
-   Section comment block
+   Table
    ========================================================================== */
 .table {
-  /* Remove spacing between table cells (from Normalize.css) */
-  border-collapse: collapse;
-  border-spacing: 0;
   empty-cells: show;
-  border: 1px solid #cbcbcb; }
+  border: 1px solid #bababa; }
+  .table caption {
+    color: #333333;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center; }
+  .table td,
+  .table th {
+    border-left: 1px solid #bababa;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 6px 12px; }
+    .table td:first-child, .table td:first-child,
+    .table th:first-child,
+    .table th:first-child {
+      border-left-width: 0; }
+  .table thead {
+    background: #bababa;
+    color: #333333;
+    text-align: left;
+    vertical-align: bottom; }
+  .table td {
+    background-color: white; }
+  .table .table-odd td {
+    background-color: #e6e6e6; }
 
-.table caption {
-  color: #000;
-  font: italic 85%/1 arial, sans-serif;
-  padding: 1em 0;
-  text-align: center; }
-
-.table td,
-.table th {
-  border-left: 1px solid #cbcbcb;
-  /*  inner column border */
-  border-width: 0 0 0 1px;
-  font-size: inherit;
-  margin: 0;
-  overflow: visible;
-  /*to make ths where the title is really long work*/
-  padding: 6px 12px;
-  /* cell padding */ }
-
-.table td:first-child,
-.table th:first-child {
-  border-left-width: 0; }
-
-.table thead {
-  background: #e0e0e0;
-  color: #000;
-  text-align: left;
-  vertical-align: bottom; }
-
-/*
-striping:
-   even - #fff (white)
-   odd  - #f2f2f2 (light gray)
-*/
-.table td {
-  background-color: transparent; }
-
-.table-odd td {
-  background-color: #f2f2f2; }
-
-/* nth-child selector for modern browsers */
+/**
+ * .table modifier: Striped table
+ * nth-child selector for modern browsers
+ */
 .table-striped tr:nth-child(2n-1) td {
-  background-color: #f2f2f2; }
+  background-color: #e6e6e6; }
 
-/* BORDERED TABLES */
+/**
+ * .table modifier: Bordered table
+ */
 .table-bordered td {
-  border-bottom: 1px solid #cbcbcb; }
-
+  border-bottom: 1px solid #bababa; }
 .table-bordered tbody > tr:last-child td,
-.table-horizontal tbody > tr:last-child td {
+.table-bordered tbody > tr:last-child td {
   border-bottom-width: 0; }
 
-/* HORIZONTAL BORDERED TABLES */
+/**
+ * .table modifier: Horizontal bordered table
+ */
 .table-horizontal td,
 .table-horizontal th {
   border-width: 0 0 1px 0;
-  border-bottom: 1px solid #cbcbcb; }
-
+  border-bottom: 1px solid #bababa; }
 .table-horizontal tbody > tr:last-child td {
   border-bottom-width: 0; }
+
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+.grid {
+  display: block;
+  margin-left: -21.5px;
+  margin-right: -21.5px;
+  text-align: left;
+  letter-spacing: -0.31em;
+  /* Webkit: collapse white-space between units */
+  text-rendering: optimizespeed;
+  /* Webkit: fixes text-rendering: optimizeLegibility */
+  /*
+   * The following font stack makes grid work on all known environments.
+   */
+  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    /*
+    Use flexbox when possible to avoid `letter-spacing` side-effects.
+
+    NOTE: Firefox (as of 25) does not currently support flex-wrap, so the
+    `-moz-` prefix version is omitted.
+    */
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  /* IE10 uses display: flexbox */
+  display: -ms-flexbox;
+  -ms-flex-flow: row wrap; }
+
+/* Opera hack */
+.opera-only :-o-prefocus,
+.grid {
+  word-spacing: -0.43em; }
+
+/**
+ * Grid without gutter
+ */
+.grid-nogutter {
+  margin-left: 0;
+  margin-right: 0; }
+  .grid-nogutter > .grid-cell {
+    padding-left: 0;
+    padding-right: 0; }
+
+/*
+ * 1. Resets the font family
+ */
+.grid-cell {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  padding-left: 21.5px;
+  padding-right: 21.5px;
+  vertical-align: top;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+  /* 1 */ }
+
+.grid-cell-example {
+  background: black;
+  background: transparent;
+  background: rgba(0, 0, 0, 0.1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A000000,endColorstr=#1A000000);
+  zoom: 1;
+  min-height: 200px;
+  padding: 21.5px; }
+  .grid-nogutter > .grid-cell > .grid-cell-example {
+    border: 1px solid #bababa; }
+
+/**
+ * Responsive sizes
+ */
+@media only screen and (min-width: 1024px) {
+  .lg-size1 {
+    width: 8.33333%; }
+
+  .lg-size2 {
+    width: 16.66667%; }
+
+  .lg-size3 {
+    width: 25%; }
+
+  .lg-size4 {
+    width: 33.33333%; }
+
+  .lg-size5 {
+    width: 41.66667%; }
+
+  .lg-size6 {
+    width: 50%; }
+
+  .lg-size7 {
+    width: 58.33333%; }
+
+  .lg-size8 {
+    width: 66.66667%; }
+
+  .lg-size9 {
+    width: 75%; }
+
+  .lg-size10 {
+    width: 83.33333%; }
+
+  .lg-size11 {
+    width: 91.66667%; }
+
+  .lg-size12 {
+    width: 100%; } }
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .md-size1 {
+    width: 8.33333%; }
+
+  .md-size2 {
+    width: 16.66667%; }
+
+  .md-size3 {
+    width: 25%; }
+
+  .md-size4 {
+    width: 33.33333%; }
+
+  .md-size5 {
+    width: 41.66667%; }
+
+  .md-size6 {
+    width: 50%; }
+
+  .md-size7 {
+    width: 58.33333%; }
+
+  .md-size8 {
+    width: 66.66667%; }
+
+  .md-size9 {
+    width: 75%; }
+
+  .md-size10 {
+    width: 83.33333%; }
+
+  .md-size11 {
+    width: 91.66667%; }
+
+  .md-size12 {
+    width: 100%; } }
+@media only screen and (max-width: 767px) {
+  .sm-size1 {
+    width: 8.33333%; }
+
+  .sm-size2 {
+    width: 16.66667%; }
+
+  .sm-size3 {
+    width: 25%; }
+
+  .sm-size4 {
+    width: 33.33333%; }
+
+  .sm-size5 {
+    width: 41.66667%; }
+
+  .sm-size6 {
+    width: 50%; }
+
+  .sm-size7 {
+    width: 58.33333%; }
+
+  .sm-size8 {
+    width: 66.66667%; }
+
+  .sm-size9 {
+    width: 75%; }
+
+  .sm-size10 {
+    width: 83.33333%; }
+
+  .sm-size11 {
+    width: 91.66667%; }
+
+  .sm-size12 {
+    width: 100%; } }
+/* ==========================================================================
+   General site component
+   ========================================================================== */
+.site-container {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 21.5px;
+  padding-right: 21.5px; }
