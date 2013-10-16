@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Layout utilities
+   ========================================================================== */
+
+.u-cf:before,
+.u-cf:after {
+    content: " ";
+    display: table;
+}
+
+.u-cf:after {
+    clear: both;
+}
+
+%u-cf {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.u-nbfc {
+    overflow: hidden;
+}
+
+
+/**
+ * Floats
+ */
+
+.u-pull-left {
+    float: left !important;
+}
+
+.u-pull-right {
+    float: right !important;
+}
+
+
+/**
+ * Object floats
+ */
+
+.u-object-left {
+    float: left !important;
+    margin-right: $space-horizontal-base;
+}
+
+.u-object-right {
+    float: right !important;
+    margin-left: $space-horizontal-base;
+}
