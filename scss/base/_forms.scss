@@ -139,3 +139,43 @@ legend {
     margin: 0.5em 0;
     display: block;
 }
+
+
+/**
+ * placeholder color
+ */
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: $control-placeholder-color;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: $control-placeholder-color;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: $control-placeholder-color;
+}
+
+
+/*
+ * Hide placeholder by focus
+ */
+
+input[placeholder]:focus::-webkit-input-placeholder,
+textarea[placeholder]:focus::-webkit-input-placeholder {
+    color: transparent !important;
+}
+
+input[placeholder]:focus:-ms-input-placeholder,
+textarea[placeholder]:focus:-ms-input-placeholder {
+    color: transparent !important;
+}
+
+input[placeholder]:focus::-moz-placeholder,
+textarea[placeholder]:focus::-moz-placeholder {
+    color: transparent !important;
+}
