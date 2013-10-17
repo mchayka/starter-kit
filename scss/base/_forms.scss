@@ -8,6 +8,7 @@
 
 %webkit-no-appearance,
 input,
+input[type="search"],
 select,
 textarea {
     -webkit-appearance: none;
@@ -43,7 +44,7 @@ textarea {
     width: 100%;
     padding: $control-padding-vertical $control-padding-horizontal;
     margin-bottom: $control-margin-bottom;
-    font-size: $font-size-base;
+    font-size: $control-font-size;
     border: 1px solid $control-border-color;
     border-radius: $control-border-radius;
     -webkit-border-radius: $control-border-radius;
@@ -51,7 +52,6 @@ textarea {
 
     &:focus {
         outline: 0;
-        outline: thin dotted \9; /* IE6-9 */
         border-color: darken( $control-border-color, 20% );
     }
 
@@ -65,7 +65,7 @@ textarea {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-    font-size: $font-size-base;
+    font-size: $control-font-size;
     outline: thin dotted $color-orange-light;
     outline: 1px auto $color-orange-light;
 
@@ -78,6 +78,8 @@ input[type="checkbox"]:focus {
 input,
 select,
 textarea {
+    line-height: $control-line-height;
+
     &[readonly] {
         color: $control-readonly-color;
         border-color: $control-readonly-color;
@@ -111,6 +113,7 @@ select optgroup {
 
 textarea {
     min-height: 105px;
+    line-height: $line-height-base;
 }
 
 label {
@@ -132,12 +135,6 @@ legend {
     font-weight: bold;
     color: inherit;
     border-bottom: 1px solid $control-border-color;
-}
-
-.checkbox,
-.radio {
-    margin: 0.5em 0;
-    display: block;
 }
 
 

@@ -4,8 +4,8 @@
 
 .grid {
     display: block;
-    margin-left: -$grid-gutter/2;
-    margin-right: -$grid-gutter/2;
+    margin-left: -$grid-gutter-default/2;
+    margin-right: -$grid-gutter-default/2;
     text-align: left;
     letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
     text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
@@ -41,16 +41,53 @@
 
 
 /**
- * Grid without gutter
+ * Modifiers: Different gutter
  */
 
-.grid-nogutter {
+.grid-no-gutter {
     margin-left: 0;
     margin-right: 0;
 
     > .grid-cell {
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+.grid-sm-gutter {
+    margin-left: -$grid-gutter-sm/2;
+    margin-right: -$grid-gutter-sm/2;
+
+    > .grid-cell {
+        padding-left: $grid-gutter-sm/2;
+        padding-right: $grid-gutter-sm/2;
+    }
+}
+
+.grid-md-gutter {
+    margin-left: -$grid-gutter-md/2;
+    margin-right: -$grid-gutter-md/2;
+
+    > .grid-cell {
+        padding-left: $grid-gutter-md/2;
+        padding-right: $grid-gutter-md/2;
+    }
+}
+
+
+/**
+ * Modifiers: Grid cell alignment
+ */
+
+.grid-align-middle {
+    > .grid-cell {
+        vertical-align: middle;
+    }
+}
+
+.grid-align-bottom {
+    > .grid-cell {
+        vertical-align: bottom;
     }
 }
 
@@ -63,8 +100,8 @@
     @include box-sizing(border-box);
     width: 100%;
     display: inline-block;
-    padding-left: $grid-gutter/2;
-    padding-right: $grid-gutter/2;
+    padding-left: $grid-gutter-default/2;
+    padding-right: $grid-gutter-default/2;
     vertical-align: top;
     text-rendering: auto;
     letter-spacing: normal;
@@ -76,11 +113,20 @@
 .grid-cell-example {
     @include rgba-bg(#000, 0.1);
     min-height: 200px;
-    padding: $grid-gutter/2;
+    padding: $grid-gutter-default/2;
 
     .grid-nogutter > .grid-cell > & {
         border: 1px solid $color-gray;
     }
+}
+
+
+/**
+ * Responsive agnostic sizes
+ */
+
+@for $i from 1 through $grid-cols-number {
+    .size#{$i} { width: $grid-cols-width * $i; }
 }
 
 

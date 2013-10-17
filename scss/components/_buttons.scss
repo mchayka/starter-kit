@@ -1,10 +1,47 @@
 /* ==========================================================================
    Buttons
    ========================================================================== */
+%btn-reset {
+    @include box-sizing(border-box);
+    margin-bottom: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+
+    /* Firefox: Get rid of the inner focus border */
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    &:hover,
+    &:focus {
+
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &[disabled] {
+        @include opacity(40);
+        border: none;
+        background-image: none;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+}
 
 %btn {
     @include box-sizing(border-box);
     display: inline-block;
+    margin-bottom: 0;
     border: 0 solid transparent;
     border: none rgba(0, 0, 0, 0);
     line-height: normal;
@@ -40,13 +77,9 @@
     }
 
     &[disabled] {
+        @include opacity(40);
         border: none;
         background-image: none;
-        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-        filter: alpha(opacity=40);
-        -khtml-opacity: 0.40;
-        -moz-opacity: 0.40;
-        opacity: 0.40;
         cursor: not-allowed;
         box-shadow: none;
     }
@@ -72,4 +105,31 @@
     font-weight: bold;
     color: $color-white;
     background-color: $color-green;
+}
+
+
+/* Button without visual styles
+   -------------------------------------------------------------------------- */
+
+.btn-clean {
+    @extend %webkit-no-appearance;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &[disabled] {
+        border: none;
+        background-image: none;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
 }

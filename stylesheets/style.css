@@ -486,7 +486,9 @@ table {
 /**
  * Prevent IOS forms default styling
  */
+.btn-clean,
 input,
+input[type="search"],
 select,
 textarea {
   -webkit-appearance: none;
@@ -521,7 +523,7 @@ textarea {
   transition: 0.3s linear border;
   display: block;
   width: 100%;
-  padding: 0.55em 0.6em;
+  padding: 7.5px 9px;
   margin-bottom: 0.5em;
   font-size: 14px;
   border: 1px solid #bababa;
@@ -546,8 +548,6 @@ textarea {
   select:focus,
   textarea:focus {
     outline: 0;
-    outline: thin dotted \9;
-    /* IE6-9 */
     border-color: #878787; }
   .form-control[disabled],
   input[type="text"][disabled],
@@ -583,28 +583,32 @@ input[type="checkbox"]:focus {
   input[type="checkbox"]:focus.is-invalid {
     outline-color: #af0000; }
 
-input[readonly],
-select[readonly],
-textarea[readonly] {
-  color: #bababa;
-  border-color: #bababa; }
-input.is-invalid, input:invalid,
-select.is-invalid,
-select:invalid,
-textarea.is-invalid,
-textarea:invalid {
-  color: #af0000;
-  border: 1px solid #af0000; }
-  input.is-invalid:focus, input:invalid:focus,
-  select.is-invalid:focus,
-  select:invalid:focus,
-  textarea.is-invalid:focus,
-  textarea:invalid:focus {
-    border-color: #af0000; }
-input.is-success,
-select.is-success,
-textarea.is-success {
-  border: 1px solid #526e20; }
+input,
+select,
+textarea {
+  line-height: 14px; }
+  input[readonly],
+  select[readonly],
+  textarea[readonly] {
+    color: #bababa;
+    border-color: #bababa; }
+  input.is-invalid, input:invalid,
+  select.is-invalid,
+  select:invalid,
+  textarea.is-invalid,
+  textarea:invalid {
+    color: #af0000;
+    border: 1px solid #af0000; }
+    input.is-invalid:focus, input:invalid:focus,
+    select.is-invalid:focus,
+    select:invalid:focus,
+    textarea.is-invalid:focus,
+    textarea:invalid:focus {
+      border-color: #af0000; }
+  input.is-success,
+  select.is-success,
+  textarea.is-success {
+    border: 1px solid #526e20; }
 
 select[multiple],
 select[size] {
@@ -616,7 +620,8 @@ select optgroup {
   font-family: inherit; }
 
 textarea {
-  min-height: 105px; }
+  min-height: 105px;
+  line-height: 1.2; }
 
 label {
   margin: 0.5em 0 0.2em; }
@@ -636,10 +641,35 @@ legend {
   color: inherit;
   border-bottom: 1px solid #bababa; }
 
-.checkbox,
-.radio {
-  margin: 0.5em 0;
-  display: block; }
+/**
+ * placeholder color
+ */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #bababa; }
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #bababa; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #bababa; }
+
+/*
+ * Hide placeholder by focus
+ */
+input[placeholder]:focus::-webkit-input-placeholder,
+textarea[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent !important; }
+
+input[placeholder]:focus:-ms-input-placeholder,
+textarea[placeholder]:focus:-ms-input-placeholder {
+  color: transparent !important; }
+
+input[placeholder]:focus::-moz-placeholder,
+textarea[placeholder]:focus::-moz-placeholder {
+  color: transparent !important; }
 
 /* ==========================================================================
    Scaffolding
@@ -696,6 +726,7 @@ hr {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
+  margin-bottom: 0;
   border: 0 solid transparent;
   border: none rgba(0, 0, 0, 0);
   line-height: normal;
@@ -719,13 +750,11 @@ hr {
   .btn-default:active, .btn-succes:active {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
   [disabled].btn-default, [disabled].btn-succes {
+    zoom: 1;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
     border: none;
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-    filter: alpha(opacity=40);
-    -khtml-opacity: 0.40;
-    -moz-opacity: 0.40;
-    opacity: 0.40;
     cursor: not-allowed;
     box-shadow: none; }
 
@@ -746,6 +775,23 @@ hr {
   font-weight: bold;
   color: white;
   background-color: #526e20; }
+
+/* Button without visual styles
+   -------------------------------------------------------------------------- */
+.btn-clean {
+  border: none;
+  background-color: transparent;
+  color: inherit; }
+  .btn-clean::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+  .btn-clean:focus {
+    outline: 0; }
+  .btn-clean[disabled] {
+    border: none;
+    background-image: none;
+    cursor: not-allowed;
+    box-shadow: none; }
 
 /* ==========================================================================
    Table
@@ -840,14 +886,37 @@ hr {
   word-spacing: -0.43em; }
 
 /**
- * Grid without gutter
+ * Modifiers: Different gutter
  */
-.grid-nogutter {
+.grid-no-gutter {
   margin-left: 0;
   margin-right: 0; }
-  .grid-nogutter > .grid-cell {
+  .grid-no-gutter > .grid-cell {
     padding-left: 0;
     padding-right: 0; }
+
+.grid-sm-gutter {
+  margin-left: -5px;
+  margin-right: -5px; }
+  .grid-sm-gutter > .grid-cell {
+    padding-left: 5px;
+    padding-right: 5px; }
+
+.grid-md-gutter {
+  margin-left: -10px;
+  margin-right: -10px; }
+  .grid-md-gutter > .grid-cell {
+    padding-left: 10px;
+    padding-right: 10px; }
+
+/**
+ * Modifiers: Grid cell alignment
+ */
+.grid-align-middle > .grid-cell {
+  vertical-align: middle; }
+
+.grid-align-bottom > .grid-cell {
+  vertical-align: bottom; }
 
 /*
  * 1. Resets the font family
@@ -878,6 +947,45 @@ hr {
   padding: 21.5px; }
   .grid-nogutter > .grid-cell > .grid-cell-example {
     border: 1px solid #bababa; }
+
+/**
+ * Responsive agnostic sizes
+ */
+.size1 {
+  width: 8.33333%; }
+
+.size2 {
+  width: 16.66667%; }
+
+.size3 {
+  width: 25%; }
+
+.size4 {
+  width: 33.33333%; }
+
+.size5 {
+  width: 41.66667%; }
+
+.size6 {
+  width: 50%; }
+
+.size7 {
+  width: 58.33333%; }
+
+.size8 {
+  width: 66.66667%; }
+
+.size9 {
+  width: 75%; }
+
+.size10 {
+  width: 83.33333%; }
+
+.size11 {
+  width: 91.66667%; }
+
+.size12 {
+  width: 100%; }
 
 /**
  * Responsive sizes
