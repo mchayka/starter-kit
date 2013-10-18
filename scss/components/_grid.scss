@@ -30,7 +30,7 @@
 %inline-block-element {
     @include box-sizing(border-box);
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     text-rendering: auto;
     letter-spacing: normal;
     word-spacing: normal;
@@ -124,6 +124,7 @@
     width: 100%;
     padding-left: $grid-gutter-default/2;
     padding-right: $grid-gutter-default/2;
+    vertical-align: top;
     text-align: left;
 }
 

@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Common list styles
+   ========================================================================== */
+
+/**
+ * Unstyled list
+ */
+
+.list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/**
+ * List inline
+ */
+
+.list-inline {
+    @extend .list-unstyled;
+    @extend %inline-block-wrapper;
+
+    > li {
+        @extend %inline-block-element;
+    }
+}
