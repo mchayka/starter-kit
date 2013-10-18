@@ -2,19 +2,50 @@
    Grid
    ========================================================================== */
 
-.grid {
+/**
+ * Placeholder for inline-block wrapper
+ * 1. prevent grid collapse in all major devices
+ */
+
+%inline-block-wrapper {
     display: block;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* 1 */
+}
+
+/* Opera hack */
+
+.opera-only :-o-prefocus,
+%inline-block-wrapper {
+    word-spacing: -0.43em;
+}
+
+
+/*
+ * Placeholder for inline-block element within inline-block-wrapper
+ * 1. Resets the font family
+ */
+
+%inline-block-element {
+    @include box-sizing(border-box);
+    display: inline-block;
+    vertical-align: top;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-family: $font-family-base; /* 1 */
+}
+
+
+/* Grid
+   -------------------------------------------------------------------------- */
+
+.grid {
+    @extend %inline-block-wrapper;
     margin-left: -$grid-gutter-default/2;
     margin-right: -$grid-gutter-default/2;
     text-align: left;
-    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
-    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-
-    /*
-     * The following font stack makes grid work on all known environments.
-     */
-
-    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
 
     /*
     Use flexbox when possible to avoid `letter-spacing` side-effects.
@@ -29,14 +60,6 @@
     /* IE10 uses display: flexbox */
     display: -ms-flexbox;
     -ms-flex-flow: row wrap;
-}
-
-
-/* Opera hack */
-
-.opera-only :-o-prefocus,
-.grid {
-    word-spacing: -0.43em;
 }
 
 
@@ -92,22 +115,16 @@
 }
 
 
-/*
- * 1. Resets the font family
+/**
+ * Grid cell
  */
 
 .grid-cell {
-    @include box-sizing(border-box);
+    @extend %inline-block-element;
     width: 100%;
-    display: inline-block;
     padding-left: $grid-gutter-default/2;
     padding-right: $grid-gutter-default/2;
-    vertical-align: top;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
     text-align: left;
-    font-family: $font-family-base; /* 1 */
 }
 
 .grid-cell-example {
@@ -120,6 +137,9 @@
     }
 }
 
+
+/* Sizes
+   -------------------------------------------------------------------------- */
 
 /**
  * Responsive agnostic sizes
