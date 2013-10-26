@@ -10,7 +10,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <script src="../javascript/vendor/modernizr-2.6.2.min.js"></script>
 </head>
@@ -22,14 +21,9 @@
     <form>
         <fieldset>
             <legend>Inputs</legend>
-
             <input type="text" placeholder="Regular input">
             <input type="text" placeholder="Readonly input" readonly>
             <input type="text" value="Disabled input" disabled>
-            <input type="text" value="Invalid input" class="is-invalid">
-            <input type="text" value="Succes input" class="is-success">
-            <input type="password" placeholder="Password">
-            <input type="file" name="somename" size="20">
         </fieldset>
 
         <fieldset>
@@ -61,79 +55,26 @@
 
         <hr>
 
-        <div class="select is-simple" luana-module="select">
-            <select>
-                <option value="1" disabled selected>- CHOOSE VALUE LONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECT -</option>
-                <option value="1">First value</option>
-                <option value="2">Second value</option>
-                <option value="3">Third value</option>
-            </select>
-            <button class="select-btn" luana-module="select">
-                <span>
-                    - CHOOSE VALUE LONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECT -
-                </span>
-            </button>
-            <ul class="select-list">
-                <li><span>- CHOOSE VALUE LONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECT -</span></li>
-                <li><a href="#" data-value="1">First value</a></li>
-                <li><a href="#" data-value="2">Second value</a></li>
-                <li><a href="#" data-value="3">Third value</a></li>
-            </ul>
-        </div>
+        <select>
+            <option value="1" disabled selected>Select value</option>
+            <option value="1">First value</option>
+            <option value="2">Second value</option>
+            <option value="3">Third value</option>
+        </select>
 
-        <div class="select is-disabled" luana-module="select">
-            <select disabled>
-                <option>First value</option>
-                <option>Second value</option>
-                <option>Third value</option>
-            </select>
-            <button class="select-btn">
-                <span>
-                    - CHOOSE VALUE LONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECT -
-                </span>
-            </button>
-            <ul class="select-list" luana-module="select">
-                <li><a href="#">First value</a></li>
-                <li><a href="#">Second value</a></li>
-                <li><a href="#">Third value</a></li>
-            </ul>
-        </div>
+        <select readonly>
+            <option value="1" disabled selected>Select value</option>
+            <option value="1">First value</option>
+            <option value="2">Second value</option>
+            <option value="3">Third value</option>
+        </select>
 
-        <div class="select is-readonly" luana-module="select">
-            <select readonly>
-                <option>First value</option>
-                <option>Second value</option>
-                <option>Third value</option>
-            </select>
-            <button class="select-btn">
-                <span>
-                    - CHOOSE VALUE LONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECT -
-                </span>
-            </button>
-            <ul class="select-list">
-                <li><a href="#">First value</a></li>
-                <li><a href="#">Second value</a></li>
-                <li><a href="#">Third value</a></li>
-            </ul>
-        </div>
-
-        <div class="select" luana-module="select">
-            <select>
-                <option>First value</option>
-                <option>Second value</option>
-                <option>Third value</option>
-            </select>
-            <button class="select-btn">
-                <span>
-                    - CHOOSE VALUE LONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECTLONG LONG LONG SELECT -
-                </span>
-            </button>
-            <ul class="select-list">
-                <li><a href="#">First value</a></li>
-                <li><a href="#">Second value</a></li>
-                <li><a href="#">Third value</a></li>
-            </ul>
-        </div>
+        <select disabled>
+            <option value="1" disabled selected>Select value</option>
+            <option value="1">First value</option>
+            <option value="2">Second value</option>
+            <option value="3">Third value</option>
+        </select>
 
         <select size = "5">
             <optgroup>
@@ -149,23 +90,13 @@
             <textarea cols="30" rows="10" placeholder="Type here"></textarea>
         </fieldset>
 
-        <button type="submit" class="btn-succes">Sign in</button>
+        <button type="submit">Sign in</button>
     </form>
 
-
-    <h2>Buttons</h2>
-
-    <a class="btn-default">Anchor</a>
-    <button class="btn-default">Button</button>
-    <input type="submit" class="btn-default" value="Submit" disabled/>
-    <input type="button" class="btn-succes" value="Input Button" disabled/>
-    <input type="reset" class="btn-succes" value="Reset" />
 
 </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../javascript/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="../javascript/vendor/luana.js"></script>
-    <script src="../javascript/select.luana.js"></script>
 </body>
 </html>

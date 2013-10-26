@@ -1,8 +1,11 @@
 // Core variables and mixins
 
 @import "variables";
-@import "utilities/bourbon/bourbon";
 @import "utilities/mixins";
+
+
+// Utilities
+
 @import "utilities/state";
 @import "utilities/layout";
 @import "utilities/text";

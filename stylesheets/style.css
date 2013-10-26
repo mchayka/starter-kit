@@ -8,9 +8,8 @@
 /* large devices */
 /* -------------------------------------------------------------------------- */
 /* Retina screens */
-/* Additional CSS3 mixins
+/* CSS3 mixins
    ========================================================================== */
-/* Opacity */
 /* rgba bg */
 /* ==========================================================================
    States utilities
@@ -486,19 +485,29 @@ table {
 /**
  * Prevent IOS forms default styling
  */
-.btn-clean,
-input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
 input[type="search"],
-select,
+input[type="tel"],
+input[type="color"],
 textarea {
   -webkit-appearance: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-border-radius: 0; }
 
 /**
- * General forms styling
+ * Control form elements
  */
-.form-control,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -519,18 +528,18 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: 0.3s linear border;
-  -moz-transition: 0.3s linear border;
   transition: 0.3s linear border;
   display: block;
   width: 100%;
+  height: 33px;
   padding: 7.5px 9px;
-  margin-bottom: 0.5em;
+  line-height: 1.2;
   font-size: 14px;
   border: 1px solid #bababa;
   border-radius: 4px;
   -webkit-border-radius: 4px;
-  background-color: white; }
-  .form-control:focus,
+  background-color: white;
+  background-image: none; }
   input[type="text"]:focus,
   input[type="password"]:focus,
   input[type="email"]:focus,
@@ -549,66 +558,23 @@ textarea {
   textarea:focus {
     outline: 0;
     border-color: #878787; }
-  .form-control[disabled],
-  input[type="text"][disabled],
-  input[type="password"][disabled],
-  input[type="email"][disabled],
-  input[type="url"][disabled],
-  input[type="date"][disabled],
-  input[type="month"][disabled],
-  input[type="time"][disabled],
-  input[type="datetime"][disabled],
-  input[type="datetime-local"][disabled],
-  input[type="week"][disabled],
-  input[type="number"][disabled],
-  input[type="search"][disabled],
-  input[type="tel"][disabled],
-  input[type="color"][disabled],
-  select[disabled],
-  textarea[disabled] {
-    cursor: not-allowed;
-    background-color: #ededed;
-    color: #bababa; }
+
+input[type="file"] {
+  display: block; }
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  font-size: 14px;
-  outline: thin dotted #f7f0e7;
-  outline: 1px auto #f7f0e7; }
-  input[type="file"]:focus:invalid:focus, input[type="file"]:focus.is-invalid,
+  outline: thin dotted #bababa;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+  input[type="file"]:focus:invalid:focus,
   input[type="radio"]:focus:invalid:focus,
-  input[type="radio"]:focus.is-invalid,
-  input[type="checkbox"]:focus:invalid:focus,
-  input[type="checkbox"]:focus.is-invalid {
+  input[type="checkbox"]:focus:invalid:focus {
     outline-color: #af0000; }
 
-input,
-select,
-textarea {
-  line-height: 14px; }
-  input[readonly],
-  select[readonly],
-  textarea[readonly] {
-    color: #bababa;
-    border-color: #bababa; }
-  input.is-invalid, input:invalid,
-  select.is-invalid,
-  select:invalid,
-  textarea.is-invalid,
-  textarea:invalid {
-    color: #af0000;
-    border: 1px solid #af0000; }
-    input.is-invalid:focus, input:invalid:focus,
-    select.is-invalid:focus,
-    select:invalid:focus,
-    textarea.is-invalid:focus,
-    textarea:invalid:focus {
-      border-color: #af0000; }
-  input.is-success,
-  select.is-success,
-  textarea.is-success {
-    border: 1px solid #526e20; }
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  height: auto; }
 
 select[multiple],
 select[size] {
@@ -620,66 +586,96 @@ select optgroup {
   font-family: inherit; }
 
 textarea {
-  min-height: 105px;
-  line-height: 1.2; }
+  height: auto; }
 
+/**
+ * States
+ */
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  color: #ededed;
+  border-color: #ededed; }
+input[disabled],
+select[disabled],
+textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #ededed;
+  color: #bababa; }
+input:invalid,
+select:invalid,
+textarea:invalid {
+  color: #af0000;
+  border: 1px solid #af0000; }
+  input:invalid:focus,
+  select:invalid:focus,
+  textarea:invalid:focus {
+    border-color: #af0000; }
+
+/**
+ * Checkboxes and radios
+ */
+.radio,
+.checkbox {
+  display: block;
+  min-height: 16.8px;
+  padding-left: 20px; }
+  .radio > label,
+  .checkbox > label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer; }
+
+.radio > input[type="radio"],
+.checkbox > input[type="checkbox"] {
+  float: left;
+  margin-left: -20px; }
+
+/**
+ * Non control form elements
+ */
 label {
-  margin: 0.5em 0 0.2em; }
+  display: inline-block;
+  margin-bottom: 10px; }
 
 fieldset {
-  margin: 0;
-  padding: 0 0 0.75em;
+  padding: 0;
+  margin: 0 0 10px;
   border: 0; }
 
 legend {
   display: block;
   width: 100%;
-  padding: 0.3em 0;
-  margin-bottom: 1em;
-  font-size: 100%;
+  padding: 0;
+  margin: 10px 0;
+  border: 0;
+  border-bottom: 1px solid #bababa;
+  font-size: 1.2em;
   font-weight: bold;
-  color: inherit;
-  border-bottom: 1px solid #bababa; }
+  color: inherit; }
 
 /**
  * placeholder color
  */
-input:-moz-placeholder,
-textarea:-moz-placeholder {
+::-webkit-input-placeholder {
   color: #bababa; }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+:-moz-placeholder {
   color: #bababa; }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+:-ms-input-placeholder {
   color: #bababa; }
-
-/*
- * Hide placeholder by focus
- */
-input[placeholder]:focus::-webkit-input-placeholder,
-textarea[placeholder]:focus::-webkit-input-placeholder {
-  color: transparent !important; }
-
-input[placeholder]:focus:-ms-input-placeholder,
-textarea[placeholder]:focus:-ms-input-placeholder {
-  color: transparent !important; }
-
-input[placeholder]:focus::-moz-placeholder,
-textarea[placeholder]:focus::-moz-placeholder {
-  color: transparent !important; }
 
 /* ==========================================================================
    Scaffolding
    ========================================================================== */
 body {
   min-width: 320px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
   font-size: 14px;
   line-height: 1.2;
-  color: #333333;
+  color: black;
   background-color: white; }
 
 /**
@@ -750,9 +746,8 @@ hr {
   .btn-default:active, .btn-succes:active {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
   [disabled].btn-default, [disabled].btn-succes {
-    zoom: 1;
-    opacity: 0.4;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    opacity: 40;
+    filter: alpha(opacity=4000);
     border: none;
     background-image: none;
     cursor: not-allowed;
@@ -855,19 +850,45 @@ hr {
 /* ==========================================================================
    Grid
    ========================================================================== */
-.grid {
+/**
+ * Placeholder for inline-block wrapper
+ * 1. prevent grid collapse in all major devices
+ */
+.grid, .list-inline {
   display: block;
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+  /* 1 */ }
+
+/* Opera hack */
+.opera-only :-o-prefocus,
+.grid,
+.list-inline {
+  word-spacing: -0.43em; }
+
+/*
+ * Placeholder for inline-block element within inline-block-wrapper
+ * 1. Resets the font family
+ */
+.grid-cell, .list-inline > li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  /* 1 */ }
+
+/* Grid
+   -------------------------------------------------------------------------- */
+.grid {
   margin-left: -21.5px;
   margin-right: -21.5px;
   text-align: left;
-  letter-spacing: -0.31em;
-  /* Webkit: collapse white-space between units */
-  text-rendering: optimizespeed;
-  /* Webkit: fixes text-rendering: optimizeLegibility */
-  /*
-   * The following font stack makes grid work on all known environments.
-   */
-  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
     /*
     Use flexbox when possible to avoid `letter-spacing` side-effects.
 
@@ -879,11 +900,6 @@ hr {
   /* IE10 uses display: flexbox */
   display: -ms-flexbox;
   -ms-flex-flow: row wrap; }
-
-/* Opera hack */
-.opera-only :-o-prefocus,
-.grid {
-  word-spacing: -0.43em; }
 
 /**
  * Modifiers: Different gutter
@@ -918,24 +934,15 @@ hr {
 .grid-align-bottom > .grid-cell {
   vertical-align: bottom; }
 
-/*
- * 1. Resets the font family
+/**
+ * Grid cell
  */
 .grid-cell {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   width: 100%;
-  display: inline-block;
   padding-left: 21.5px;
   padding-right: 21.5px;
   vertical-align: top;
-  text-rendering: auto;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-align: left;
-  font-family: "Ubuntu", sans-serif;
-  /* 1 */ }
+  text-align: left; }
 
 .grid-cell-example {
   background: black;
@@ -948,6 +955,8 @@ hr {
   .grid-nogutter > .grid-cell > .grid-cell-example {
     border: 1px solid #bababa; }
 
+/* Sizes
+   -------------------------------------------------------------------------- */
 /**
  * Responsive agnostic sizes
  */
@@ -1099,6 +1108,29 @@ hr {
   .sm-size12 {
     width: 100%; } }
 /* ==========================================================================
+   Media object
+   ========================================================================== */
+.media,
+.media-body {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1; }
+
+/* ==========================================================================
+   Common list styles
+   ========================================================================== */
+/**
+ * Unstyled list
+ */
+.list-unstyled, .list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/**
+ * List inline
+ */
+/* ==========================================================================
    General site component
    ========================================================================== */
 .site-container {
@@ -1109,3 +1141,17 @@ hr {
   margin: 0 auto;
   padding-left: 21.5px;
   padding-right: 21.5px; }
+
+/* Site header
+   -------------------------------------------------------------------------- */
+/**
+ * Utilities block
+ */
+/**
+ * Heading with logo
+ */
+/**
+ * Main navigation
+ */
+/* Site footer
+   -------------------------------------------------------------------------- */

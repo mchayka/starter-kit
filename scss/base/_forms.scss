@@ -6,22 +6,31 @@
  * Prevent IOS forms default styling
  */
 
-%webkit-no-appearance,
-input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
 input[type="search"],
-select,
+input[type="tel"],
+input[type="color"],
 textarea {
     -webkit-appearance: none;
-    @include box-shadow(none);
+    @include box-shadow( none );
     -webkit-border-radius: 0;
 }
 
 
 /**
- * General forms styling
+ * Control form elements
  */
 
-.form-control,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -42,61 +51,44 @@ textarea {
     @include transition(0.3s linear border);
     display: block;
     width: 100%;
+    height: ( floor( $control-font-size * $control-line-height ) + ( $control-padding-vertical * 2 ) + 2 );
     padding: $control-padding-vertical $control-padding-horizontal;
-    margin-bottom: $control-margin-bottom;
+    line-height: $control-line-height;
     font-size: $control-font-size;
     border: 1px solid $control-border-color;
     border-radius: $control-border-radius;
     -webkit-border-radius: $control-border-radius;
     background-color: $color-white;
+    background-image: none; // Reset Firefox-on-Android default style
 
     &:focus {
         outline: 0;
         border-color: darken( $control-border-color, 20% );
     }
+}
 
-    &[disabled] {
-        cursor: not-allowed;
-        background-color: lighten( $control-disabled-color, 20% );
-        color: $control-disabled-color;
-    }
+input[type="file"] {
+    display: block;
 }
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-    font-size: $control-font-size;
-    outline: thin dotted $color-orange-light;
-    outline: 1px auto $color-orange-light;
+    // Default
+    outline: thin dotted $control-border-color;
+    // Webkit
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
 
-    &:invalid:focus,
-    &.is-invalid {
+    &:invalid:focus {
         outline-color: $control-invalid-color
     }
 }
 
-input,
-select,
-textarea {
-    line-height: $control-line-height;
-
-    &[readonly] {
-        color: $control-readonly-color;
-        border-color: $control-readonly-color;
-    }
-
-    &.is-invalid,
-    &:invalid {
-        color: $control-invalid-color;
-        border: 1px solid $control-invalid-color;
-
-        &:focus {
-            border-color: $control-invalid-color;
-        }
-    }
-
-    &.is-success {
-        border: 1px solid $control-success-color;
+input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        height: auto;
     }
 }
 
@@ -112,29 +104,89 @@ select optgroup {
 }
 
 textarea {
-    min-height: 105px;
-    line-height: $line-height-base;
+    height: auto;
 }
 
+
+/**
+ * States
+ */
+
+input,
+select,
+textarea {
+    &[readonly] {
+        color: lighten( $control-border-color, 20% );
+        border-color:  lighten( $control-border-color, 20% );
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: lighten( $control-border-color, 20% );
+        color: $control-border-color;
+    }
+
+    &:invalid {
+        color: $control-invalid-color;
+        border: 1px solid $control-invalid-color;
+
+        &:focus {
+            border-color: $control-invalid-color;
+        }
+    }
+}
+
+
+/**
+ * Checkboxes and radios
+ */
+
+.radio,
+.checkbox {
+    display: block;
+    min-height: $control-line-height * $control-font-size;
+    padding-left: 20px;
+
+    > label {
+        display: inline;
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+    }
+}
+
+.radio > input[type="radio"],
+.checkbox > input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+
+
+/**
+ * Non control form elements
+ */
+
 label {
-    margin: 0.5em 0 0.2em;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 fieldset {
-    margin: 0;
-    padding: 0 0 0.75em;
+    padding: 0;
+    margin: 0 0 10px;
     border: 0;
 }
 
 legend {
     display: block;
     width: 100%;
-    padding: 0.3em 0;
-    margin-bottom: 1em;
-    font-size: 100%;
+    padding: 0;
+    margin: 10px 0;
+    border: 0;
+    border-bottom: 1px solid $control-border-color;
+    font-size: 1.2em;
     font-weight: bold;
     color: inherit;
-    border-bottom: 1px solid $control-border-color;
 }
 
 
@@ -142,37 +194,14 @@ legend {
  * placeholder color
  */
 
-input:-moz-placeholder,
-textarea:-moz-placeholder {
+::-webkit-input-placeholder {
     color: $control-placeholder-color;
 }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+:-moz-placeholder {
     color: $control-placeholder-color;
 }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+:-ms-input-placeholder {
     color: $control-placeholder-color;
-}
-
-
-/*
- * Hide placeholder by focus
- */
-
-input[placeholder]:focus::-webkit-input-placeholder,
-textarea[placeholder]:focus::-webkit-input-placeholder {
-    color: transparent !important;
-}
-
-input[placeholder]:focus:-ms-input-placeholder,
-textarea[placeholder]:focus:-ms-input-placeholder {
-    color: transparent !important;
-}
-
-input[placeholder]:focus::-moz-placeholder,
-textarea[placeholder]:focus::-moz-placeholder {
-    color: transparent !important;
 }

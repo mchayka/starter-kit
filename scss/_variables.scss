@@ -7,6 +7,7 @@
 
 $color-white: #fff;
 $color-white-muted: #f8f8f8;
+$color-black: #000;
 $color-gray: #bababa;
 $color-gray-light: #e6e6e6;
 $color-gray-dark: #333;
@@ -19,21 +20,18 @@ $color-orange: #dba452;
 $color-orange-light: #f7f0e7;
 
 
-//site general settings
 
-$site-width: 1140px;
-$site-color: $color-gray-dark;
-$site-bg-color: $color-white;
+//Typography
 
+$font-family-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
 
-//scaffolding
-
-$font-family-base: 'Ubuntu', sans-serif;
 $font-size-base: 14px;
 $font-size-h1: 32px;
 $font-size-h2: 24px;
 $font-size-h3: 18px;
-$line-height-base: 1.2;
+$line-height-default: 1.2;
 
 
 //
@@ -51,20 +49,26 @@ $screen-large: "only screen and (min-width: 1024px)";
 $screen-retina: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)";
 
 
+//  Site general settings
+// ==========================================================================
+
+$site-width: 1140px;
+$site-color: $color-black;
+$site-bg-color: $color-white;
+$site-font-family: $font-family-sans;
+$site-line-height: $line-height-default;
+
+
 //  Forms
 // ==========================================================================
 
 $control-padding-horizontal: 9px;
 $control-padding-vertical: 7.5px;
-$control-margin-bottom: .5em;
 $control-font-size: $font-size-base;
-$control-line-height: $control-font-size;
+$control-line-height: $line-height-default; // don't set in px, em, rem
 $control-border-radius: $border-radius-base;
 $control-border-color: $color-gray;
 $control-invalid-color: $color-red;
-$control-success-color: $color-green;
-$control-readonly-color: $color-gray;
-$control-disabled-color: $color-gray;
 $control-placeholder-color: $color-gray;
 
 
