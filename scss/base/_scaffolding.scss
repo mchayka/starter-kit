@@ -2,6 +2,12 @@
    Scaffolding
    ========================================================================== */
 
+/* Prevent grey overlay on touchstart in mobile Safari */
+
+html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 body {
     min-width: 320px;
     font-family: $site-font-family;
@@ -50,8 +56,8 @@ table {
  */
 
 hr {
-    margin-top: $space-vertical-base;
-    margin-bottom: $space-vertical-base;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border: 0;
     border-top: 1px solid $color-gray;
 }
