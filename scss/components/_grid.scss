@@ -22,7 +22,7 @@
 }
 
 
-/*
+/**
  * Placeholder for inline-block element within inline-block-wrapper
  * 1. Resets the font family
  */
@@ -41,7 +41,7 @@
 /* Grid
    -------------------------------------------------------------------------- */
 
-.grid {
+.Grid {
     @extend %inline-block-wrapper;
     margin-left: -$grid-gutter-default/2;
     margin-right: -$grid-gutter-default/2;
@@ -67,7 +67,7 @@
  * Modifiers: Different gutter
  */
 
-.grid-no-gutter {
+.Grid--noGutter {
     margin-left: 0;
     margin-right: 0;
 
@@ -77,38 +77,17 @@
     }
 }
 
-.grid-sm-gutter {
-    margin-left: -$grid-gutter-sm/2;
-    margin-right: -$grid-gutter-sm/2;
-
-    > .grid-cell {
-        padding-left: $grid-gutter-sm/2;
-        padding-right: $grid-gutter-sm/2;
-    }
-}
-
-.grid-md-gutter {
-    margin-left: -$grid-gutter-md/2;
-    margin-right: -$grid-gutter-md/2;
-
-    > .grid-cell {
-        padding-left: $grid-gutter-md/2;
-        padding-right: $grid-gutter-md/2;
-    }
-}
-
-
 /**
  * Modifiers: Grid cell alignment
  */
 
-.grid-align-middle {
-    > .grid-cell {
+.Grid--alignMiddle {
+    > .Grid-cell {
         vertical-align: middle;
     }
 }
 
-.grid-align-bottom {
+.Grid--alignBottom {
     > .grid-cell {
         vertical-align: bottom;
     }
@@ -119,7 +98,7 @@
  * Grid cell
  */
 
-.grid-cell {
+.Grid-cell {
     @extend %inline-block-element;
     width: 100%;
     padding-left: $grid-gutter-default/2;
@@ -128,7 +107,7 @@
     text-align: left;
 }
 
-.grid-cell-example {
+.Grid-cell--example {
     @include rgba-bg(#000, 0.1);
     min-height: 200px;
     padding: $grid-gutter-default/2;

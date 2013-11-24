@@ -692,18 +692,6 @@ a {
     text-decoration: none; }
 
 /**
- * Headers
- */
-h1 {
-  font-size: 32px; }
-
-h2 {
-  font-size: 24px; }
-
-h3 {
-  font-size: 18px; }
-
-/**
  * Tables
  */
 table {
@@ -719,9 +707,24 @@ hr {
   border-top: 1px solid #bababa; }
 
 /* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Headers
+ */
+h1 {
+  font-size: 32px; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 18px; }
+
+/* ==========================================================================
    Buttons
    ========================================================================== */
-.btn-default, .btn-succes {
+.Btn {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -742,14 +745,14 @@ hr {
   user-select: none;
   background-image: none;
   /* Firefox: Get rid of the inner focus border */ }
-  .btn-default::-moz-focus-inner, .btn-succes::-moz-focus-inner {
+  .Btn::-moz-focus-inner {
     padding: 0;
     border: 0; }
-  .btn-default:focus, .btn-succes:focus {
+  .Btn:focus {
     outline: 0; }
-  .btn-default:active, .btn-succes:active {
+  .Btn:active {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
-  [disabled].btn-default, [disabled].btn-succes {
+  .Btn[disabled] {
     opacity: 40;
     filter: alpha(opacity=4000);
     border: none;
@@ -757,7 +760,10 @@ hr {
     cursor: not-allowed;
     box-shadow: none; }
 
-.btn-default {
+/**
+ * Modifiers: Different color
+ */
+.Btn--default {
   min-width: 140px;
   padding: .7em .5em;
   border-radius: 4px;
@@ -766,27 +772,22 @@ hr {
   color: white;
   background-color: #785d7b; }
 
-.btn-succes {
-  min-width: 140px;
-  padding: .7em .5em;
-  border-radius: 4px;
-  font-size: 17px;
-  font-weight: bold;
-  color: white;
-  background-color: #526e20; }
-
 /* Button without visual styles
    -------------------------------------------------------------------------- */
-.btn-clean {
+.BtnClean {
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
   border: none;
   background-color: transparent;
   color: inherit; }
-  .btn-clean::-moz-focus-inner {
+  .BtnClean::-moz-focus-inner {
     padding: 0;
     border: 0; }
-  .btn-clean:focus {
+  .BtnClean:focus {
     outline: 0; }
-  .btn-clean[disabled] {
+  .BtnClean[disabled] {
     border: none;
     background-image: none;
     cursor: not-allowed;
@@ -795,60 +796,60 @@ hr {
 /* ==========================================================================
    Table
    ========================================================================== */
-.table {
+.Table {
   empty-cells: show;
   border: 1px solid #bababa; }
-  .table caption {
+  .Table caption {
     color: #333333;
     font: italic 85%/1 arial, sans-serif;
     padding: 1em 0;
     text-align: center; }
-  .table td,
-  .table th {
+  .Table td,
+  .Table th {
     border-left: 1px solid #bababa;
     border-width: 0 0 0 1px;
     font-size: inherit;
     margin: 0;
     overflow: visible;
     padding: 6px 12px; }
-    .table td:first-child, .table td:first-child,
-    .table th:first-child,
-    .table th:first-child {
+    .Table td:first-child, .Table td:first-child,
+    .Table th:first-child,
+    .Table th:first-child {
       border-left-width: 0; }
-  .table thead {
+  .Table thead {
     background: #bababa;
     color: #333333;
     text-align: left;
     vertical-align: bottom; }
-  .table td {
+  .Table td {
     background-color: white; }
-  .table .table-odd td {
+  .Table .table-odd td {
     background-color: #e6e6e6; }
 
 /**
  * .table modifier: Striped table
  * nth-child selector for modern browsers
  */
-.table-striped tr:nth-child(2n-1) td {
+.Table--striped tr:nth-child(2n-1) td {
   background-color: #e6e6e6; }
 
 /**
  * .table modifier: Bordered table
  */
-.table-bordered td {
+.Table--bordered td {
   border-bottom: 1px solid #bababa; }
-.table-bordered tbody > tr:last-child td,
-.table-bordered tbody > tr:last-child td {
+.Table--bordered tbody > tr:last-child td,
+.Table--bordered tbody > tr:last-child td {
   border-bottom-width: 0; }
 
 /**
  * .table modifier: Horizontal bordered table
  */
-.table-horizontal td,
-.table-horizontal th {
+.Table--horizontal td,
+.Table--horizontal th {
   border-width: 0 0 1px 0;
   border-bottom: 1px solid #bababa; }
-.table-horizontal tbody > tr:last-child td {
+.Table--horizontal tbody > tr:last-child td {
   border-bottom-width: 0; }
 
 /* ==========================================================================
@@ -858,7 +859,7 @@ hr {
  * Placeholder for inline-block wrapper
  * 1. prevent grid collapse in all major devices
  */
-.grid, .list-inline {
+.Grid, .ListInline {
   display: block;
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
@@ -867,15 +868,15 @@ hr {
 
 /* Opera hack */
 .opera-only :-o-prefocus,
-.grid,
-.list-inline {
+.Grid,
+.ListInline {
   word-spacing: -0.43em; }
 
-/*
+/**
  * Placeholder for inline-block element within inline-block-wrapper
  * 1. Resets the font family
  */
-.grid-cell, .list-inline > li {
+.Grid-cell, .ListInline > li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -889,7 +890,7 @@ hr {
 
 /* Grid
    -------------------------------------------------------------------------- */
-.grid {
+.Grid {
   margin-left: -21.5px;
   margin-right: -21.5px;
   text-align: left;
@@ -908,47 +909,33 @@ hr {
 /**
  * Modifiers: Different gutter
  */
-.grid-no-gutter {
+.Grid--noGutter {
   margin-left: 0;
   margin-right: 0; }
-  .grid-no-gutter > .grid-cell {
+  .Grid--noGutter > .grid-cell {
     padding-left: 0;
     padding-right: 0; }
-
-.grid-sm-gutter {
-  margin-left: -5px;
-  margin-right: -5px; }
-  .grid-sm-gutter > .grid-cell {
-    padding-left: 5px;
-    padding-right: 5px; }
-
-.grid-md-gutter {
-  margin-left: -10px;
-  margin-right: -10px; }
-  .grid-md-gutter > .grid-cell {
-    padding-left: 10px;
-    padding-right: 10px; }
 
 /**
  * Modifiers: Grid cell alignment
  */
-.grid-align-middle > .grid-cell {
+.Grid--alignMiddle > .Grid-cell {
   vertical-align: middle; }
 
-.grid-align-bottom > .grid-cell {
+.Grid--alignBottom > .grid-cell {
   vertical-align: bottom; }
 
 /**
  * Grid cell
  */
-.grid-cell {
+.Grid-cell {
   width: 100%;
   padding-left: 21.5px;
   padding-right: 21.5px;
   vertical-align: top;
   text-align: left; }
 
-.grid-cell-example {
+.Grid-cell--example {
   background: black;
   background: transparent;
   background: rgba(0, 0, 0, 0.1);
@@ -956,7 +943,7 @@ hr {
   zoom: 1;
   min-height: 200px;
   padding: 21.5px; }
-  .grid-nogutter > .grid-cell > .grid-cell-example {
+  .grid-nogutter > .grid-cell > .Grid-cell--example {
     border: 1px solid #bababa; }
 
 /* Sizes
@@ -1114,8 +1101,8 @@ hr {
 /* ==========================================================================
    Media object
    ========================================================================== */
-.media,
-.media-body {
+.Media,
+.Media-body {
   overflow: hidden;
   _overflow: visible;
   zoom: 1; }
@@ -1126,7 +1113,7 @@ hr {
 /**
  * Unstyled list
  */
-.list-unstyled, .list-inline {
+.ListUnstyled, .ListInline {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -1135,9 +1122,9 @@ hr {
  * List inline
  */
 /* ==========================================================================
-   General site component
+   Site Container
    ========================================================================== */
-.site-container {
+.Container {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -1146,6 +1133,9 @@ hr {
   padding-left: 21.5px;
   padding-right: 21.5px; }
 
+/* ==========================================================================
+   General site component
+   ========================================================================== */
 /* Site header
    -------------------------------------------------------------------------- */
 /**
@@ -1159,3 +1149,60 @@ hr {
  */
 /* Site footer
    -------------------------------------------------------------------------- */
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }

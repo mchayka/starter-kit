@@ -6,7 +6,7 @@
  * Unstyled list
  */
 
-.list-unstyled {
+.ListUnstyled {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -17,8 +17,8 @@
  * List inline
  */
 
-.list-inline {
-    @extend .list-unstyled;
+.ListInline {
+    @extend .ListUnstyled;
     @extend %inline-block-wrapper;
 
     > li {

@@ -1,44 +1,8 @@
 /* ==========================================================================
    Buttons
    ========================================================================== */
-%btn-reset {
-    @include box-sizing(border-box);
-    margin-bottom: 0;
-    white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
 
-    /* Firefox: Get rid of the inner focus border */
-    &::-moz-focus-inner {
-        padding: 0;
-        border: 0;
-    }
-
-    &:hover,
-    &:focus {
-
-    }
-
-    &:focus {
-        outline: 0;
-    }
-
-    &[disabled] {
-        @include opacity(40);
-        border: none;
-        background-image: none;
-        cursor: not-allowed;
-        box-shadow: none;
-    }
-}
-
-%btn {
+.Btn {
     @include box-sizing(border-box);
     display: inline-block;
     margin-bottom: 0;
@@ -63,11 +27,6 @@
         border: 0;
     }
 
-    &:hover,
-    &:focus {
-
-    }
-
     &:focus {
         outline: 0;
     }
@@ -85,8 +44,11 @@
     }
 }
 
-.btn-default {
-    @extend %btn;
+/**
+ * Modifiers: Different color
+ */
+
+.Btn--default {
     min-width: 140px;
     padding: .7em .5em;
     border-radius: $btn-border-radius;
@@ -96,23 +58,15 @@
     background-color: $color-purple-light;
 }
 
-.btn-succes {
-    @extend %btn;
-    min-width: 140px;
-    padding: .7em .5em;
-    border-radius: $btn-border-radius;
-    font-size: 17px;
-    font-weight: bold;
-    color: $color-white;
-    background-color: $color-green;
-}
-
-
 /* Button without visual styles
    -------------------------------------------------------------------------- */
 
-.btn-clean {
-    @extend %webkit-no-appearance;
+.BtnClean {
+    // Prevent IOS forms default styling
+    -webkit-appearance: none;
+    @include box-shadow(none);
+    -webkit-border-radius: 0;
+
     border: none;
     background-color: transparent;
     color: inherit;
