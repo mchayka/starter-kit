@@ -11,91 +11,173 @@
 /* CSS3 mixins
    ========================================================================== */
 /* rgba bg */
+/* github.com/suitcss */
 /* ==========================================================================
    States utilities
    ========================================================================== */
 /**
- * Global states.
- * JavaScript may add/remove/toggle these classes.
- * All other states are component-scoped and use the `is-` prefix.
+ * Indicate that interaction will result in an (in)action.
  */
+.u-isActionable {
+  cursor: pointer !important; }
+
+.u-isDisabled {
+  cursor: default !important; }
+
+.u-isDraggable {
+  cursor: move !important; }
+
 /**
  * Completely remove from the flow and screen readers.
  */
-.u-is-hidden {
+.u-isHidden {
   display: none !important;
   visibility: hidden !important; }
 
 /**
  * Completely remove from the flow but leave available to screen readers.
  */
-.u-is-hidden-visually {
+.u-isHiddenVisually {
   position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px); }
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; }
 
 /**
  * Control visibility without affecting flow.
  */
-.u-is-visible {
-  visibility: visible !important; }
-
-.u-is-invisible {
+.u-isInvisible {
   visibility: hidden !important; }
 
-/**
- * Indicate that interaction will result in an (in)action.
- */
-.u-is-actionable {
-  cursor: pointer; }
+.u-isVisible {
+  visibility: visible !important; }
 
-.u-is-draggable {
-  cursor: move; }
-
-.u-is-disabled {
-  cursor: default; }
-
+/* github.com/suitcss */
 /* ==========================================================================
    Layout utilities
    ========================================================================== */
+/**
+ * Vertical alignment utilities
+ * Depends on an appropriate `display` value.
+ */
+.u-alignTop {
+  vertical-align: top !important; }
+
+.u-alignMiddle {
+  vertical-align: middle !important; }
+
+.u-alignBaseline {
+  vertical-align: baseline !important; }
+
+.u-alignBottom {
+  vertical-align: bottom !important; }
+
+/**
+ * Contain floats
+ *
+ * Make an element expand to contain floated children.
+ * Uses pseudo-elements (micro clearfix).
+ *
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of the
+ *    element.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
 .u-cf:before,
 .u-cf:after {
   content: " ";
-  display: table; }
+  /* 1 */
+  display: table;
+  /* 2 */ }
 
 .u-cf:after {
   clear: both; }
 
+/**
+ * New block formatting context
+ *
+ * This affords some useful properties to the element. It won't wrap under
+ * floats. Will also contain any floated children.
+
+ * N.B. This will clip overflow. Use the alternative method below if this is
+ * problematic.
+ */
 .u-nbfc {
-  overflow: hidden; }
+  overflow: hidden !important; }
+
+/**
+ * New block formatting context (alternative)
+ *
+ * Alternative method when overflow must not be clipped.
+ *
+ * 1. Create a new block formatting context (NBFC).
+ * 2. Avoid shrink-wrap behaviour of table-cell.
+ *
+ * N.B. This breaks down in some browsers when elements within this element
+ * exceed its width.
+ */
+.u-nbfcAlt {
+  display: table-cell !important;
+  /* 1 */
+  width: 10000px !important;
+  /* 2 */ }
 
 /**
  * Floats
  */
-.u-pull-left {
+.u-pullLeft {
   float: left !important; }
 
-.u-pull-right {
+.u-pullRight {
   float: right !important; }
 
 /**
- * Object floats
+ * Object position helpers.
+ *
+ * Float an object left or right, and include some space between the object and
+ * proceeding objects.
  */
-.u-object-left {
+.u-objLeft {
   float: left !important;
-  margin-right: 20px; }
+  margin-right: 10px; }
 
-.u-object-right {
+.u-objRight {
   float: right !important;
-  margin-left: 20px; }
+  margin-left: 10px; }
 
+/**
+ * 1. Remove excess space below images
+ * 2. Guard against `img {max-width:100%}` hiding this utility's images in
+ *    IE 8.
+ */
+.u-objLeft img,
+.u-objRight img {
+  display: block;
+  /* 1 */
+  max-width: none;
+  /* 2 */ }
+
+/* github.com/suitcss */
 /* ==========================================================================
    Text utilities
    ========================================================================== */
+/**
+ * Horizontal text alignment
+ */
+.u-textCenter {
+  text-align: center !important; }
+
+.u-textLeft {
+  text-align: left !important; }
+
+.u-textRight {
+  text-align: right !important; }
+
 /**
  * Text truncation
  *
@@ -107,13 +189,13 @@
  * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
  *    nodes.
  */
-.u-text-truncate {
+.u-textTruncate {
   max-width: 100%;
   /* 1 */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
   /* 2 */ }
 
 /**
@@ -121,23 +203,23 @@
  *
  * Break strings when their length exceeds the width of their container.
  */
-.u-text-break {
-  word-break: break-all;
-  word-break: break-word;
-  word-wrap: break-word; }
+.u-textBreak {
+  word-wrap: break-word !important; }
 
-/* -------------------------------------------------------------------------- */
 /**
- * Horizontal text alignment
+ * Inherit the ancestor's text color.
  */
-.u-text-center {
-  text-align: center; }
+.u-textInheritColor {
+  color: inherit !important; }
 
-.u-text-left {
-  text-align: left; }
-
-.u-text-right {
-  text-align: right; }
+/**
+ * Inherit the ancestor's text color for all states.
+ */
+.u-textInheritAllColor,
+.u-textInheritAllColor:hover,
+.u-textInheritAllColor:focus,
+.u-textInheritAllColor:active {
+  color: inherit !important; }
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================

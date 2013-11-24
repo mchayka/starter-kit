@@ -1,6 +1,24 @@
+/* github.com/suitcss */
+
 /* ==========================================================================
    Text utilities
    ========================================================================== */
+
+/**
+ * Horizontal text alignment
+ */
+
+.u-textCenter {
+    text-align: center !important;
+}
+
+.u-textLeft {
+    text-align: left !important;
+}
+
+.u-textRight {
+    text-align: right !important;
+}
 
 /**
  * Text truncation
@@ -14,12 +32,12 @@
  *    nodes.
  */
 
-.u-text-truncate {
+.u-textTruncate {
     max-width: 100%; /* 1 */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: normal; /* 2 */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important; /* 2 */
 }
 
 /**
@@ -28,26 +46,25 @@
  * Break strings when their length exceeds the width of their container.
  */
 
-.u-text-break {
-    word-break: break-all;
-    word-break: break-word;
-    word-wrap: break-word;
+.u-textBreak {
+    word-wrap: break-word !important;
 }
-
-/* -------------------------------------------------------------------------- */
 
 /**
- * Horizontal text alignment
+ * Inherit the ancestor's text color.
  */
 
-.u-text-center {
-    text-align: center;
+.u-textInheritColor {
+    color: inherit !important;
 }
 
-.u-text-left {
-    text-align: left;
-}
+/**
+ * Inherit the ancestor's text color for all states.
+ */
 
-.u-text-right {
-    text-align: right;
+.u-textInheritAllColor,
+.u-textInheritAllColor:hover,
+.u-textInheritAllColor:focus,
+.u-textInheritAllColor:active {
+    color: inherit !important;
 }
