@@ -6,26 +6,27 @@
  * Prevent IOS forms default styling
  */
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-textarea {
-    -webkit-appearance: none;
-    @include box-shadow( none );
-    -webkit-border-radius: 0;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    textarea {
+        -webkit-appearance: none;
+        @include box-shadow( none );
+        -webkit-border-radius: 0;
+    }
 }
-
 
 /**
  * Control form elements
