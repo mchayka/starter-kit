@@ -48,7 +48,6 @@ input[type="tel"],
 input[type="color"],
 select,
 textarea {
-    @include box-sizing(border-box);
     @include transition(0.3s linear border);
     display: block;
     width: 100%;

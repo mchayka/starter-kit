@@ -2,8 +2,7 @@
    Buttons
    ========================================================================== */
 
-.Btn {
-    @include box-sizing(border-box);
+.Button {
     display: inline-block;
     margin-bottom: 0;
     border: 0 solid transparent;
@@ -48,10 +47,10 @@
  * Modifiers: Different color
  */
 
-.Btn--default {
+.Button--default {
     min-width: 140px;
     padding: .7em .5em;
-    border-radius: $btn-border-radius;
+    border-radius: $Button-border-radius;
     font-size: 17px;
     font-weight: bold;
     color: $color-white;
@@ -61,7 +60,7 @@
 /* Button without visual styles
    -------------------------------------------------------------------------- */
 
-.BtnClean {
+.ButtonClean {
     // Prevent IOS forms default styling
     -webkit-appearance: none;
     @include box-shadow(none);

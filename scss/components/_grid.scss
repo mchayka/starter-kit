@@ -28,7 +28,6 @@
  */
 
 %inline-block-element {
-    @include box-sizing(border-box);
     display: inline-block;
     vertical-align: middle;
     text-rendering: auto;

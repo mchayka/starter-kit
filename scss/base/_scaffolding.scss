@@ -2,6 +2,16 @@
    Scaffolding
    ========================================================================== */
 
+
+/* Reset the box-sizing */
+
+*,
+*:before,
+*:after {
+    @include box-sizing( border-box );
+}
+
+
 /* Prevent grey overlay on touchstart in mobile Safari */
 
 html {
