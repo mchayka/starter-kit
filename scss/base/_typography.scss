@@ -2,10 +2,56 @@
    Typography
    ========================================================================== */
 
-/**
- * Headers
- */
+$typography-debug: true;
 
-h1 { font-size: $font-size-h1; }
-h2 { font-size: $font-size-h2; }
-h3 { font-size: $font-size-h3; }
+@mixin font-size( $font-size, $line-height: true ) {
+  font-size: $font-size;
+  font-size: ( $font-size / $font-size-base ) * 1rem;
+
+  @if $line-height == true {
+    line-height: ceil($font-size / $line-height-base-px) * $line-height-base-px;
+
+    &:before{
+      display: inlinie-block;
+      content: "#{ceil($font-size / $line-height-base-px)} * #{($line-height-base-px / $font-size)} = #{ceil($font-size / $line-height-base-px) * ($line-height-base-px / $font-size)} - ";
+    }
+  }
+}
+
+html {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0 0 $line-height-base-px;
+//  background: rgba( 0, 0, 0, .2 );
+}
+
+h1 {
+  @include font-size( $font-size-h1 );
+  &:before {
+    content: "Base font-size: #{$font-size-base}, base line-height: #{$line-height-base-px}";
+  }
+}
+h2 { @include font-size( $font-size-h2 );}
+h3 { @include font-size( $font-size-h3 );}
+h4 { @include font-size( $font-size-h4 );}
+h5 { @include font-size( $font-size-h5 );}
+h6 { @include font-size( $font-size-h6 );}
+
+// for vertical rythm debugging
+body {
+  @if $typography-debug == true {
+    background-image: -webkit-linear-gradient(transparent 50%, rgba(0, 0, 0, .1) 50%);
+    background-size: $line-height-base-px*2 $line-height-base-px*2;
+  }
+}

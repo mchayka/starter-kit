@@ -2,10 +2,8 @@
    Site Container
    ========================================================================== */
 
-.Container {
+.container {
     @include box-sizing(content-box);
     max-width: $site-width;
     margin: 0 auto;
-    padding-left: $grid-gutter-default/2;
-    padding-right: $grid-gutter-default/2;
 }

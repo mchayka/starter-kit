@@ -1,7 +1,7 @@
 /*! suit-flex-embed v1.2.1 | MIT License | github.com/suitcss */
 
 /* ==========================================================================
-   FlexEmbed
+   flexEmbed
    ========================================================================== */
 
 /**
@@ -13,18 +13,18 @@
  *
  * Example HTML:
  *
- * <div class="FlexEmbed FlexEmbed--16by9">
- *     <iframe class="FlexEmbed-item" src="…"></iframe>
+ * <div class="flexEmbed flexEmbed--16by9">
+ *     <iframe class="flexEmbed-item" src="…"></iframe>
  * </div>
  *
- * <div class="FlexEmbed FlexEmbed--16by9">
+ * <div class="flexEmbed flexEmbed--16by9">
  *     [iframe|object|embed|img]
  * </div>
  *
  * Based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video
  */
 
-.FlexEmbed {
+.flexEmbed {
     display: block;
     height: 0;
     padding: 0;
@@ -39,10 +39,10 @@
  * code.
  */
 
-.FlexEmbed-item,
-.FlexEmbed iframe,
-.FlexEmbed embed,
-.FlexEmbed object {
+.flexEmbed-item,
+.flexEmbed iframe,
+.flexEmbed embed,
+.flexEmbed object {
     bottom: 0;
     height: 100%;
     left: 0;
@@ -55,7 +55,7 @@
  * Modifier: 16:9 aspect ratio
  */
 
-.FlexEmbed--16by9 {
+.flexEmbed--16by9 {
     padding-bottom: 56.25%;
 }
 
@@ -63,6 +63,6 @@
  * Modifier: 4:3 aspect ratio
  */
 
-.FlexEmbed--4by3 {
+.flexEmbed--4by3 {
     padding-bottom: 75%;
 }

@@ -2,7 +2,7 @@
    Table
    ========================================================================== */
 
-.Table {
+.table {
     empty-cells: show;
     border: 1px solid $table-border-color;
 
@@ -50,7 +50,7 @@
  * nth-child selector for modern browsers
  */
 
-.Table--striped tr:nth-child(2n-1) td {
+.table--striped tr:nth-child(2n-1) td {
     background-color: $table-odd-bg-color;
 }
 
@@ -59,7 +59,7 @@
  * .table modifier: Bordered table
  */
 
-.Table--bordered {
+.table--bordered {
     td {
         border-bottom: 1px solid $table-border-color;
     }
@@ -75,7 +75,7 @@
  * .table modifier: Horizontal bordered table
  */
 
-.Table--horizontal {
+.table--horizontal {
     td,
     th {
         border-width: 0 0 1px 0;

@@ -3,7 +3,8 @@
 // ==========================================================================
 
 
-//colors
+//  Colors
+// ==========================================================================
 
 $color-white: #fff;
 $color-white-muted: #f8f8f8;
@@ -20,24 +21,32 @@ $color-orange: #dba452;
 $color-orange-light: #f7f0e7;
 
 
-//Typography
+//  Typography
+// ==========================================================================
 
 $font-family-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
 
-$font-size-base: 14px;
-$font-size-h1: 32px;
-$font-size-h2: 24px;
-$font-size-h3: 18px;
+$font-size-base: 16px;
 
-$line-height-default: 1.2;
-$line-height-lg: 1.4;
+//set modular scale
+$ms-base: $font-size-base;
+$ms-ratio: $fourth;
 
-$border-radius-base: 4px;
+$font-size-h1: ms(7, $ms-base 20px, $fourth);
+$font-size-h2: ms(6, $ms-base 20px, $fourth);
+$font-size-h3: ms(5, $ms-base 20px, $fourth);
+$font-size-h4: ms(4, $ms-base 20px, $fourth);
+$font-size-h5: ms(3, $ms-base 20px, $fourth);
+$font-size-h6: ms(2, $ms-base 20px, $fourth);
+
+$line-height-base: 1.5;
+$line-height-base-px: $line-height-base * $font-size-base;
 
 
-//media queries
+//  Media queries
+// ==========================================================================
 
 $screen-small: "only screen and (max-width: 767px)";
 $screen-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
@@ -51,8 +60,10 @@ $site-width: 1140px;
 $site-color: $color-black;
 $site-bg-color: $color-white;
 $site-font-family: $font-family-sans;
-$site-line-height: $line-height-default;
+$site-line-height: $line-height-base;
 
+
+$border-radius-base: 4px;
 
 //  Forms
 // ==========================================================================
@@ -60,7 +71,7 @@ $site-line-height: $line-height-default;
 $control-padding-horizontal: 9px;
 $control-padding-vertical: 7.5px;
 $control-font-size: $font-size-base;
-$control-line-height: $line-height-default; // don't set in px, em, rem
+$control-line-height: $line-height-base; // don't set in px, em, rem
 $control-border-radius: $border-radius-base;
 $control-border-color: $color-gray;
 $control-invalid-color: $color-red;
@@ -69,6 +80,8 @@ $control-placeholder-color: $color-gray;
 
 //  Components
 // ==========================================================================
+
+
 
 //btn
 

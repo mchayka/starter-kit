@@ -2,7 +2,7 @@
    Buttons
    ========================================================================== */
 
-.Button {
+.btn {
   @include user-select( none );
   display: inline-block;
   margin-bottom: 0;
@@ -54,7 +54,7 @@
  * Modifiers: Different color
  */
 
-.Button--default {
+.btn--default {
 
   color: $color-white;
   background-color: $color-purple-light;
@@ -63,7 +63,7 @@
 /* Button without visual styles
    -------------------------------------------------------------------------- */
 
-.ButtonClean {
+.btnClean {
   // Prevent IOS forms default styling
   -webkit-appearance: none;
   @include box-shadow(none);

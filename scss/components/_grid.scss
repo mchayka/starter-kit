@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Grid
+   grid
    ========================================================================== */
 
 /**
@@ -37,10 +37,10 @@
 }
 
 
-/* Grid
+/* grid
    -------------------------------------------------------------------------- */
 
-.Grid {
+.grid {
     @extend %inline-block-wrapper;
     margin-left: -$grid-gutter-default/2;
     margin-right: -$grid-gutter-default/2;
@@ -66,7 +66,7 @@
  * Modifiers: Different gutter
  */
 
-.Grid--noGutter {
+.grid--noGutter {
     margin-left: 0;
     margin-right: 0;
 
@@ -77,16 +77,16 @@
 }
 
 /**
- * Modifiers: Grid cell alignment
+ * Modifiers: grid cell alignment
  */
 
-.Grid--alignMiddle {
-    > .Grid-cell {
+.grid--alignMiddle {
+    > .grid-cell {
         vertical-align: middle;
     }
 }
 
-.Grid--alignBottom {
+.grid--alignBottom {
     > .grid-cell {
         vertical-align: bottom;
     }
@@ -94,10 +94,10 @@
 
 
 /**
- * Grid cell
+ * grid cell
  */
 
-.Grid-cell {
+.grid-cell {
     @extend %inline-block-element;
     width: 100%;
     padding-left: $grid-gutter-default/2;
@@ -106,7 +106,7 @@
     text-align: left;
 }
 
-.Grid-cell--example {
+.grid-cell--example {
     @include rgba-bg(#000, 0.1);
     min-height: 200px;
     padding: $grid-gutter-default/2;
