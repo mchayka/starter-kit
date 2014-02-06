@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+.table {
+    empty-cells: show;
+    border: 1px solid $table-border-color;
+
+    caption {
+        color: $table-color;
+        font: italic 85%/1 arial, sans-serif;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    td,
+    th {
+        border-left: 1px solid $table-border-color;
+        border-width: 0 0 0 1px;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible;
+        padding: 6px 12px;
+
+        &:first-child,
+        &:first-child {
+            border-left-width: 0;
+        }
+    }
+
+    thead {
+        background: $table-head-bg-color;
+        color: $table-color;
+        text-align: left;
+        vertical-align: bottom;
+    }
+
+    td {
+        background-color: $table-bg-color;
+    }
+
+    .table-odd td {
+        background-color: $table-odd-bg-color;
+    }
+}
+
+
+/**
+ * .table modifier: Striped table
+ * nth-child selector for modern browsers
+ */
+
+.table--striped tr:nth-child(2n-1) td {
+    background-color: $table-odd-bg-color;
+}
+
+
+/**
+ * .table modifier: Bordered table
+ */
+
+.table--bordered {
+    td {
+        border-bottom: 1px solid $table-border-color;
+    }
+
+    tbody > tr:last-child td,
+    tbody > tr:last-child td {
+        border-bottom-width: 0;
+    }
+}
+
+
+/**
+ * .table modifier: Horizontal bordered table
+ */
+
+.table--horizontal {
+    td,
+    th {
+        border-width: 0 0 1px 0;
+        border-bottom: 1px solid $table-border-color;
+    }
+
+    tbody > tr:last-child td {
+        border-bottom-width: 0;
+    }
+}
+
