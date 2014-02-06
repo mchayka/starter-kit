@@ -9,7 +9,7 @@ __Note that all files in "build" folder are generated automatically with grunt. 
 "build" folder is ignored by git. All changes should be done in "src" folder. It contains all source file to work with.
 
 1. Install node.js ( Linux )
-```bash
+```shell
     sudo apt-get update
     sudo apt-get install python-software-properties python g++ make
     sudo add-apt-repository ppa:chris-lea/node.js
@@ -22,7 +22,7 @@ __Note that all files in "build" folder are generated automatically with grunt. 
     `sudo npm install`
 4. It's ready to use, after each git pull run command "grunt build" in project root to update build folder
 5. If you haven't installed sass & ruby do next:
-```bash
+```shell
     sudo apt-get install ruby
     gem install sass
 ```
