@@ -10,11 +10,11 @@ __Note that all files in "build" folder are generated automatically with grunt. 
 
 1. Install node.js ( Linux )
 ```shell
-    sudo apt-get update
-    sudo apt-get install python-software-properties python g++ make
-    sudo add-apt-repository ppa:chris-lea/node.js
-    sudo apt-get update
-    sudo apt-get install nodejs
+sudo apt-get update
+sudo apt-get install python-software-properties python g++ make
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
 ```
 2. Install Grunt CLI
     `sudo npm install -g grunt-cli`
@@ -23,6 +23,6 @@ __Note that all files in "build" folder are generated automatically with grunt. 
 4. It's ready to use, after each git pull run command "grunt build" in project root to update build folder
 5. If you haven't installed sass & ruby do next:
 ```shell
-    sudo apt-get install ruby
-    gem install sass
+sudo apt-get install ruby
+gem install sass
 ```
