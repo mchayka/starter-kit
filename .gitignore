@@ -1,4 +1,7 @@
-css/style.css
 .sass-cache/*
-.ide/*
 .idea/*
+.sublime/*
+*.sublime-project
+*.sublime-workspace
+node_modules
+build
