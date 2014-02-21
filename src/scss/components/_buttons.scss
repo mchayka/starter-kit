@@ -3,89 +3,131 @@
    ========================================================================== */
 
 .btn {
-  @include user-select( none );
-  display: inline-block;
-  margin-bottom: 0;
-  padding: .7em .5em;
-  border: 0 solid transparent;
-  border: none rgba(0, 0, 0, 0);
-  line-height: normal;
-  white-space: nowrap;
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-user-drag: none;
-  background-image: none; // Reset unusual Firefox-on-Android default style
-  border-radius: $btn-border-radius;
-  font-size: 17px;
-  font-weight: bold;
-
-  /* Firefox: Get rid of the inner focus border */
-  &::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  &:focus,
-  &:hover {
-    color: inherit;
+    display: inline-block;
+    margin-bottom: 0;
+    padding: .7em .5em;
+    border: 0 solid transparent;
+    border: none rgba(0, 0, 0, 0);
+    line-height: normal;
+    vertical-align: middle;
+    font-size: $btn-font-size;
+    text-align: center;
     text-decoration: none;
-  }
+    cursor: pointer;
+    -webkit-user-drag: none;
+    background-image: none; // Reset unusual Firefox-on-Android default style
+    user-select: none;
 
-  &:active {
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
-  }
+    // Firefox: Get rid of the inner focus border
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
 
-  &[disabled] {
-    @include opacity(40);
-    border: none;
-    background-image: none;
-    cursor: not-allowed;
-    box-shadow: none;
-  }
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus,
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &:active {
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
+    }
+
+    &[disabled] {
+        opacity: .4;
+        border: none;
+        background-image: none;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
 }
+
 
 /**
  * Modifiers: Different color
  */
 
-.btn--default {
-
-  color: $color-white;
-  background-color: $color-purple-light;
+.btn--1 {
+    color: $color-white;
+    background-color: $color-green;
 }
 
-/* Button without visual styles
-   -------------------------------------------------------------------------- */
+.btn--2 {
+    color: $color-white;
+    background-color: $color-red;
+}
+
+
+/**
+ * Modifiers: Sizes
+ */
+
+.btn--sm {
+    padding: .4em .4em;
+    font-size: 12px;
+}
+
+.btn--md {
+    padding: .6em .6em;
+    font-size: 14px;
+}
+
+.btn--lg {
+    padding: .8em .8em;
+    font-size: 18px;
+}
+
+
+/*
+   Button without visual styles
+   ========================================================================== */
 
 .btnClean {
-  // Prevent IOS forms default styling
-  -webkit-appearance: none;
-  @include box-shadow(none);
-  -webkit-border-radius: 0;
-
-  border: none;
-  background-color: transparent;
-  color: inherit;
-
-  &::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  &[disabled] {
-    border: none;
-    background-image: none;
-    cursor: not-allowed;
+    // Prevent IOS forms default styling
+    -webkit-appearance: none;
     box-shadow: none;
-  }
+    -webkit-border-radius: 0;
+
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &[disabled] {
+        border: none;
+        background-image: none;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+}
+
+
+/*
+   Button behaves like link
+   ========================================================================== */
+
+.btnLink {
+    @extend .btnClean;
+
+    color: $link-color;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
 }
