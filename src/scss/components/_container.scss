@@ -3,7 +3,6 @@
    ========================================================================== */
 
 .container {
-    @include box-sizing(content-box);
     max-width: $site-width;
     margin: 0 auto;
 }

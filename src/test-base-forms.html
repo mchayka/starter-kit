@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+		<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <script src="javascript/vendor/modernizr-2.6.2.min.js"></script>
+        <!--[if lt IE 9]><script src="javascript/vendor/respond.min.js"></script><![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+        <p class="BrowserWarning">You are using an <strong>outdated</strong> browser.</p>
+        <![endif]-->
+
+        <header class="SiteHeader" role="banner">
+            <nav class="SiteNav" role="navigation"></nav>
+        </header>
+
+        <article role="main" class="container">
+			<h2>Base forms</h2>
+
+			<form>
+				<fieldset>
+					<legend>Controls</legend>
+					<input type="text" placeholder="text input">
+					<input type="number"  placeholder="number">
+					<input type="search"  placeholder="search">
+					<label for="checkbox-1">
+						<input type="checkbox" id="checkbox-1"/>
+						Checkbox
+					</label>
+					<label for="radio-1">
+						<input type="radio" id="radio-1"/>
+						Radio
+					</label>
+					<input type="email" placeholder="test@test.com">
+					<input type="datetime" placeholder="datetime">
+					<input type="date"  placeholder="date">
+					<input type="month" placeholder="month">
+					<input type="week"  placeholder="week">
+					<input type="time" placeholder="week">
+					<input type="datetime-local"  placeholder="datetime local">
+					<input type="file" multiple>
+					<input type="color">
+					<input type="range" required name="range">
+					<select>
+						<option value="1">Value 1</option>
+						<option value="2">Value 2</option>
+						<option value="3">Value 3</option>
+						<option value="4">Value 4</option>
+					</select>
+					<input type="submit" value="Submit">
+					<input type="reset">
+				</fieldset>
+				<fieldset>
+					<legend>States</legend>
+					<input class="is-invalid" type="text" value="invalid vaule">
+					<input type="text" value="disabled value" disabled>
+					<input type="text" value="readonly value" readonly>
+					<select class="is-invalid">
+						<option value="1">Value 1</option>
+						<option value="2">Value 2</option>
+						<option value="3">Value 3</option>
+						<option value="4">Value 4</option>
+					</select>
+					<select readonly>
+						<option value="1">Value 1</option>
+						<option value="2">Value 2</option>
+						<option value="3">Value 3</option>
+						<option value="4">Value 4</option>
+					</select>
+					<select disabled>
+						<option value="1">Value 1</option>
+						<option value="2">Value 2</option>
+						<option value="3">Value 3</option>
+						<option value="4">Value 4</option>
+					</select>
+				</fieldset>
+			</form>
+        </article>
+
+
+
+        <footer class="SiteFooter" role="contentinfo">
+        </footer>
+
+        <script src="javascript/vendor/jquery-1.10.2.min.js"></script>
+        <script src="javascript/main.js"></script>
+    </body>
+</html>

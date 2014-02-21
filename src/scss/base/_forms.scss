@@ -1,11 +1,96 @@
 /* ==========================================================================
-   Forms
+   Forms base styles
    ========================================================================== */
 
-/**
- * Prevent IOS forms default styling
- */
+/*
+   NORMALIZE Non control form elements
+   ========================================================================== */
 
+label {
+    display: block;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
+    // so we reset that to ensure it behaves more like a standard block element.
+    // See https://github.com/twbs/bootstrap/issues/12359.
+    min-width: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    line-height: inherit;
+}
+
+
+/*
+   NORMALIZE Control form elements
+   ========================================================================== */
+
+input,
+button,
+select,
+select optgroup,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        height: auto;
+    }
+}
+
+// Override content-box in Normalize
+input[type="search"] {
+    box-sizing: border-box;
+}
+
+// Set the height of file controls to match text inputs
+input[type="file"] {
+    display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9; /* IE8-9 */
+    line-height: normal;
+}
+
+textarea {
+    height: auto;
+}
+
+
+/*
+   Common styles for control form elements
+   ========================================================================== */
+
+// Prevent IOS forms default styling
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type="text"],
     input[type="password"],
@@ -23,14 +108,10 @@
     input[type="color"],
     textarea {
         -webkit-appearance: none;
-        @include box-shadow( none );
+        box-shadow: none;
         -webkit-border-radius: 0;
     }
 }
-
-/**
- * Control form elements
- */
 
 input[type="text"],
 input[type="password"],
@@ -48,7 +129,6 @@ input[type="tel"],
 input[type="color"],
 select,
 textarea {
-    @include transition(0.3s linear border);
     display: block;
     width: 100%;
     height: ( floor( $control-font-size * $control-line-height ) + ( $control-padding-vertical * 2 ) + 2 );
@@ -56,10 +136,10 @@ textarea {
     line-height: $control-line-height;
     font-size: $control-font-size;
     border: 1px solid $control-border-color;
-    border-radius: $control-border-radius;
-    -webkit-border-radius: $control-border-radius;
+    color: $control-color;
     background-color: $color-white;
     background-image: none; // Reset Firefox-on-Android default style
+    transition: 0.3s linear border;
 
     &:focus {
         outline: 0;
@@ -67,9 +147,10 @@ textarea {
     }
 }
 
-input[type="file"] {
-    display: block;
-}
+
+/**
+ * States
+ */
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
@@ -85,48 +166,23 @@ input[type="checkbox"]:focus {
     }
 }
 
-input[type="number"] {
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        height: auto;
-    }
-}
-
-select[multiple],
-select[size] {
-    height: auto;
-}
-
-select optgroup {
-    font-size: inherit;
-    font-style: inherit;
-    font-family: inherit;
-}
-
-textarea {
-    height: auto;
-}
-
-
-/**
- * States
- */
-
 input,
 select,
 textarea {
-    &[readonly] {
-        color: lighten( $control-border-color, 20% );
-        border-color:  lighten( $control-border-color, 20% );
+    &[readonly],
+    &.is-readonly {
+        color: $control-readonly-color;
     }
 
-    &[disabled] {
+    &[disabled],
+    &.is-disabled {
         cursor: not-allowed;
+        color: $control-disabled-color;
         background-color: lighten( $control-border-color, 20% );
-        color: $control-border-color;
     }
 
-    &:invalid {
+    &:invalid,
+    &.is-invalid {
         color: $control-invalid-color;
         border: 1px solid $control-invalid-color;
 
@@ -135,60 +191,6 @@ textarea {
         }
     }
 }
-
-
-/**
- * Checkboxes and radios
- */
-
-.radio,
-.checkbox {
-    display: block;
-    min-height: $control-line-height * $control-font-size;
-    padding-left: 20px;
-
-    > label {
-        display: inline;
-        margin-bottom: 0;
-        font-weight: normal;
-        cursor: pointer;
-    }
-}
-
-.radio > input[type="radio"],
-.checkbox > input[type="checkbox"] {
-    float: left;
-    margin-left: -20px;
-}
-
-
-/**
- * Non control form elements
- */
-
-label {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-fieldset {
-    padding: 0;
-    margin: 0 0 10px;
-    border: 0;
-}
-
-legend {
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin: 10px 0;
-    border: 0;
-    border-bottom: 1px solid $control-border-color;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: inherit;
-}
-
 
 /**
  * placeholder color
@@ -205,3 +207,4 @@ legend {
 :-ms-input-placeholder {
     color: $control-placeholder-color;
 }
+

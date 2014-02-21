@@ -3,23 +3,24 @@
    ========================================================================== */
 
 
-/* Reset the box-sizing */
-
-*,
-*:before,
-*:after {
-    @include box-sizing( border-box );
+// Reset the box-sizing
+* {
+    box-sizing: border-box;
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
 }
 
-
-/* Prevent grey overlay on touchstart in mobile Safari */
+// Body reset
 
 html {
+    font-size: 62.5%;
+    // Prevent grey overlay on touchstart in mobile Safari
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
-    min-width: 320px;
     font-family: $site-font-family;
     font-size: $font-size-base;
     line-height: $line-height-base;
@@ -28,12 +29,10 @@ body {
 }
 
 
-/**
- * Link
- */
+// Links
 
 a {
-    color: inherit;
+    color: $link-color;
     text-decoration: underline;
 
     &:hover,
@@ -43,22 +42,30 @@ a {
 }
 
 
-/**
- * Tables
- */
+// Table
 
 table {
     max-width: 100%;
 }
 
 
-/**
- * Horizontal rule
- */
+// Horizontal rule
 
 hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid $color-gray;
+}
+
+// Figure
+
+figure {
+    margin: 0;
+}
+
+// Images
+
+img {
+    vertical-align: middle;
 }
