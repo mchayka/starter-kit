@@ -47,26 +47,26 @@ $control-placeholder-color: $color-gray;
 
 
 // Scaffolding
-
 $site-width: 1140px;
 $site-color: $color-black;
 $site-bg-color: $color-white;
 $site-font-family: $font-family-sans;
 $site-line-height: $line-height-base;
-
 $link-color: $color-orange;
 
 
-//  Media queries
-// ==========================================================================
+/*
+   Media queries
+   ========================================================================== */
 
 $screen-small: "only screen and (max-width: 767px)";
 $screen-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
 $screen-large: "only screen and (min-width: 1024px)";
 
 
-//  Components
-// ==========================================================================
+/*
+   Components
+   ========================================================================== */
 
 //btn
 $btn-font-size: $font-size-base;
