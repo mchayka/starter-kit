@@ -65,22 +65,22 @@ $screen-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
 $screen-large: "only screen and (min-width: 1024px)";
 
 
-
-
-
 //  Components
 // ==========================================================================
 
 //btn
-
 $btn-font-size: $font-size-base;
+$btn-color-1: $color-white;
+$btn-bgcolor-1: $color-green;
+$btn-color-2: $color-white;
+$btn-bgcolor-2: $color-red;
+
 
 //grid
-$grid-gutter-default: 43px;
-$grid-gutter-sm: 10px;
-$grid-gutter-md: 20px;
+$grid-gutter-default: 20px;
 $grid-cols-number: 12;
 $grid-cols-width: 100%/$grid-cols-number;
+
 
 //table
 $table-color: $color-gray;
