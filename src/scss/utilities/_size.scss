@@ -26,7 +26,7 @@
 
 @media #{$screen-large} {
   @for $i from 1 through $grid-cols-number {
-    .lg-u-size#{$i} { width: $grid-cols-width * $i; }
+    .u-lg-size#{$i} { width: $grid-cols-width * $i; }
   }
 }
 
@@ -37,7 +37,7 @@
 
 @media #{$screen-medium} {
   @for $i from 1 through $grid-cols-number {
-    .md-u-size#{$i} { width: $grid-cols-width * $i; }
+    .u-md-size#{$i} { width: $grid-cols-width * $i; }
   }
 }
 
@@ -48,6 +48,6 @@
 
 @media #{$screen-small} {
   @for $i from 1 through $grid-cols-number {
-    .sm-u-size#{$i} { width: $grid-cols-width * $i; }
+    .u-sm-size#{$i} { width: $grid-cols-width * $i; }
   }
 }
