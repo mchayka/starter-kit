@@ -1,9 +1,9 @@
 // Core variables and mixins
 
+@import "utilities/mixins";
 @import "variables";
 
 // CSS Base
-
 @import "base/normalize";
 @import "base/forms";
 @import "base/scaffolding";
@@ -11,8 +11,21 @@
 @import "base/print";
 
 // Components
-
 @import "components/site";
 @import "components/buttons";
 @import "components/flex-embed";
 @import "components/media";
+@import "components/grid";
+
+// Utilities
+@import "utilities/display";
+@import "utilities/layout";
+@import "utilities/state";
+@import "utilities/text";
+@import "utilities/size";
+
+// Non modular
+@import "non-modular/misc";
+
+// Only for test!! Delete this line
+@import "non-modular/test";

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Styles for test
+   ========================================================================== */
+
+// to present grid component
+.grid--example {
+  .grid-cell {
+    &:before {
+      display: block;
+      min-height: 50px;
+      width: 100%;
+      background-color: #c2ccd1;
+      border: 1px solid #000000;
+      content: attr(class);
+    }
+
+    .grid-cell:before {
+      background-color: #91999e;
+    }
+  }
+}

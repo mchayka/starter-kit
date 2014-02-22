@@ -16,7 +16,7 @@
     cursor: pointer;
     -webkit-user-drag: none;
     background-image: none; // Reset unusual Firefox-on-Android default style
-    user-select: none;
+    @include user-select( none );
 
     // Firefox: Get rid of the inner focus border
     &::-moz-focus-inner {
@@ -35,11 +35,11 @@
     }
 
     &:active {
-        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
+        @include box-shadow( 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset );
     }
 
     &[disabled] {
-        opacity: .4;
+        @include opacity( 40 );
         border: none;
         background-image: none;
         cursor: not-allowed;

@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Sizes
+   ========================================================================== */
+
+/*
+   Responsive agnostic sizes
+   ========================================================================== */
+
+.u-sizeFull {
+  display: block !important;
+  width: 100% !important;
+}
+
+@for $i from 1 through $grid-cols-number {
+  .u-size#{$i} { width: $grid-cols-width * $i; }
+}
+
+
+/*
+   Responsive sizes
+   ========================================================================== */
+
+/**
+ * for lg breakpoint
+ */
+
+@media #{$screen-large} {
+  @for $i from 1 through $grid-cols-number {
+    .lg-u-size#{$i} { width: $grid-cols-width * $i; }
+  }
+}
+
+
+/**
+ * for md breakpoint
+ */
+
+@media #{$screen-medium} {
+  @for $i from 1 through $grid-cols-number {
+    .md-u-size#{$i} { width: $grid-cols-width * $i; }
+  }
+}
+
+
+/**
+ * for sm breakpoint
+ */
+
+@media #{$screen-small} {
+  @for $i from 1 through $grid-cols-number {
+    .sm-u-size#{$i} { width: $grid-cols-width * $i; }
+  }
+}

@@ -53,7 +53,7 @@ input[type="number"] {
 
 // Override content-box in Normalize
 input[type="search"] {
-    box-sizing: border-box;
+    @include box-sizing( border-box );
 }
 
 // Set the height of file controls to match text inputs
@@ -139,7 +139,7 @@ textarea {
     color: $control-color;
     background-color: $color-white;
     background-image: none; // Reset Firefox-on-Android default style
-    transition: 0.3s linear border;
+    @include transition( 0.3s linear border );
 
     &:focus {
         outline: 0;

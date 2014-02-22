@@ -1,7 +1,29 @@
 @@include('html-includes/header.html')
 <article role="main" class="siteContainer">
     <h1>Grid</h1>
-
+    <h2>Responsive agnostic</h2>
+    <div class="grid grid--example">
+        <div class="grid-cell u-size6"></div>
+        <div class="grid-cell u-size6"></div>
+    </div>
+    <hr>
+    <h2>Nested grids</h2>
+    <div class="grid grid--example">
+        <div class="grid-cell u-size6">
+            <div class="grid">
+                <div class="grid-cell u-size6"></div>
+                <div class="grid-cell u-size6"></div>
+            </div>
+        </div>
+        <div class="grid-cell u-size6"></div>
+    </div>
+    <hr>
+    <h2>Responsive</h2>
+    <div class="grid grid--example">
+        <div class="grid-cell lg-u-size4 md-u-size2 sm-u-size6"></div>
+        <div class="grid-cell lg-u-size4 md-u-size5 sm-u-size6"></div>
+        <div class="grid-cell lg-u-size4 md-u-size5"></div>
+    </div>
 
 </article>
 @@include('html-includes/footer.html')
