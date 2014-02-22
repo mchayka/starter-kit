@@ -1,48 +1,18 @@
-<!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-		<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylesheets/style.css">
-        <script src="javascript/vendor/modernizr-2.6.2.min.js"></script>
-        <!--[if lt IE 9]><script src="javascript/vendor/respond.min.js"></script><![endif]-->
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-        <p class="BrowserWarning">You are using an <strong>outdated</strong> browser.</p>
-        <![endif]-->
-
-        <header class="SiteHeader" role="banner">
-            <nav class="SiteNav" role="navigation"></nav>
-        </header>
-
-        <article role="main" class="container">
-			<h1>Test</h1>
-			<hr>
-			<h2>Base styles</h2>
-			<ul>
-				<li><a href="test-base-forms.html">Forms</a></li>
-				<li><a href="test-base-typography.html">Typography</a></li>
-				<li><a href="test-base-scaffolding.html">Scaffolding</a></li>
-			</ul>
-			<hr>
-			<h2>Components</h2>
-			<ul>
-				<li><a href="test-comp-btn.html">Buttons</a></li>
-			</ul>
-
-        </article>
+@@include('html-includes/header.html')
+<article role="main" class="siteContainer">
+    <h2>Base styles</h2>
+    <ul>
+        <li><a href="test-base-forms.html">Forms</a></li>
+        <li><a href="test-base-typography.html">Typography</a></li>
+        <li><a href="test-base-scaffolding.html">Scaffolding</a></li>
+    </ul>
+    <h2>Components</h2>
+    <ul>
+        <li><a href="test-comp-btn.html">Buttons</a></li>
+    </ul>
+</article>
+@@include('html-includes/footer.html')
 
 
 
-        <footer class="SiteFooter" role="contentinfo">
-        </footer>
 
-        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-        <script src="javascript/vendor/jquery-1.10.2.min.js"></script>
-        <script src="javascript/main.js"></script>
-    </body>
-</html>

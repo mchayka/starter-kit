@@ -3,44 +3,42 @@
    ========================================================================== */
 
 
-/* Site header
-   -------------------------------------------------------------------------- */
+/*
+   Site header
+   ========================================================================== */
 
 .siteHeader {
-
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid $border-color-1;
 }
 
 
-/**
- * Utilities block
- */
-
-.siteUtilities {
-
-}
-
-
-/**
- * Heading with logo
- */
-
-.siteLogo {
-
-}
-
-
-/**
- * Main navigation
- */
+/*
+   Site navigation
+   ========================================================================== */
 
 .siteNav {
 
 }
 
 
-/* Site footer
-   -------------------------------------------------------------------------- */
+/*
+   Site container
+   ========================================================================== */
+
+.siteContainer {
+  max-width: $site-width;
+  margin: 0 auto;
+}
+
+
+/*
+   Site footer
+   ========================================================================== */
 
 .siteFooter {
-
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid $border-color-1;
 }

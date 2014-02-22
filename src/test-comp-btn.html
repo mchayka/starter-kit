@@ -1,52 +1,23 @@
-<!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-		<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylesheets/style.css">
-        <script src="javascript/vendor/modernizr-2.6.2.min.js"></script>
-        <!--[if lt IE 9]><script src="javascript/vendor/respond.min.js"></script><![endif]-->
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-        <p class="BrowserWarning">You are using an <strong>outdated</strong> browser.</p>
-        <![endif]-->
-
-        <header class="SiteHeader" role="banner">
-            <nav class="SiteNav" role="navigation"></nav>
-        </header>
-
-        <article role="main" class="container">
-			<h1>Buttons</h1>
-			<h2>Common buttons</h2>
-			<button class="btn btn--1" type="button">button.btn.btn--1</button>
-			<a class="btn btn--1" href="#">a.btn.btn--1</a>
-			<input class="btn btn--1" type="submit" value="input.btn.btn--1">
-			<hr>
-			<button class="btn btn--2" type="button">button.btn.btn--2</button>
-			<a class="btn btn--2" href="#">a.btn.btn--2</a>
-			<input class="btn btn--2" type="submit" value="input.btn.btn--2">
-			<hr>
-			<button class="btn btn--2 btn--sm" type="button">button.btn.btn--2.btn--sm</button>
-			<button class="btn btn--2 btn--md" type="button">button.btn.btn--2.btn--md</button>
-			<button class="btn btn--2 btn--lg" type="button">button.btn.btn--2.btn--lg</button>
-			<hr>
-			<h2>Button without visual styles</h2>
-			<button class="btnClean" type="button">button.btnClean</button>
-			<hr>
-			<h2>Button behaves like link</h2>
-			<button class="btnLink" type="button">button.btnLink</button>
-        </article>
-
-
-
-        <footer class="SiteFooter" role="contentinfo">
-        </footer>
-
-        <script src="javascript/vendor/jquery-1.10.2.min.js"></script>
-        <script src="javascript/main.js"></script>
-    </body>
-</html>
+@@include('html-includes/header.html')
+<article role="main" class="siteContainer">
+    <h1>Buttons</h1>
+    <h2>Common buttons</h2>
+    <button class="btn btn--1" type="button">button.btn.btn--1</button>
+    <a class="btn btn--1" href="#">a.btn.btn--1</a>
+    <input class="btn btn--1" type="submit" value="input.btn.btn--1">
+    <hr>
+    <button class="btn btn--2" type="button">button.btn.btn--2</button>
+    <a class="btn btn--2" href="#">a.btn.btn--2</a>
+    <input class="btn btn--2" type="submit" value="input.btn.btn--2">
+    <hr>
+    <button class="btn btn--2 btn--sm" type="button">button.btn.btn--2.btn--sm</button>
+    <button class="btn btn--2 btn--md" type="button">button.btn.btn--2.btn--md</button>
+    <button class="btn btn--2 btn--lg" type="button">button.btn.btn--2.btn--lg</button>
+    <hr>
+    <h2>Button without visual styles</h2>
+    <button class="btnClean" type="button">button.btnClean</button>
+    <hr>
+    <h2>Button behaves like link</h2>
+    <button class="btnLink" type="button">button.btnLink</button>
+</article>
+@@include('html-includes/footer.html')

@@ -3,6 +3,17 @@
    ========================================================================== */
 
 /**
+ * Example uses:
+ *
+ * <div class="grid [grid--noGutter|grid--gutterSm] [grid--alignMiddle|grid--alignBottom]">
+ *     <div class="grid-cell u-size1of2"></div>
+ *     <div class="grid-cell u-size1of2"></div>
+ *     <div class="grid-cell u-size1of3"></div>
+ *     <div class="grid-cell u-size1of3"></div>
+ * </div>
+ */
+
+/**
  * Placeholder for inline-block wrapper
  * 1. prevent grid collapse in all major devices
  */
@@ -37,8 +48,8 @@
 }
 
 
-/* grid
-   -------------------------------------------------------------------------- */
+/* Grid container
+   ========================================================================== */
 
 .grid {
     @extend %inline-block-wrapper;
@@ -49,7 +60,7 @@
 
 
 /**
- * Modifiers: Different gutter
+ * Modifiers: No gutter
  */
 
 .grid--noGutter {
@@ -62,26 +73,26 @@
     }
 }
 
+
 /**
  * Modifiers: grid cell alignment
  */
 
 .grid--alignMiddle {
-    > .grid-cell {
-        vertical-align: middle;
-    }
-}
+   > .grid-cell {
+     vertical-align: middle;
+   }
+ }
 
 .grid--alignBottom {
-    > .grid-cell {
-        vertical-align: bottom;
-    }
+  > .grid-cell {
+    vertical-align: bottom;
+  }
 }
 
 
-/**
- * grid cell
- */
+/* Grid cell
+   ========================================================================== */
 
 .grid-cell {
     @extend %inline-block-element;
@@ -90,48 +101,4 @@
     padding-right: $grid-gutter-default/2;
     vertical-align: top;
     text-align: left;
-}
-
-.grid-cell--example {
-    @include rgba-bg(#000, 0.1);
-    min-height: 200px;
-    padding: $grid-gutter-default/2;
-
-    .grid-nogutter > .grid-cell > & {
-        border: 1px solid $color-gray;
-    }
-}
-
-
-/* Sizes
-   -------------------------------------------------------------------------- */
-
-/**
- * Responsive agnostic sizes
- */
-
-@for $i from 1 through $grid-cols-number {
-    .size#{$i} { width: $grid-cols-width * $i; }
-}
-
-
-/**
- * Responsive sizes
- */
-
-@media #{$screen-large} {
-    @for $i from 1 through $grid-cols-number {
-        .lg-size#{$i} { width: $grid-cols-width * $i; }
-    }
-}
-@media #{$screen-medium} {
-    @for $i from 1 through $grid-cols-number {
-        .md-size#{$i} { width: $grid-cols-width * $i; }
-    }
-}
-
-@media #{$screen-small} {
-    @for $i from 1 through $grid-cols-number {
-        .sm-size#{$i} { width: $grid-cols-width * $i; }
-    }
 }
