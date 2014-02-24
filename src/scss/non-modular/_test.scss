@@ -2,6 +2,78 @@
    Styles for test
    ========================================================================== */
 
+/*
+   Scaffolding
+   ========================================================================== */
+
+code {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lighten( $color-gray, 20% );
+}
+
+.highlight {
+    padding: 9px 14px;
+    margin-bottom: 14px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+
+    pre {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        border: 0;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    code {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+}
+/*
+   Site components
+   ========================================================================== */
+
+.siteHeader {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.siteLogo {
+    margin: 0;
+
+    > a {
+        text-decoration: none;
+    }
+
+    > small {
+        display: block;
+        font-size: $font-size-base;
+        color: $color-gray;
+    }
+
+    &:after {
+        display: block;
+        margin-top: 50px;
+        width: 10%;
+        height: 3px;
+        background-color: lighten( $color-gray, 15% );
+        content: "";
+    }
+}
+
+.siteFooter {
+    margin-top: 20px;
+    padding: 20px 0;
+    color: $color-gray;
+}
+
 
 /*
    Class for better presentation
