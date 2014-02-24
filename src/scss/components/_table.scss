@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+.table {
+    empty-cells: show;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border-color: $table-border-color;
+
+    caption {
+        color: $table-color;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    td,
+    th {
+        color: $table-color;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        border-color: $table-border-color;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible;
+        padding: .5em .7em;
+    }
+
+    thead {
+        background: $table-head-bg-color;
+        color: $table-color;
+        text-align: left;
+        vertical-align: bottom;
+    }
+
+    td {
+        background-color: $table-bg-color;
+    }
+}
+
+
+/**
+ * Modifier: Vertical bordered table
+ */
+
+.table--vertical {
+    border-left: none;
+
+    td,
+    th {
+        border-left-width: 1px;
+    }
+}
+
+

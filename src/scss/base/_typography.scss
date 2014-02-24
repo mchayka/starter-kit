@@ -5,13 +5,16 @@
 // Headers
 
 h1,
-h2,
+h2 {
+    margin: $line-height-base-px 0 $line-height-base-px;
+    font-weight: bold;
+}
+
 h3,
 h4,
 h5,
-h6,
- {
-    margin: 0 0 $line-height-base-px;
+h6 {
+    margin: $line-height-base-px/2 0 $line-height-base-px/2;
     font-weight: bold;
 }
 
@@ -26,7 +29,7 @@ h6 { font-size: $font-size-h6; }
 // Body text
 
 p {
-    margin: 0 0 $line-height-base-px;
+    margin: $line-height-base-px/2 0 $line-height-base-px/2;
 }
 
 small {
@@ -42,8 +45,9 @@ cite {
 
 ul,
 ol {
-    margin-top: 0;
-    margin-bottom: $line-height-base-px;
+    margin-top: $line-height-base-px/2;
+    margin-bottom: $line-height-base-px/2;
+
     ul,
     ol {
         margin-bottom: 0;
@@ -55,7 +59,7 @@ ol {
 
 dl {
     margin-top: 0;
-    margin-bottom: $line-height-base-px;
+    margin-bottom: $line-height-base-px/2;
 }
 
 dt,
@@ -85,7 +89,7 @@ blockquote:after {
 
 // Addresses
 address {
-    margin-bottom: $line-height-base-px;
+    margin-bottom: $line-height-base-px/2;
     font-style: normal;
     line-height: $line-height-base;
 }

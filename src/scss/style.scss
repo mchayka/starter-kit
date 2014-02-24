@@ -16,6 +16,8 @@
 @import "components/flex-embed";
 @import "components/media";
 @import "components/grid";
+@import "components/lists";
+@import "components/table";
 
 // Utilities
 @import "utilities/display";
@@ -23,6 +25,7 @@
 @import "utilities/state";
 @import "utilities/text";
 @import "utilities/size";
+@import "utilities/offset";
 
 // Non modular
 @import "non-modular/misc";

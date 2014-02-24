@@ -10,9 +10,10 @@
 $color-white: #fff;
 $color-black: #000;
 $color-gray: #bababa;
-$color-green: #526e20;
-$color-red: #af0000;
-$color-orange: #dba452;
+$color-blue: #079ae8;
+$color-green: #5fc5ac;
+$color-red: #af4435;
+$color-orange: #f48022;
 
 
 /*
@@ -52,7 +53,7 @@ $site-color: $color-black;
 $site-bg-color: $color-white;
 $site-font-family: $font-family-sans;
 $site-line-height: $line-height-base;
-$link-color: $color-orange;
+$link-color: $color-blue;
 $border-color-1: $color-gray;
 
 
@@ -72,9 +73,9 @@ $screen-large: "only screen and (min-width: 1024px)";
 //btn
 $btn-font-size: $font-size-base;
 $btn-color-1: $color-white;
-$btn-bgcolor-1: $color-green;
+$btn-bgcolor-1: $color-blue;
 $btn-color-2: $color-white;
-$btn-bgcolor-2: $color-red;
+$btn-bgcolor-2: $color-orange;
 
 
 //grid
@@ -84,8 +85,8 @@ $grid-cols-width: 100%/$grid-cols-number;
 
 
 //table
-$table-color: $color-gray;
+$table-color: $color-black;
 $table-border-color: $color-gray;
 $table-bg-color: $color-white;
 $table-odd-bg-color: $color-gray;
-$table-head-bg-color: $color-gray;
+$table-head-bg-color: lighten( $color-gray, 15% );

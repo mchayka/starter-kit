@@ -1,29 +1,73 @@
 @@include('html-includes/header.html')
 <article role="main" class="siteContainer">
-    <h1>Grid</h1>
-    <h2>Responsive agnostic</h2>
-    <div class="grid grid--example">
-        <div class="grid-cell u-size6"></div>
-        <div class="grid-cell u-size6"></div>
-    </div>
-    <hr>
-    <h2>Nested grids</h2>
-    <div class="grid grid--example">
-        <div class="grid-cell u-size6">
-            <div class="grid">
-                <div class="grid-cell u-size6"></div>
-                <div class="grid-cell u-size6"></div>
-            </div>
-        </div>
-        <div class="grid-cell u-size6"></div>
-    </div>
-    <hr>
-    <h2>Responsive</h2>
-    <div class="grid grid--example">
-        <div class="grid-cell lg-u-size4 md-u-size2 sm-u-size6"></div>
-        <div class="grid-cell lg-u-size4 md-u-size5 sm-u-size6"></div>
-        <div class="grid-cell lg-u-size4 md-u-size5"></div>
-    </div>
+	<h1>Grid</h1>
+	<p class="textLead">Component description</p>
 
-</article>
-@@include('html-includes/footer.html')
+	<h2>Responsive agnostic sizes</h2>
+
+	<div class="grid">
+		<div class="grid-cell u-size6"></div>
+		<div class="grid-cell u-size6"></div>
+	</div>
+
+	<h2>Responsive sizes</h2>
+
+	<div class="grid">
+		<div class="grid-cell u-lg-size4 u-md-size2 u-sm-size6"></div>
+		<div class="grid-cell u-lg-size4 u-md-size5 u-sm-size6"></div>
+		<div class="grid-cell u-lg-size4 u-md-size5"></div>
+	</div>
+
+	<h2>Nested grids</h2>
+
+	<div class="grid">
+		<div class="grid-cell u-size6">
+			<div class="grid">
+				<div class="grid-cell u-size6"></div>
+				<div class="grid-cell u-size6"></div>
+			</div>
+		</div>
+		<div class="grid-cell u-size6"></div>
+	</div>
+
+	<h2>Grid modifiers: horizontal and vertical align</h2>
+
+	<h3>Middle</h3>
+
+	<div class="grid grid--alignMiddle">
+		<div class="grid-cell u-lg-size6 u-md-size6">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem delectus error magnam magni maiores neque nisi nostrum qui reiciendis, tempora?
+		</div>
+		<div class="grid-cell u-lg-size6 u-md-size6">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, fugiat!
+		</div>
+	</div>
+
+	<h3>Bottom</h3>
+
+	<div class="grid grid--alignBottom">
+		<div class="grid-cell u-lg-size6 u-md-size6">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem delectus error magnam magni maiores neque nisi nostrum qui reiciendis, tempora?
+		</div>
+		<div class="grid-cell u-lg-size6 u-md-size6">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, fugiat!
+		</div>
+	</div>
+
+	<h3>Center</h3>
+
+	<div class="grid grid--alignCenter">
+		<div class="grid-cell u-lg-size6 u-md-size8">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem delectus error magnam magni maiores neque nisi nostrum qui reiciendis, tempora?
+		</div>
+	</div>
+
+	<h3>Right</h3>
+
+	<div class="grid grid--alignRight">
+		<div class="grid-cell u-lg-size6 u-md-size6">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem delectus error magnam magni maiores neque nisi nostrum qui reiciendis, tempora?
+		</div>
+	</div>
+
+</article>@@include('html-includes/footer.html')
