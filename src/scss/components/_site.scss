@@ -2,6 +2,35 @@
    General site component
    ========================================================================== */
 
+/*
+   Sticky footer
+   ========================================================================== */
+
+html,
+body {
+    height: 100%;
+}
+
+.siteCover {
+    min-height: 100%;
+    overflow: hidden;
+    margin-bottom: -50px;
+
+    &:after {
+        display: block;
+        content: "";
+    }
+}
+
+.siteFooter,
+.siteCover:after {
+    height: 50px;
+}
+
+.siteContent {
+    padding-bottom: 50px;
+}
+
 
 /*
    Site header
@@ -44,7 +73,7 @@
    ========================================================================== */
 
 .siteFooter {
-    margin-top: 20px;
-    padding: 20px 0;
+    line-height: 50px;
+    border-top: 1px solid lighten( $color-gray, 20% );
     color: $color-gray;
 }
