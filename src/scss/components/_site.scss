@@ -8,15 +8,24 @@
    ========================================================================== */
 
 .siteHeader {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-bottom: 3px solid  lighten( $color-gray, 15% );
+    padding-bottom: 20px;
 }
 
+.siteLogo {
+    margin: 0;
 
-/*
-   Site navigation
-   ========================================================================== */
+    > a {
+        text-decoration: none;
+    }
 
-.siteNav {
-
+    > small {
+        display: block;
+        font-size: $font-size-base;
+        color: $color-gray;
+    }
 }
 
 
@@ -35,5 +44,7 @@
    ========================================================================== */
 
 .siteFooter {
-
+    margin-top: 20px;
+    padding: 20px 0;
+    color: $color-gray;
 }
