@@ -7,27 +7,21 @@ module.exports = function (grunt) {
 			build: {
 				cwd: 'src',
 				src: [ 'images/**/*', 'javascript/**/*', 'favicon.ico', 'apple-touch-icon-precomposed.png' ],
-				dest: 'build',
+				dest: '',
 				expand: true
 			},
 			javascript: {
 				cwd: 'src',
 				src: [ 'javascript/**/*' ],
-				dest: 'build',
+				dest: '',
 				expand: true
 			}
 		},
 
 		// Clean
 		clean: {
-			all: {
-				src: [ 'build/**/*', 'test/**/*' ]
-			},
 			build: {
-				src: [ 'build/**/*' ]
-			},
-			test: {
-				src: [ 'test/**/*' ]
+				src: [ 'javascript/**/*', 'images/**/*', 'favicon.ico',  'apple-touch-icon-precomposed.png', '*.html', 'stylesheets/**/*.css' ]
 			}
 		},
 
@@ -39,7 +33,7 @@ module.exports = function (grunt) {
 					noCache: true
 				},
 				files: {
-					'build/stylesheets/style.css': 'src/scss/style.scss'
+					'stylesheets/style.css': 'src/scss/style.scss'
 				}
 			}
 		},
@@ -50,7 +44,7 @@ module.exports = function (grunt) {
 				expand: true,
 				cwd: 'src',
 				src: '*.html',
-				dest: 'build/'
+				dest: ''
 			}
 		},
 
@@ -84,7 +78,7 @@ module.exports = function (grunt) {
 			build: {
 				options: {
 					port: 9001,
-					base: 'build'
+					base: ''
 				}
 			}
 		}
@@ -102,5 +96,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', 'Prepare build files', ['clean:build', 'copy:build', 'includereplace', 'sass']);
 	grunt.registerTask('start', 'Starts local server and watch files', ['connect', 'watch-files']);
 	grunt.registerTask('watch-files', 'Watch files', ['watch']);
+	grunt.registerTask('clean-files', 'Clean build files', ['clean:build']);
 
 };
