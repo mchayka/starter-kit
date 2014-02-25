@@ -18,12 +18,6 @@
     background-image: none; // Reset unusual Firefox-on-Android default style
     @include user-select( none );
 
-    // Firefox: Get rid of the inner focus border
-    &::-moz-focus-inner {
-        padding: 0;
-        border: 0;
-    }
-
     &:focus {
         outline: 0;
     }

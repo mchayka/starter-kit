@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 				files: 'src/scss/**/*.scss',
-				tasks: [ 'sass' ],
+				tasks: [ 'sass:build' ],
 				options: {
 					livereload: true
 				}
@@ -88,7 +88,6 @@ module.exports = function (grunt) {
 				}
 			}
 		}
-
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');

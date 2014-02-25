@@ -11,21 +11,15 @@ label {
 }
 
 fieldset {
-    padding: 0;
-    margin: 0 0 $line-height-base-px/2;
-    border: 0;
     // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
     // so we reset that to ensure it behaves more like a standard block element.
-    // See https://github.com/twbs/bootstrap/issues/12359.
     min-width: 0;
 }
 
 legend {
     display: block;
     width: 100%;
-    padding: 0;
     margin: 0 0 $line-height-base-px/2;;
-    border: 0;
     font-weight: bold;
     line-height: inherit;
 }
@@ -34,23 +28,6 @@ legend {
 /*
    NORMALIZE Control form elements
    ========================================================================== */
-
-input,
-button,
-select,
-select optgroup,
-textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-
-input[type="number"] {
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        height: auto;
-    }
-}
 
 // Override content-box in Normalize
 input[type="search"] {
