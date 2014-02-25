@@ -21,13 +21,10 @@ module.exports = function (grunt) {
 		// Clean
 		clean: {
 			all: {
-				src: [ 'build/**/*', 'test/**/*' ]
+				src: [ 'build/**/*' ]
 			},
 			build: {
 				src: [ 'build/**/*' ]
-			},
-			test: {
-				src: [ 'test/**/*' ]
 			}
 		},
 
