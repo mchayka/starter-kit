@@ -1,0 +1,120 @@
+/* ==========================================================================
+   grid
+   ========================================================================== */
+
+/**
+ * Example uses:
+ *
+ * <div class="grid [grid--noGutter|grid--gutterSm] [grid--alignMiddle|grid--alignBottom]">
+ *     <div class="grid-cell u-size2"></div>
+ *     <div class="grid-cell u-size4"></div>
+ *     <div class="grid-cell u-size2"></div>
+ *     <div class="grid-cell u-size4"></div>
+ * </div>
+ */
+
+
+/* Placeholder to place inline-block elements without extra space
+   ========================================================================== */
+
+// parent
+%inline-block-wrapper {
+    display: block;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* prevent grid collapse in all major devices */
+}
+
+// Opera hack for parent
+.opera-only :-o-prefocus,
+%inline-block-wrapper {
+    word-spacing: -0.43em;
+}
+
+// child
+%inline-block-element {
+    display: inline-block;
+    vertical-align: middle;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-family: $site-font-family; /* Resets the font family */
+}
+
+
+/* Grid container
+   ========================================================================== */
+
+.grid {
+    @extend %inline-block-wrapper;
+    margin-left: -$grid-gutter-default/2;
+    margin-right: -$grid-gutter-default/2;
+    text-align: left;
+
+    // Use flexbox when possible to avoid `letter-spacing` side-effects.
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    direction: ltr;
+}
+
+
+/**
+ * Modifiers: No gutter
+ */
+
+.grid--noGutter {
+    margin-left: 0;
+    margin-right: 0;
+
+    > .grid-cell {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/**
+ * Modifiers: grid cell alignment
+ * 1 - For browsers with flexbox support
+ */
+
+.grid--alignMiddle {
+    align-items: center; /* 1 */
+
+    > .grid-cell {
+        vertical-align: middle;
+    }
+}
+
+.grid--alignBottom {
+    align-items: flex-end; /* 1 */
+
+    > .grid-cell {
+        vertical-align: bottom;
+    }
+}
+
+.grid--alignCenter {
+    justify-content: center; /* 1 */
+    text-align: center;
+}
+
+.grid--alignRight {
+    justify-content: flex-end; /* 1 */
+    text-align: right;
+}
+
+
+/* Grid cell
+   ========================================================================== */
+
+.grid-cell {
+    @extend %inline-block-element;
+    width: 100%;
+    padding-left: $grid-gutter-default/2;
+    padding-right: $grid-gutter-default/2;
+    vertical-align: top;
+    text-align: left;
+}

@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Scaffolding
+   ========================================================================== */
+
+
+// Reset the box-sizing
+* {
+    @include box-sizing( border-box );
+
+    &:before,
+    &:after {
+      @include box-sizing( border-box );
+    }
+}
+
+// Body reset
+
+html {
+    font-size: 62.5%;
+    // Prevent grey overlay on touchstart in mobile Safari
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    font-family: $site-font-family;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $site-color;
+    background-color: $site-bg-color;
+}
+
+
+// Links
+
+a {
+    color: $link-color;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+
+// Table
+
+table {
+    max-width: 100%;
+}
+
+
+// Horizontal rule
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid $border-color-1;
+}
+
+// Figure
+
+figure {
+    margin: 0;
+}
+
+// Images
+
+img {
+    vertical-align: middle;
+}

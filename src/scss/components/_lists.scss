@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Common list styles
+   ========================================================================== */
+
+/* Unstyled list
+   ========================================================================== */
+
+.listUnstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* List inline
+   ========================================================================== */
+
+.listInline {
+    @extend .listUnstyled;
+    @extend %inline-block-wrapper;
+    margin-left: -5px;
+    margin-right: -5px;
+
+    > li,
+    .listInline-item {
+        @extend %inline-block-element;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+
+/**
+ * Modifier: no gutter
+ */
+
+.listInline--noGutter {
+    margin-left: 0;
+    margin-right: 0;
+
+    > li,
+    .listInline-item {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

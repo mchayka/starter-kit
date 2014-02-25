@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+
+/*
+   Colors
+   ========================================================================== */
+
+$color-white: #fff;
+$color-black: #333;
+$color-gray: #bababa;
+$color-blue: #079ae8;
+$color-green: #5fc5ac;
+$color-red: #af4435;
+$color-orange: #f48022;
+
+
+/*
+   Base settings ( default styles in "base" folder )
+   ========================================================================== */
+
+//  Typography
+$font-family-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-size-base: 16px;
+$font-size-h1: 30px;
+$font-size-h2: 25px;
+$font-size-h3: 20px;
+$font-size-h4: 18px;
+$font-size-h5: 16px;
+$font-size-h6: 14px;
+$line-height-base: 1.5;
+$line-height-base-px: $line-height-base * $font-size-base;
+
+// Forms
+$control-padding-horizontal: 9px;
+$control-padding-vertical: 7.5px;
+$control-font-size: $font-size-base;
+$control-line-height: 1.2; // don't set in px, em, rem
+$control-border-color: $color-gray;
+$control-color: $color-black;
+$control-invalid-color: $color-red;
+$control-readonly-color: lighten( $control-color, 40% );;
+$control-disabled-color: lighten( $control-color, 40% );
+$control-placeholder-color: $color-gray;
+
+
+// Scaffolding
+$site-width: 1140px;
+$site-color: $color-black;
+$site-bg-color: $color-white;
+$site-font-family: $font-family-sans;
+$site-line-height: $line-height-base;
+$link-color: $color-blue;
+$border-color-1: $color-gray;
+
+
+/*
+   Media queries
+   ========================================================================== */
+
+$screen-small: "only screen and (max-width: 767px)";
+$screen-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
+$screen-large: "only screen and (min-width: 1024px)";
+
+
+/*
+   Components
+   ========================================================================== */
+
+//btn
+$btn-font-size: $font-size-base;
+$btn-color-1: $color-white;
+$btn-bgcolor-1: $color-blue;
+$btn-color-2: $color-white;
+$btn-bgcolor-2: $color-orange;
+
+
+//grid
+$grid-gutter-default: 20px;
+$grid-cols-number: 12;
+$grid-cols-width: 100%/$grid-cols-number;
+
+
+//table
+$table-color: $color-black;
+$table-border-color: $color-gray;
+$table-bg-color: $color-white;
+$table-odd-bg-color: $color-gray;
+$table-head-bg-color: lighten( $color-gray, 15% );

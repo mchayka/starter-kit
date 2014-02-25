@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Offset utilities
+   ========================================================================== */
+
+/* Offset before an object
+   ========================================================================== */
+
+/**
+ * Responsive agnostic
+ */
+
+@for $i from 1 through $grid-cols-number {
+  .u-before#{$i} { margin-left: $grid-cols-width * $i; }
+}
+
+
+/**
+ * for lg breakpoint
+ */
+
+@media #{$screen-large} {
+  @for $i from 1 through $grid-cols-number {
+    .u-lg-before#{$i} { margin-left: $grid-cols-width * $i; }
+  }
+}
+
+
+/**
+ * for md breakpoint
+ */
+
+@media #{$screen-medium} {
+  @for $i from 1 through $grid-cols-number {
+    .u-md-before#{$i} { margin-left: $grid-cols-width * $i; }
+  }
+}
+
+
+/**
+ * for sm breakpoint
+ */
+
+@media #{$screen-small} {
+  @for $i from 1 through $grid-cols-number {
+    .u-sm-before#{$i} { margin-left: $grid-cols-width * $i; }
+  }
+}
+
+/* Offset after an object
+   ========================================================================== */
+
+/**
+ * Responsive agnostic
+ */
+
+@for $i from 1 through $grid-cols-number {
+  .u-after#{$i} { margin-right: $grid-cols-width * $i; }
+}
+
+
+/**
+ * for lg breakpoint
+ */
+
+@media #{$screen-large} {
+  @for $i from 1 through $grid-cols-number {
+    .u-lg-after#{$i} { margin-right: $grid-cols-width * $i; }
+  }
+}
+
+
+/**
+ * for md breakpoint
+ */
+
+@media #{$screen-medium} {
+  @for $i from 1 through $grid-cols-number {
+    .u-md-after#{$i} { margin-right: $grid-cols-width * $i; }
+  }
+}
+
+
+/**
+ * for sm breakpoint
+ */
+
+@media #{$screen-small} {
+  @for $i from 1 through $grid-cols-number {
+    .u-sm-after#{$i} { margin-right: $grid-cols-width * $i; }
+  }
+}

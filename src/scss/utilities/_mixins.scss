@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Helper mixins
+   ========================================================================== */
+
+// get rid of unit
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+
+/* Media queries mixins
+   ========================================================================== */
+
+// small devices
+@mixin breakpoint-sm {
+    @media #{$screen-small} {
+        @content;
+    }
+}
+
+/* medium devices */
+@mixin breakpoint-md {
+    @media #{$screen-medium} {
+        @content;
+    }
+}
+
+/* large devices */
+@mixin breakpoint-lg {
+    @media #{$screen-large} {
+        @content;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Retina screens */
+@mixin screen-retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        @content;
+    }
+}
+
+
+/* CSS3 mixins
+   ========================================================================== */
+
+// rgba bg
+@mixin rgba-bg($color, $opacity: 0.5) {
+    $rgba: rgba($color, $opacity);
+    $ie-hex-str: ie-hex-str($rgba);
+
+    background: $color;
+    background: transparent;
+    background: $rgba;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+    zoom: 1;
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+// Drop shadows
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+    box-shadow: $shadow;
+}
+
+// Transitions
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+@mixin transition-delay($transition-delay) {
+    -webkit-transition-delay: $transition-delay;
+    transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration) {
+    -webkit-transition-duration: $transition-duration;
+    transition-duration: $transition-duration;
+}
+@mixin transition-transform($transition...) {
+    -webkit-transition: -webkit-transform $transition;
+    -moz-transition: -moz-transform $transition;
+    -o-transition: -o-transform $transition;
+    transition: transform $transition;
+}
+
+// Transformations
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -ms-transform: rotate($degrees); // IE9+
+    transform: rotate($degrees);
+}
+@mixin scale($ratio) {
+    -webkit-transform: scale($ratio);
+    -ms-transform: scale($ratio); // IE9+
+    transform: scale($ratio);
+}
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y); // IE9+
+    transform: translate($x, $y);
+}
+@mixin skew($x, $y) {
+    -webkit-transform: skew($x, $y);
+    -ms-transform: skewX($x) skewY($y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+    transform: skew($x, $y);
+}
+@mixin translate3d($x, $y, $z) {
+    -webkit-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+}
+
+// Backface visibility
+@mixin backface-visibility($visibility){
+    -webkit-backface-visibility: $visibility;
+    -moz-backface-visibility: $visibility;
+    backface-visibility: $visibility;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+    -webkit-box-sizing: $boxmodel;
+    -moz-box-sizing: $boxmodel;
+    box-sizing: $boxmodel;
+}
+
+// User select
+@mixin user-select($select) {
+    -webkit-user-select: $select;
+    -moz-user-select: $select;
+    -ms-user-select: $select; // IE10+
+    -o-user-select: $select;
+    user-select: $select;
+}
+
+// Resize anything
+@mixin resizable($direction) {
+    resize: $direction; // Options: horizontal, vertical, both
+    overflow: auto; // Safari fix
+}
+
+// CSS3 Content Columns
+@mixin content-columns($column-count, $column-gap: $grid-gutter-width) {
+    -webkit-column-count: $column-count;
+    -moz-column-count: $column-count;
+    column-count: $column-count;
+    -webkit-column-gap: $column-gap;
+    -moz-column-gap: $column-gap;
+    column-gap: $column-gap;
+}
+
+// Optional hyphenation
+@mixin hyphens($mode: auto) {
+    word-wrap: break-word;
+    -webkit-hyphens: $mode;
+    -moz-hyphens: $mode;
+    -ms-hyphens: $mode; // IE10+
+    -o-hyphens: $mode;
+    hyphens: $mode;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: ($opacity * 100);
+    filter: alpha(opacity=#{$opacity-ie});
+}
+
+
+/* Gradients
+   ========================================================================== */
+
+// Horizontal gradient, from left to right
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image: -webkit-gradient(linear, $start-percent top, $end-percent top, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, color-stop($start-color $start-percent), color-stop($end-color $end-percent)); // Safari 5.1+, Chrome 10+
+    background-image: -moz-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
+    background-image:  linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+// Vertical gradient, from top to bottom
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image: -webkit-gradient(linear, left $start-percent, left $end-percent, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, $start-color, $start-percent, $end-color, $end-percent); // Safari 5.1+, Chrome 10+
+    background-image:  -moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
+    background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+// Reset filters for IE
+@mixin reset-filter() {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
