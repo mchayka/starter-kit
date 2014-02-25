@@ -14,12 +14,13 @@ fieldset {
     // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
     // so we reset that to ensure it behaves more like a standard block element.
     min-width: 0;
+    margin: 0 0 $line-height-base-px/2;
+    border-color: $color-gray;
 }
 
 legend {
     display: block;
-    width: 100%;
-    margin: 0 0 $line-height-base-px/2;;
+    margin: 0 0 $line-height-base-px/2;
     font-weight: bold;
     line-height: inherit;
 }
