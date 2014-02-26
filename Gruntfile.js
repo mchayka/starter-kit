@@ -33,9 +33,17 @@ module.exports = function (grunt) {
 
 		// Sass
 		sass: {
-			build: {
+			nested: {
 				options: {
 					outputStyle: 'nested'
+				},
+				files: {
+					'build/stylesheets/style.css': 'src/scss/style.scss'
+				}
+			},
+			compressed: {
+				options: {
+					outputStyle: 'compressed'
 				},
 				files: {
 					'build/stylesheets/style.css': 'src/scss/style.scss'
@@ -57,7 +65,7 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 				files: 'src/scss/**/*.scss',
-				tasks: [ 'sass:build' ],
+				tasks: [ 'sass:nested' ],
 				options: {
 					livereload: true
 				}
@@ -139,6 +147,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('html', 'Compile html', ['includereplace']);
 	grunt.registerTask('css', 'Compile sass', ['sass']);
 	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
-	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass', 'img']);
+	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass:compressed', 'img']);
 
 };
