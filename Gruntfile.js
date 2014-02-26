@@ -4,9 +4,9 @@ module.exports = function (grunt) {
 
 		// Copy
 		copy: {
-			build: {
+			all: {
 				cwd: 'src',
-				src: [ 'images/**/*', 'javascript/**/*', 'favicon.ico', 'apple-touch-icon-precomposed.png' ],
+				src: [ '**/*.{png,jpg,gif,svg,ico}', 'javascript/**/*' ],
 				dest: 'build',
 				expand: true
 			},
@@ -15,15 +15,18 @@ module.exports = function (grunt) {
 				src: [ 'javascript/**/*' ],
 				dest: 'build',
 				expand: true
+			},
+			images: {
+				cwd: 'src',
+				src: [ '**/*.{png,jpg,gif,svg,ico}' ],
+				dest: 'build',
+				expand: true
 			}
 		},
 
 		// Clean
 		clean: {
 			all: {
-				src: [ 'build/**/*' ]
-			},
-			build: {
 				src: [ 'build/**/*' ]
 			}
 		},
@@ -50,7 +53,7 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Watch
+		// Watch files changes
 		watch: {
 			sass: {
 				files: 'src/scss/**/*.scss',
@@ -62,6 +65,13 @@ module.exports = function (grunt) {
 			html: {
 				files: 'src/**/*.html',
 				tasks: [ 'includereplace' ],
+				options: {
+					livereload: true
+				}
+			},
+			img: {
+				files: 'src/images/**/*.{png,jpg,gif,svg,ico}',
+				tasks: [ 'copy:images' ],
 				options: {
 					livereload: true
 				}
@@ -85,14 +95,25 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// Image optimization
+		imagemin: {
+			all: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/images/',
+						src: ['**/*.{png,jpg,gif}'],
+						dest: 'build/images/'
+					}
+				]
+			}
+		},
+
 		// HTML validation
 		validation: {
 			options: {
 				reset: grunt.option('reset') || false,
 				stoponerror: false,
-//				remotePath: "http://localhost:9001",
-//				remoteFiles: ["html/moving-from-wordpress-to-octopress/"],
-//				remoteFiles: "validation-files.json",
 				relaxerror: ["Bad value X-UA-Compatible for attribute http-equiv on element meta."]
 			},
 			files: {
@@ -107,12 +128,14 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-include-replace');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-notify');
 	grunt.loadNpmTasks('grunt-html-validation');
 
-	grunt.registerTask('build', 'Prepare build files', ['clean:build', 'copy:build', 'includereplace', 'sass']);
+	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass', 'img-optimization']);
 	grunt.registerTask('start', 'Starts local server and watch files', ['connect', 'watch-files']);
 	grunt.registerTask('watch-files', 'Watch files', ['watch']);
+	grunt.registerTask('img-optimization', 'Optimize image files', ['imagemin']);
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
 
 };
