@@ -29,8 +29,7 @@ module.exports = function (grunt) {
 		sass: {
 			build: {
 				options: {
-					style: 'compressed',
-					noCache: true
+					outputStyle: 'nested'
 				},
 				files: {
 					'stylesheets/style.css': 'src/scss/style.scss'
@@ -87,13 +86,13 @@ module.exports = function (grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-notify');
 
-	grunt.registerTask('default', 'Prepare build files', ['clean:build', 'copy:build', 'includereplace', 'sass']);
+	grunt.registerTask('build', 'Prepare build files', ['clean:build', 'copy:build', 'includereplace', 'sass']);
 	grunt.registerTask('start', 'Starts local server and watch files', ['connect', 'watch-files']);
 	grunt.registerTask('watch-files', 'Watch files', ['watch']);
 	grunt.registerTask('clean-files', 'Clean build files', ['clean:build']);
