@@ -5,3 +5,5 @@
 *.sublime-workspace
 node_modules
 build
+validation-report.json
+validation-status.json

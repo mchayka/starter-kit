@@ -83,6 +83,21 @@ module.exports = function (grunt) {
 					base: 'build'
 				}
 			}
+		},
+
+		// HTML validation
+		validation: {
+			options: {
+				reset: grunt.option('reset') || false,
+				stoponerror: false,
+//				remotePath: "http://localhost:9001",
+//				remoteFiles: ["html/moving-from-wordpress-to-octopress/"],
+//				remoteFiles: "validation-files.json",
+				relaxerror: ["Bad value X-UA-Compatible for attribute http-equiv on element meta."]
+			},
+			files: {
+				src: ['build/**/*.html']
+			}
 		}
 	});
 
@@ -93,9 +108,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-notify');
+	grunt.loadNpmTasks('grunt-html-validation');
 
 	grunt.registerTask('build', 'Prepare build files', ['clean:build', 'copy:build', 'includereplace', 'sass']);
 	grunt.registerTask('start', 'Starts local server and watch files', ['connect', 'watch-files']);
 	grunt.registerTask('watch-files', 'Watch files', ['watch']);
+	grunt.registerTask('validate', 'Validate html files', ['validation']);
 
 };
