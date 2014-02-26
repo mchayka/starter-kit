@@ -42,7 +42,7 @@ $control-line-height: 1.2; // don't set in px, em, rem
 $control-border-color: $color-gray;
 $control-color: $color-black;
 $control-invalid-color: $color-red;
-$control-readonly-color: lighten( $control-color, 40% );;
+$control-readonly-color: lighten( $control-color, 40% );
 $control-disabled-color: lighten( $control-color, 40% );
 $control-placeholder-color: $color-gray;
 
