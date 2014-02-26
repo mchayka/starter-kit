@@ -132,10 +132,13 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-notify');
 	grunt.loadNpmTasks('grunt-html-validation');
 
-	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass', 'img-optimization']);
-	grunt.registerTask('start', 'Starts local server and watch files', ['connect', 'watch-files']);
-	grunt.registerTask('watch-files', 'Watch files', ['watch']);
-	grunt.registerTask('img-optimization', 'Optimize image files', ['imagemin']);
+	// Tasks
+	grunt.registerTask('default', 'Watch files', ['watch']);
+	grunt.registerTask('start', 'Starts local server and watch files', ['connect', 'default']);
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
+	grunt.registerTask('html', 'Compile html', ['includereplace']);
+	grunt.registerTask('css', 'Compile sass', ['sass']);
+	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
+	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass', 'img']);
 
 };
