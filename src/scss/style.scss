@@ -1,6 +1,10 @@
+// Bourbon
+@import "mixins/bourbon/bourbon";
+@import "mixins/bourbon/bourbon-deprecated-upcoming";
+
 // Core variables and mixins
-@import "utilities/mixins";
 @import "variables";
+@import "mixins/common";
 
 // CSS Base
 @import "base/normalize";

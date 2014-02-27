@@ -52,10 +52,11 @@
     text-align: left;
 
     // Use flexbox when possible to avoid `letter-spacing` side-effects.
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(flex-start);
+    @include align-items(flext-start);
     direction: ltr;
 }
 
@@ -81,7 +82,7 @@
  */
 
 .grid--alignMiddle {
-    align-items: center; /* 1 */
+    @include align-items(center); /* 1 */
 
     > .grid-cell {
         vertical-align: middle;
@@ -89,7 +90,7 @@
 }
 
 .grid--alignBottom {
-    align-items: flex-end; /* 1 */
+    @include align-items(flext-end); /* 1 */
 
     > .grid-cell {
         vertical-align: bottom;
@@ -97,12 +98,12 @@
 }
 
 .grid--alignCenter {
-    justify-content: center; /* 1 */
+    @include justify-content(center); /* 1 */
     text-align: center;
 }
 
 .grid--alignRight {
-    justify-content: flex-end; /* 1 */
+    @include justify-content(flex-end); /* 1 */
     text-align: right;
 }
 
