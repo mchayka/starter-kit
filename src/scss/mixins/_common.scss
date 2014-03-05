@@ -73,7 +73,7 @@
     opacity: $opacity;
     // IE8 filter
     $opacity-ie: ($opacity * 100);
-    filter: alpha(opacity=#{$opacity-ie});
+    filter: "alpha(opacity=#{$opacity-ie})";
 }
 
 // rgba bg
@@ -84,6 +84,6 @@
     background: $color;
     background: transparent;
     background: $rgba;
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$ie-hex-str}',endColorstr='#{$ie-hex-str}');
     zoom: 1;
 }

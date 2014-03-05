@@ -65,9 +65,9 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 				files: 'src/scss/**/*.scss',
-				tasks: [ 'sass:expanded' ],
+				tasks: [ 'sass:expanded', 'autoprefixer' ],
 				options: {
-					livereload: true
+					livereload: false
 				}
 			},
 			html: {
@@ -127,6 +127,13 @@ module.exports = function (grunt) {
 			files: {
 				src: ['build/**/*.html']
 			}
+		},
+
+		autoprefixer: {
+			options: {},
+			css: {
+				src: 'build/stylesheets/**/*.css'
+			}
 		}
 	});
 
@@ -139,6 +146,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-notify');
 	grunt.loadNpmTasks('grunt-html-validation');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 
 	// Tasks
 	grunt.registerTask('default', 'Watch files', ['watch']);
@@ -148,5 +156,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('css', 'Compile sass', ['sass:expanded']);
 	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
 	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass:compressed', 'img']);
+	grunt.registerTask('prefix', 'Add vendor prefixes to css', ['css', 'autoprefixer']);
 
 };

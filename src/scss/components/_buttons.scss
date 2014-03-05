@@ -16,14 +16,14 @@
     cursor: pointer;
     -webkit-user-drag: none;
     background-image: none; // Reset unusual Firefox-on-Android default style
-    @include user-select(none);
+    user-select: none;
 
     &:focus {
         outline: 0;
     }
 
     &:active {
-        @include box-shadow(0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset);
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
     }
 
     &[disabled] {
