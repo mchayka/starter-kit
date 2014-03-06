@@ -65,40 +65,38 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 				files: 'src/scss/**/*.scss',
-				tasks: [ 'sass:expanded', 'autoprefixer' ],
-				options: {
-					livereload: false
-				}
+				tasks: [ 'sass:expanded', 'autoprefixer' ]
 			},
 			html: {
 				files: 'src/**/*.html',
-				tasks: [ 'includereplace' ],
-				options: {
-					livereload: true
-				}
+				tasks: [ 'includereplace' ]
 			},
 			img: {
 				files: 'src/images/**/*.{png,jpg,gif,svg,ico}',
-				tasks: [ 'copy:images' ],
-				options: {
-					livereload: true
-				}
+				tasks: [ 'copy:images' ]
 			},
 			javascript: {
 				files: 'src/javascript/**/*.js',
-				tasks: [ 'copy:javascript' ],
-				options: {
-					livereload: true
-				}
+				tasks: [ 'copy:javascript' ]
 			}
 		},
 
-		// Local servers
-		connect: {
-			build: {
+		// sync changes with browser
+		browser_sync: {
+			dev: {
+				bsFiles: {
+					src : [
+						'build/stylesheets/*.css',
+						'build/**/*.html',
+						'build/images/**/*.{png,jpg,gif,svg,ico}',
+						'build/javascript/**/*.js'
+					]
+				},
 				options: {
-					port: 9001,
-					base: 'build'
+					watchTask: true,
+					server: {
+						baseDir: "build"
+					}
 				}
 			}
 		},
@@ -141,16 +139,16 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-notify');
 	grunt.loadNpmTasks('grunt-html-validation');
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-browser-sync');
 
 	// Tasks
 	grunt.registerTask('default', 'Watch files', ['watch']);
-	grunt.registerTask('start', 'Starts local server and watch files', ['connect', 'default']);
+	grunt.registerTask('start', 'Starts local server and watch files', ['browser_sync', 'default']);
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
 	grunt.registerTask('html', 'Compile html', ['includereplace']);
 	grunt.registerTask('css', 'Compile sass', ['sass:expanded']);
