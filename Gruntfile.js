@@ -127,12 +127,14 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// css autoprefixer
 		autoprefixer: {
 			options: {},
 			css: {
 				src: 'build/stylesheets/**/*.css'
 			}
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -145,6 +147,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-html-validation');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-browser-sync');
+	grunt.loadNpmTasks('grunt-ssh');
 
 	// Tasks
 	grunt.registerTask('default', 'Watch files', ['watch']);
