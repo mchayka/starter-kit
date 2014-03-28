@@ -21,18 +21,3 @@
     float: left;
     margin-left: -20px;
 }
-
-
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-
-.form {
-    @extend %inline-block-wrapper;
-}
-
-.form-item {
-    @extend %inline-block-element;
-    width: 100%;
-    margin-bottom: $line-height-base-px/2;
-}

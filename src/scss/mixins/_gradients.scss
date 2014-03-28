@@ -1,43 +1,7 @@
 /* ==========================================================================
-   Common mixins
+   Gradients
    ========================================================================== */
 
-/* Media queries
-   ========================================================================== */
-
-// small devices
-@mixin breakpoint-sm {
-    @media #{$screen-small} {
-        @content;
-    }
-}
-
-// medium devices
-@mixin breakpoint-md {
-    @media #{$screen-medium} {
-        @content;
-    }
-}
-
-// large devices
-@mixin breakpoint-lg {
-    @media #{$screen-large} {
-        @content;
-    }
-}
-
-/* -------------------------------------------------------------------------- */
-
-// Retina screens
-@mixin screen-retina {
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-        @content;
-    }
-}
-
-
-/* Gradients
-   ========================================================================== */
 
 // Horizontal gradient, from left to right
 @mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
@@ -62,28 +26,4 @@
 // Reset filters for IE
 @mixin reset-filter() {
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-
-
-/* Helplers
-   ========================================================================== */
-
-// Opacity
-@mixin opacity($opacity) {
-    opacity: $opacity;
-    // IE8 filter
-    $opacity-ie: ($opacity * 100);
-    filter: "alpha(opacity=#{$opacity-ie})";
-}
-
-// rgba bg
-@mixin rgba-bg($color, $opacity: 0.5) {
-    $rgba: rgba($color, $opacity);
-    $ie-hex-str: ie-hex-str($rgba);
-
-    background: $color;
-    background: transparent;
-    background: $rgba;
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$ie-hex-str}',endColorstr='#{$ie-hex-str}');
-    zoom: 1;
 }

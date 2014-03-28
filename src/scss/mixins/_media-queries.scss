@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
+
+// small devices
+@mixin breakpoint-sm {
+    @media #{$screen-small} {
+        @content;
+    }
+}
+
+// medium devices
+@mixin breakpoint-md {
+    @media #{$screen-medium} {
+        @content;
+    }
+}
+
+// large devices
+@mixin breakpoint-lg {
+    @media #{$screen-large} {
+        @content;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+
+// Retina screens
+@mixin screen-retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        @content;
+    }
+}

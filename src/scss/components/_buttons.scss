@@ -40,7 +40,7 @@
  * Modifiers: Different color
  */
 
-.btn--1 {
+.btn--type1 {
     color: $btn-1-color;
     background-color: $btn-1-bgcolor;
 
@@ -51,7 +51,7 @@
     }
 }
 
-.btn--2 {
+.btn--type2 {
     color: $btn-2-color;
     background-color: $btn-2-bgcolor;
 
@@ -67,17 +67,17 @@
  * Modifiers: Sizes
  */
 
-.btn--sm {
+.btn--sizeSm {
     padding: .4em .4em;
     font-size: 12px;
 }
 
-.btn--md {
+.btn--sizeMd {
     padding: .6em .6em;
     font-size: 14px;
 }
 
-.btn--lg {
+.btn--sizeLg {
     padding: .8em .8em;
     font-size: 18px;
 }

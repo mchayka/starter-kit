@@ -1,11 +1,11 @@
 /* ==========================================================================
-   grid
+   Grid
    ========================================================================== */
 
 /**
- * Example uses:
+ * Example HTML:
  *
- * <div class="grid [grid--noGutter|grid--gutterSm] [grid--alignMiddle|grid--alignBottom]">
+ * <div class="grid [grid--gutterNone|grid--gutterSm] [grid--alignMiddle|grid--alignBottom]">
  *     <div class="grid-cell u-size2"></div>
  *     <div class="grid-cell u-size4"></div>
  *     <div class="grid-cell u-size2"></div>
@@ -65,7 +65,7 @@
  * Modifiers: No gutter
  */
 
-.grid--noGutter {
+.grid--gutterNone {
     margin-left: 0;
     margin-right: 0;
 
@@ -110,6 +110,11 @@
 
 /* Grid cell
    ========================================================================== */
+
+/**
+ * No explicit width by default. Rely on combining `Grid-cell` with a size & offset
+ * utility.
+ */
 
 .grid-cell {
     @extend %inline-block-element;
