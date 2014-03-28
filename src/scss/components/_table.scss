@@ -2,6 +2,13 @@
    Table
    ========================================================================== */
 
+$table-color: $color-black;
+$table-border-color: $color-gray;
+$table-bg-color: $color-white;
+$table-odd-bg-color: $color-gray;
+$table-head-bg-color: lighten( $color-gray, 15% );
+
+
 .table {
     empty-cells: show;
     border-style: solid;

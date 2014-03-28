@@ -2,6 +2,17 @@
    Buttons
    ========================================================================== */
 
+$btn-font-size: $font-size-base;
+$btn-1-color: $color-white;
+$btn-1-bgcolor: $color-blue;
+$btn-2-color: $color-white;
+$btn-2-bgcolor: $color-orange;
+
+
+/**
+ * base class for button
+ */
+
 .btn {
     display: inline-block;
     margin-bottom: 0;

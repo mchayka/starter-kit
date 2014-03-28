@@ -2,10 +2,6 @@
    Media queries
    ========================================================================== */
 
-$screen-small: "only screen and (max-width: 767px)" !default;
-$screen-medium: "only screen and (min-width: 768px) and (max-width: 1023px)" !default;
-$screen-large: "only screen and (min-width: 1024px)" !default;
-
 // small devices
 @mixin breakpoint-sm {
     @media #{$screen-small} {
