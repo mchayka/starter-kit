@@ -1,33 +1,47 @@
 /* ==========================================================================
-   Sizes
+   Sizes & Offsets
    ========================================================================== */
+
+$utilities-sizes-number: 12;
+$utilities-sizes-unit-width: 100%/$utilities-sizes-number;
 
 /*
-   Responsive agnostic sizes
+   Proportional widths
    ========================================================================== */
 
-.u-sizeFull {
-  display: block !important;
-  width: 100% !important;
+/**
+ * Specify the proportional width of an object.
+ * Intentional redundancy build into each set of unit classes.
+ * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+ */
+
+
+/**
+ * Responsive agnostic
+ */
+
+
+@for $i from 1 through $utilities-sizes-number {
+    @for $j from 1 through $i {
+        @if $j < $i {
+            .u-size#{$j}of#{$i} { width: $j/$i * 100% !important; }
+        }
+    }
 }
 
-@for $i from 1 through $grid-cols-number {
-  .u-size#{$i} { width: $grid-cols-width * $i; }
-}
-
-
-/*
-   Responsive sizes
-   ========================================================================== */
 
 /**
  * for lg breakpoint
  */
 
 @media #{$screen-large} {
-  @for $i from 1 through $grid-cols-number {
-    .u-lg-size#{$i} { width: $grid-cols-width * $i; }
-  }
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-lg-size#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
 }
 
 
@@ -36,9 +50,13 @@
  */
 
 @media #{$screen-medium} {
-  @for $i from 1 through $grid-cols-number {
-    .u-md-size#{$i} { width: $grid-cols-width * $i; }
-  }
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-md-size#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
 }
 
 
@@ -47,7 +65,135 @@
  */
 
 @media #{$screen-small} {
-  @for $i from 1 through $grid-cols-number {
-    .u-sm-size#{$i} { width: $grid-cols-width * $i; }
-  }
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-sm-size#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
+}
+
+
+
+
+/* Offset before an object
+   ========================================================================== */
+
+/**
+ * Responsive agnostic
+ */
+
+@for $i from 1 through $utilities-sizes-number {
+    @for $j from 1 through $i {
+        @if $j < $i {
+            .u-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
+        }
+    }
+}
+
+
+/**
+ * for lg breakpoint
+ */
+
+@media #{$screen-large} {
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-lg-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
+}
+
+
+/**
+ * for md breakpoint
+ */
+
+@media #{$screen-medium} {
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-md-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
+}
+
+
+/**
+ * for sm breakpoint
+ */
+
+@media #{$screen-small} {
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-sm-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
+}
+
+
+/* Offset after an object
+   ========================================================================== */
+
+/**
+ * Responsive agnostic
+ */
+
+@for $i from 1 through $utilities-sizes-number {
+    @for $j from 1 through $i {
+        @if $j < $i {
+            .u-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
+        }
+    }
+}
+
+
+/**
+ * for lg breakpoint
+ */
+
+@media #{$screen-large} {
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-lg-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
+}
+
+
+/**
+ * for md breakpoint
+ */
+
+@media #{$screen-medium} {
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-md-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
+}
+
+
+/**
+ * for sm breakpoint
+ */
+
+@media #{$screen-small} {
+    @for $i from 1 through $utilities-sizes-number {
+        @for $j from 1 through $i {
+            @if $j < $i {
+                .u-sm-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            }
+        }
+    }
 }

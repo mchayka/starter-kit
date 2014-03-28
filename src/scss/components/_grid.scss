@@ -13,6 +13,8 @@
  * </div>
  */
 
+$grid-gutter-default: 20px;
+
 
 /* Placeholder to place inline-block elements without extra space
    ========================================================================== */
@@ -47,6 +49,7 @@
 
 .grid {
     @extend %inline-block-wrapper;
+    min-height: 1px;
     margin-left: -$grid-gutter-default/2;
     margin-right: -$grid-gutter-default/2;
     text-align: left;
