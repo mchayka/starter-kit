@@ -2,8 +2,7 @@
    Sizes & Offsets
    ========================================================================== */
 
-$utilities-sizes-number: 12;
-$utilities-sizes-unit-width: 100%/$utilities-sizes-number;
+$utilities-sizes-number: 12 !default;
 
 /*
    Proportional widths
@@ -15,11 +14,9 @@ $utilities-sizes-unit-width: 100%/$utilities-sizes-number;
  * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
  */
 
-
-/**
- * Responsive agnostic
- */
-
+.u-sizeFull {
+  width: 100% !important;
+}
 
 @for $i from 1 through $utilities-sizes-number {
     @for $j from 1 through $i {
@@ -28,53 +25,6 @@ $utilities-sizes-unit-width: 100%/$utilities-sizes-number;
         }
     }
 }
-
-
-/**
- * for lg breakpoint
- */
-
-@media #{$screen-large} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-lg-size#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
-/**
- * for md breakpoint
- */
-
-@media #{$screen-medium} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-md-size#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
-/**
- * for sm breakpoint
- */
-
-@media #{$screen-small} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-sm-size#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
 
 
 /* Offset before an object
@@ -93,51 +43,6 @@ $utilities-sizes-unit-width: 100%/$utilities-sizes-number;
 }
 
 
-/**
- * for lg breakpoint
- */
-
-@media #{$screen-large} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-lg-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
-/**
- * for md breakpoint
- */
-
-@media #{$screen-medium} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-md-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
-/**
- * for sm breakpoint
- */
-
-@media #{$screen-small} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-sm-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
 /* Offset after an object
    ========================================================================== */
 
@@ -149,51 +54,6 @@ $utilities-sizes-unit-width: 100%/$utilities-sizes-number;
     @for $j from 1 through $i {
         @if $j < $i {
             .u-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
-        }
-    }
-}
-
-
-/**
- * for lg breakpoint
- */
-
-@media #{$screen-large} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-lg-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
-/**
- * for md breakpoint
- */
-
-@media #{$screen-medium} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-md-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
-        }
-    }
-}
-
-
-/**
- * for sm breakpoint
- */
-
-@media #{$screen-small} {
-    @for $i from 1 through $utilities-sizes-number {
-        @for $j from 1 through $i {
-            @if $j < $i {
-                .u-sm-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
-            }
         }
     }
 }

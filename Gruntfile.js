@@ -147,7 +147,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-html-validation');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-browser-sync');
-	grunt.loadNpmTasks('grunt-ssh');
 
 	// Tasks
 	grunt.registerTask('default', 'Watch files', ['watch']);

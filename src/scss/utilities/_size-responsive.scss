@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Sizes & Offsets responsive
+   ========================================================================== */
+
+$utilities-sizes-number: 12 !default;
+$utilities-media-queries: (
+    sm: "only screen and (max-width: 767px)",
+    md: "only screen and (min-width: 768px) and (max-width: 1023px)",
+    lg: "only screen and (min-width: 1024px)"
+) !default;
+
+/*
+   Proportional widths
+   ========================================================================== */
+
+/**
+ * Specify the proportional width of an object.
+ * Intentional redundancy build into each set of unit classes.
+ * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+ */
+
+@each $prefix, $media-query in $utilities-media-queries {
+    @media #{$media-query} {
+        .u-#{$prefix}-sizeFull {
+            width: 100% !important;
+        }
+
+        @for $i from 1 through $utilities-sizes-number {
+            @for $j from 1 through $i {
+                @if $j < $i {
+                    .u-#{$prefix}-size#{$j}of#{$i} {
+                        width: $j/$i * 100% !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Offset before an object
+   ========================================================================== */
+
+/**
+ * Responsive agnostic
+ */
+
+@each $prefix, $media-query in $utilities-media-queries {
+    @media #{$media-query} {
+        @for $i from 1 through $utilities-sizes-number {
+            @for $j from 1 through $i {
+                @if $j < $i {
+                    .u-#{$prefix}-before#{$j}of#{$i} {
+                        margin-left: $j/$i * 100% !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Offset after an object
+   ========================================================================== */
+
+/**
+ * Responsive agnostic
+ */
+
+@each $prefix, $media-query in $utilities-media-queries {
+    @media #{$media-query} {
+        @for $i from 1 through $utilities-sizes-number {
+            @for $j from 1 through $i {
+                @if $j < $i {
+                    .u-#{$prefix}-after#{$j}of#{$i} {
+                        margin-right: $j/$i * 100% !important;
+                    }
+                }
+            }
+        }
+    }
+}

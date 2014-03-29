@@ -58,9 +58,15 @@ $border-color-1: $color-gray;
 
 
 /*
-   Media queries for mixins
+   Utilities and mixins settings
    ========================================================================== */
 
-$screen-small: "only screen and (max-width: 767px)";
-$screen-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
-$screen-large: "only screen and (min-width: 1024px)";
+// Media queries for mixins and utilities responsive sizes
+$utilities-media-queries: (
+    sm: "only screen and (max-width: 767px)",
+    md: "only screen and (min-width: 768px) and (max-width: 1023px)",
+    lg: "only screen and (min-width: 1024px)"
+);
+
+// Sets number of proportional width utilities
+$utilities-sizes-number: 12;
