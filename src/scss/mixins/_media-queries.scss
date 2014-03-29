@@ -8,7 +8,7 @@ $utilities-media-queries: (
     lg: "only screen and (min-width: 1024px)"
 ) !default;
 
-@mixin breakpoint($prefix) {
+@mixin screen($prefix) {
     $media-query: map-get($utilities-media-queries, $prefix);
     @media #{$media-query} {
         @content;

@@ -1,6 +1,6 @@
 # Starter kit
 
-Essential files and tools to start a project from scratch.
+A minimal boilerplate with Grunt integration.
 
 ## Working directory
 
@@ -24,12 +24,3 @@ sudo apt-get install nodejs
     `sudo npm install -g grunt-cli`
 * In project root folder run
     `sudo npm install`
-
-## Grunt commands
-
-* build
-* start
-* validate
-* html
-* css
-* img
