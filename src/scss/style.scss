@@ -23,9 +23,11 @@
 // Utilities
 @import "utilities/display";
 @import "utilities/layout";
-@import "utilities/state";
+@import "utilities/display";
+@import "utilities/display-responsive";
 @import "utilities/text";
 @import "utilities/size";
+@import "utilities/size-responsive";
 
 // Non modular
 @import "non-modular/browser-warning";

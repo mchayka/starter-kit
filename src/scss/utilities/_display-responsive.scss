@@ -1,0 +1,50 @@
+/* github.com/suitcss */
+
+/* ==========================================================================
+   Responsive Display utilities
+   ========================================================================== */
+
+$utilities-media-queries: (
+    sm: "only screen and (max-width: 767px)",
+    md: "only screen and (min-width: 768px) and (max-width: 1023px)",
+    lg: "only screen and (min-width: 1024px)"
+) !default;
+
+@each $prefix, $media-query in $utilities-media-queries {
+    @media #{$media-query} {
+        /**
+         * Completely remove from the flow and screen readers.
+         */
+        .u-#{$prefix}-hidden {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+
+        /**
+         * Completely remove from the flow but leave available to screen readers.
+         */
+        .u-#{$prefix}-hiddenVisually {
+            position: absolute !important;
+            overflow: hidden !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+            clip: rect(1px, 1px, 1px, 1px) !important;
+        }
+
+
+        /**
+         * Control visibility without affecting flow.
+         */
+
+        .u-#{$prefix}-invisible {
+            visibility: hidden !important;
+        }
+
+        .u-#{$prefix}-visible {
+            visibility: visible !important;
+        }
+    }
+}

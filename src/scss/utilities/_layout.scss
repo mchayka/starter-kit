@@ -64,23 +64,6 @@
 }
 
 /**
- * New block formatting context (alternative)
- *
- * Alternative method when overflow must not be clipped.
- *
- * 1. Create a new block formatting context (NBFC).
- * 2. Avoid shrink-wrap behaviour of table-cell.
- *
- * N.B. This breaks down in some browsers when elements within this element
- * exceed its width.
- */
-
-.u-nbfcAlt {
-    display: table-cell !important; /* 1 */
-    width: 10000px !important; /* 2 */
-}
-
-/**
  * Floats
  */
 
