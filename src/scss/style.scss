@@ -20,6 +20,9 @@
 @import "components/table";
 @import "components/forms";
 
+// Non modular
+@import "partials/browser-warning";
+
 // Utilities
 @import "utilities/display";
 @import "utilities/layout";
@@ -29,5 +32,4 @@
 @import "utilities/size";
 @import "utilities/size-responsive";
 
-// Non modular
-@import "non-modular/browser-warning";
+
