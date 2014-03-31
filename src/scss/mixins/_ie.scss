@@ -28,3 +28,38 @@
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$ie-hex-str}',endColorstr='#{$ie-hex-str}');
     zoom: 1;
 }
+
+
+/**
+ * Reset filters for IE
+ */
+
+@mixin reset-filter() {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+
+/*
+   Gradients
+   ========================================================================== */
+
+/**
+ * Horizontal gradient, from left to right
+ */
+
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image:  unquote("linear-gradient(to right, #{$start-color} #{$start-percent}, #{$end-color} #{$end-percent})");
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+
+/**
+ * Vertical gradient, from top to bottom
+ */
+
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image: unquote("linear-gradient(to bottom, #{$start-color} #{$start-percent}, #{$end-color} #{$end-percent})");
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
