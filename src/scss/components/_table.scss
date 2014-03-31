@@ -4,9 +4,8 @@
 
 $table-color: #000 !default;
 $table-border-color: #bababa !default;
-$table-bg-color: #fff !default;
-$table-odd-bg-color: #bababa !default;
-$table-head-bg-color: lighten( #bababa, 15% ) !default;
+$table-background: #fff !default;
+$table-head-background: lighten( #bababa, 15% ) !default;
 
 
 .table {
@@ -34,14 +33,14 @@ $table-head-bg-color: lighten( #bababa, 15% ) !default;
     }
 
     thead {
-        background: $table-head-bg-color;
+        background: $table-head-background;
         color: $table-color;
         text-align: left;
         vertical-align: bottom;
     }
 
     td {
-        background-color: $table-bg-color;
+        background-color: $table-background;
     }
 }
 
