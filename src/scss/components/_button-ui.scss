@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Common ui buttons
+   ========================================================================== */
+
+$btn-font-size: 16px !default;
+$btn-default-color: #fff !default;
+$btn-default-background: #079ae8 !default;
+
+
+/**
+ * base class for button
+ */
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: .7em .5em;
+    border: 0 solid transparent;
+    line-height: normal;
+    vertical-align: middle;
+    font-size: $btn-font-size;
+    text-align: center;
+    text-decoration: none;
+    white-space: normal;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    background-image: none; // Reset unusual Firefox-on-Android default style
+    user-select: none;
+    -webkit-appearance: none;
+
+    /**
+    * UI states
+    */
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:active {
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
+    }
+
+    &[disabled],
+    &:disabled {
+        border: none;
+        background-image: none;
+        cursor: default;
+        box-shadow: none;
+    }
+}
+
+
+/**
+ * Modifiers: Different color
+ */
+
+.btn--default {
+    color: $btn-default-color;
+    background-color: $btn-default-background;
+
+    &:focus,
+    &:hover {
+        background-color: darken($btn-default-background, 10%);
+    }
+}

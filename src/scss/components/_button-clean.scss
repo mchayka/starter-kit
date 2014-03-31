@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Button without visual styles
+   ========================================================================== */
+
+.btnClean {
+    // Prevent IOS forms default styling
+    -webkit-appearance: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &[disabled],
+    &:disabled {
+        border: none;
+        background-image: none;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+}

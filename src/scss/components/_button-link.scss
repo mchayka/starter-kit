@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Button behaves like link
+   ========================================================================== */
+
+$link-color: #079ae8 !default;
+$link-hover-color: inherit !default;
+
+.btnLink {
+    // Prevent IOS forms default styling
+    -webkit-appearance: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+
+    padding: 0;
+    border: none;
+    text-decoration: underline;
+    color: $link-color;
+    background: transparent;
+    cursor: pointer;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &[disabled],
+    &:disabled {
+        border: none;
+        background-image: none;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        color: $link-hover-color;
+    }
+}
