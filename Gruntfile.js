@@ -35,18 +35,19 @@ module.exports = function (grunt) {
 		sass: {
 			expanded: {
 				options: {
-					outputStyle: 'expanded'
+					style: 'expanded',
+					sourcemap: true
 				},
 				files: {
-					'build/stylesheets/style.css': 'src/scss/style.scss'
+					'build/stylesheets/**/*.css': 'src/scss/**/*.scss'
 				}
 			},
 			compressed: {
 				options: {
-					outputStyle: 'compressed'
+					style: 'compressed'
 				},
 				files: {
-					'build/stylesheets/style.css': 'src/scss/style.scss'
+					'build/stylesheets/**/*.css': 'src/scss/**/*.scss'
 				}
 			}
 		},
@@ -139,7 +140,7 @@ module.exports = function (grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
