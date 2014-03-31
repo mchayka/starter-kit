@@ -2,7 +2,10 @@
    IE Helplers
    ========================================================================== */
 
-// Opacity
+/**
+ * Opacity IE fallback
+ */
+
 @mixin opacity($opacity) {
     opacity: $opacity;
     // IE8 filter
@@ -10,7 +13,11 @@
     filter: "alpha(opacity=#{$opacity-ie})";
 }
 
-// rgba bg
+
+/**
+ * rgba IE fallback
+ */
+
 @mixin rgba-bg($color, $opacity: 0.5) {
     $rgba: rgba($color, $opacity);
     $ie-hex-str: ie-hex-str($rgba);

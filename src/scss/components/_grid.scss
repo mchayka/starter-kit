@@ -13,54 +13,35 @@
  * </div>
  */
 
-$grid-gutter-default: 20px;
-
-
-/* Placeholder to place inline-block elements without extra space
-   ========================================================================== */
-
-// parent
-%inline-block-wrapper {
-    display: block;
-    letter-spacing: -0.31em;
-    text-rendering: optimizespeed;
-    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* prevent grid collapse in all major devices */
-}
-
-// Opera hack for parent
-.opera-only :-o-prefocus,
-%inline-block-wrapper {
-    word-spacing: -0.43em;
-}
-
-// child
-%inline-block-element {
-    display: inline-block;
-    vertical-align: middle;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    font-family: $site-font-family; /* Resets the font family */
-}
+$grid-child-font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
+$grid-gutter-default: 20px !default;
 
 
 /* Grid container
    ========================================================================== */
 
 .grid {
-    @extend %inline-block-wrapper;
-    min-height: 1px;
+    display: block;
     margin-left: -$grid-gutter-default/2;
     margin-right: -$grid-gutter-default/2;
+    letter-spacing: -0.31em; /* remove extra space between 'inline-block' child elements */
     text-align: left;
+    text-rendering: optimizespeed;
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* prevent grid collapse in all major devices */
 
-    // Use flexbox when possible to avoid `letter-spacing` side-effects.
+    /* Use flexbox when possible to avoid `letter-spacing` side-effects. */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flext-start;
     direction: ltr;
+}
+
+/* Opera hack for parent to prevent inline-block extra space*/
+.opera-only :-o-prefocus,
+.grid {
+    word-spacing: -0.43em;
 }
 
 
@@ -120,10 +101,17 @@ $grid-gutter-default: 20px;
  */
 
 .grid-cell {
-    @extend %inline-block-element;
+    display: inline-block;
     width: 100%;
+    min-height: 1px; /* Prevent collapsing when cell is empty */
     padding-left: $grid-gutter-default/2;
     padding-right: $grid-gutter-default/2;
     vertical-align: top;
     text-align: left;
+
+    /* Reset parent styles */
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-family: $grid-child-font-family; /* Resets the font family */
 }

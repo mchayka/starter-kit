@@ -2,11 +2,9 @@
    Buttons
    ========================================================================== */
 
-$btn-font-size: $font-size-base;
-$btn-1-color: $color-white;
-$btn-1-bgcolor: $color-blue;
-$btn-2-color: $color-white;
-$btn-2-bgcolor: $color-orange;
+$btn-font-size: 16px !default;
+$btn-default-color: #fff !default;
+$btn-default-bgcolor: #079ae8 !default;
 
 
 /**
@@ -51,46 +49,15 @@ $btn-2-bgcolor: $color-orange;
  * Modifiers: Different color
  */
 
-.btn--type1 {
-    color: $btn-1-color;
-    background-color: $btn-1-bgcolor;
+.btn--default {
+    color: $btn-default-color;
+    background-color: $btn-default-color;
 
     &:focus,
     &:hover {
-        background-color: darken($btn-1-bgcolor, 10%);
+        background-color: darken($btn-default-color, 10%);
         text-decoration: none;
     }
-}
-
-.btn--type2 {
-    color: $btn-2-color;
-    background-color: $btn-2-bgcolor;
-
-    &:focus,
-    &:hover {
-        background-color: darken($btn-2-bgcolor, 10%);
-        text-decoration: none;
-    }
-}
-
-
-/**
- * Modifiers: Sizes
- */
-
-.btn--sizeSm {
-    padding: .4em .4em;
-    font-size: 12px;
-}
-
-.btn--sizeMd {
-    padding: .6em .6em;
-    font-size: 14px;
-}
-
-.btn--sizeLg {
-    padding: .8em .8em;
-    font-size: 18px;
 }
 
 

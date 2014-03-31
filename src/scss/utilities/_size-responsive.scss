@@ -2,6 +2,14 @@
    Sizes & Offsets responsive
    ========================================================================== */
 
+/**
+ * Specify the proportional width and offset of an object.
+ * For specific predefined media-queries
+ * Intentional redundancy build into each set of unit classes.
+ * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+ */
+
+
 $utilities-sizes-number: 12 !default;
 $utilities-media-queries: (
     sm: "only screen and (max-width: 767px)",
@@ -12,12 +20,6 @@ $utilities-media-queries: (
 /*
    Proportional widths
    ========================================================================== */
-
-/**
- * Specify the proportional width of an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
- */
 
 @each $prefix, $media-query in $utilities-media-queries {
     @media #{$media-query} {
@@ -40,10 +42,6 @@ $utilities-media-queries: (
 /* Offset before an object
    ========================================================================== */
 
-/**
- * Responsive agnostic
- */
-
 @each $prefix, $media-query in $utilities-media-queries {
     @media #{$media-query} {
         @for $i from 1 through $utilities-sizes-number {
@@ -60,10 +58,6 @@ $utilities-media-queries: (
 
 /* Offset after an object
    ========================================================================== */
-
-/**
- * Responsive agnostic
- */
 
 @each $prefix, $media-query in $utilities-media-queries {
     @media #{$media-query} {

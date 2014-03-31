@@ -2,6 +2,10 @@
    Media queries
    ========================================================================== */
 
+/**
+ * Mixins for predefined media-queries
+ */
+
 $utilities-media-queries: (
     sm: "only screen and (max-width: 767px)",
     md: "only screen and (min-width: 768px) and (max-width: 1023px)",
@@ -17,7 +21,10 @@ $utilities-media-queries: (
 
 /* -------------------------------------------------------------------------- */
 
-// Retina screens
+/**
+ * Retina screens
+ */
+
 @mixin screen-retina {
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
         @content;

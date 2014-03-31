@@ -2,11 +2,11 @@
    Table
    ========================================================================== */
 
-$table-color: $color-black;
-$table-border-color: $color-gray;
-$table-bg-color: $color-white;
-$table-odd-bg-color: $color-gray;
-$table-head-bg-color: lighten( $color-gray, 15% );
+$table-color: #000 !default;
+$table-border-color: #bababa !default;
+$table-bg-color: #fff !default;
+$table-odd-bg-color: #bababa !default;
+$table-head-bg-color: lighten( #bababa, 15% ) !default;
 
 
 .table {

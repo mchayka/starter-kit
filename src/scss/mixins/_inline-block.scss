@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Mixin to remove whitespace between `inline-block` child elements
+   ========================================================================== */
+
+/**
+ * Font-family based method
+ */
+
+@mixin inline-block-hack( $font-family: sans-serif ) {
+    display: block;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* prevent grid collapse in all major devices */
+
+    @at-root {
+        .opera-only :-o-prefocus,
+        & {
+            word-spacing: -0.43em;
+        }
+    }
+
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        font-family: $font-family; /* Resets the font family */
+    }
+}
