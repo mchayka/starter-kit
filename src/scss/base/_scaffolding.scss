@@ -38,6 +38,7 @@ a {
 
     &:hover,
     &:focus {
+        color: $link-hover-color;
         text-decoration: none;
     }
 }

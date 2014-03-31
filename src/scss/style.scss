@@ -12,7 +12,9 @@
 @import "base/print";
 
 // Components
-@import "components/buttons";
+@import "components/button-ui";
+@import "components/button-clean";
+@import "components/button-link";
 @import "components/flex-embed";
 @import "components/media";
 @import "components/grid";
@@ -31,5 +33,3 @@
 @import "utilities/text";
 @import "utilities/size";
 @import "utilities/size-responsive";
-
-
