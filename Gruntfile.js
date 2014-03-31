@@ -39,7 +39,7 @@ module.exports = function (grunt) {
 					sourcemap: true
 				},
 				files: {
-					'build/stylesheets/**/*.css': 'src/scss/**/*.scss'
+					'build/stylesheets/style.css': 'src/scss/style.scss'
 				}
 			},
 			compressed: {
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'build/stylesheets/**/*.css': 'src/scss/**/*.scss'
+					'build/stylesheets/style.css': 'src/scss/style.scss'
 				}
 			}
 		},
