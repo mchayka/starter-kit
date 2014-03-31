@@ -22,8 +22,10 @@ $grid-gutter-default: 20px !default;
 
 .grid {
     display: block;
-    margin-left: -$grid-gutter-default/2;
-    margin-right: -$grid-gutter-default/2;
+    margin-left: -$grid-gutter-default;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
     letter-spacing: -0.31em; /* remove extra space between 'inline-block' child elements */
     text-align: left;
     text-rendering: optimizespeed;
@@ -51,11 +53,9 @@ $grid-gutter-default: 20px !default;
 
 .grid--gutterNone {
     margin-left: 0;
-    margin-right: 0;
 
     > .grid-cell {
         padding-left: 0;
-        padding-right: 0;
     }
 }
 
@@ -104,8 +104,10 @@ $grid-gutter-default: 20px !default;
     display: inline-block;
     width: 100%;
     min-height: 1px; /* Prevent collapsing when cell is empty */
-    padding-left: $grid-gutter-default/2;
-    padding-right: $grid-gutter-default/2;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: $grid-gutter-default;
+    padding-right: 0;
     vertical-align: top;
     text-align: left;
 
