@@ -21,6 +21,7 @@ $grid-gutter-default: 20px !default;
    ========================================================================== */
 
 .grid {
+    box-sizing: border-box;
     display: block;
     margin-left: -$grid-gutter-default;
     margin-right: 0;
@@ -30,6 +31,7 @@ $grid-gutter-default: 20px !default;
     text-align: left;
     text-rendering: optimizespeed;
     font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* prevent grid collapse in all major devices */
+    list-style: none;
 
     /* Use flexbox when possible to avoid `letter-spacing` side-effects. */
     display: flex;
