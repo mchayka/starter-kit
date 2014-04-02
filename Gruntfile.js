@@ -39,7 +39,7 @@ module.exports = function (grunt) {
 					sourcemap: true
 				},
 				files: {
-					'build/stylesheets/style.css': 'src/scss/style.scss'
+					'build/stylesheets/style.css': 'src/stylesheets/style.scss'
 				}
 			},
 			compressed: {
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'build/stylesheets/style.css': 'src/scss/style.scss'
+					'build/stylesheets/style.css': 'src/stylesheets/style.scss'
 				}
 			}
 		},
@@ -65,7 +65,7 @@ module.exports = function (grunt) {
 		// Watch files changes
 		watch: {
 			sass: {
-				files: 'src/scss/**/*.scss',
+				files: 'src/stylesheets/**/*.scss',
 				tasks: [ 'sass:expanded', 'autoprefixer' ]
 			},
 			html: {
