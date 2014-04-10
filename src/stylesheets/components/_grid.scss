@@ -2,6 +2,9 @@
    Grid
    ========================================================================== */
 
+$grid-child-font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
+$grid-gutter-default: 20px !default;
+
 /**
  * Example HTML:
  *
@@ -12,9 +15,6 @@
  *     <div class="grid-cell u-size4"></div>
  * </div>
  */
-
-$grid-child-font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
-$grid-gutter-default: 20px !default;
 
 
 /* Grid container
