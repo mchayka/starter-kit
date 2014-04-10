@@ -6,7 +6,7 @@
  * Font-family based method
  */
 
-@mixin inline-block-hack( $font-family: sans-serif ) {
+@mixin inline-block-wrapper() {
     display: block;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
@@ -18,13 +18,13 @@
             word-spacing: -0.43em;
         }
     }
+}
 
-    > * {
-        display: inline-block;
-        vertical-align: middle;
-        text-rendering: auto;
-        letter-spacing: normal;
-        word-spacing: normal;
-        font-family: $font-family; /* Resets the font family */
-    }
+@mixin inline-block-element($font-family: sans-serif) {
+    display: inline-block;
+    vertical-align: middle;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-family: $font-family; /* Resets the font family */
 }
