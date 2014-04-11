@@ -1,26 +1,19 @@
 # Starter kit
 
-A minimal boilerplate with Grunt integration.
+A minimal html/css boilerplate, great starting point to your next web project.
 
-## Working directory
+Based on [Sass](http://sass-lang.com) & automated with [Grunt](http://gruntjs.com).
 
-We use Grunt to automate tasks: compiling, validation, copressing images, html includes.
-Changes should be done in "src" folder as it contains all source file to work with.
-Note that "build" folder is generated automatically by Grunt and ignored by git.
+It provides you:
 
-## Install Grunt
+* Base styles;
+* Base html based on Boilerplate HTML;
+* Useful sass mixins;
+* Set of helper classes (utilities): clearfix, sizes, display;
+* Common useful & independent css patterns ( components ) which you can use optionally in your project;
+* Automated workflow with Grunt. Contains useful tasks like watching, autoprefixer, validation, img compression;
+* Editorconfig file to keep consistent indentions;
 
-To use this kit you should install Node.js and Grunt on your computer.
+## Requirement
 
-* Install node.js ( Linux )
-```
-sudo apt-get update
-sudo apt-get install python-software-properties python g++ make
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs
-```
-* Install Grunt CLI
-    `sudo npm install -g grunt-cli`
-* In project root folder run
-    `sudo npm install`
+To work with this boilerplate you should have installed [Node.js](http://nodejs.org), [Grunt](http://gruntjs.com) and [Sass](http://sass-lang.com) ( at lest 3.3 version ).
