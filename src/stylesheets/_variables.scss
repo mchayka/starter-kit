@@ -1,14 +1,13 @@
-/* ==========================================================================
-  Common variables
-  ========================================================================== */
-/**
-* DO NOT use these variables directly in components.
-* Assign them to component specific variables
-*/
+// ==========================================================================
+// Common variables
+// ==========================================================================
 
-/*
-   Colors
-   ========================================================================== */
+// DO NOT use these variables directly in components.
+// Assign them to component specific variables in settings
+
+
+// Colors
+// ==========================================================================
 
 $color-white: #fff;
 $color-black: #333;
@@ -18,11 +17,9 @@ $color-green: #5fc5ac;
 $color-red: #af4435;
 
 
-/*
-   Base settings ( default styles in "base" folder )
-   ========================================================================== */
+// Typography
+// ==========================================================================
 
-//  Typography
 $font-family-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
@@ -36,40 +33,12 @@ $font-size-h6: 14px;
 $line-height-base: 1.5;
 $line-height-base-px: $line-height-base * $font-size-base;
 
-// Forms
-$control-padding-horizontal: 9px;
-$control-padding-vertical: 7.5px;
-$control-font-size: $font-size-base;
-$control-line-height: 1.2; // don't set in px, em, rem
-$control-border-color: $color-gray;
-$control-color: $color-black;
-$control-invalid-color: $color-red;
-$control-readonly-color: lighten( $control-color, 40% );
-$control-disabled-color: lighten( $control-color, 40% );
-$control-placeholder-color: $color-gray;
 
+// Media queries
+// ==========================================================================
 
-// Scaffolding
-$site-width: 1140px;
-$site-color: $color-black;
-$site-bg-color: $color-white;
-$site-font-family: $font-family-sans;
-$site-line-height: $line-height-base;
-$link-color: $color-blue;
-$link-hover-color: $color-blue;
-$border-color-1: $color-gray;
-
-
-/*
-   Utilities and mixins settings
-   ========================================================================== */
-
-// Media queries for mixins and utilities responsive sizes
-$utilities-media-queries: (
+$media-queries:(
     sm: "only screen and (max-width: 767px)",
     md: "only screen and (min-width: 768px) and (max-width: 1023px)",
     lg: "only screen and (min-width: 1024px)"
 );
-
-// Sets number of proportional width utilities
-$utilities-sizes-number: 12;

@@ -1,0 +1,45 @@
+// ==========================================================================
+// Setting
+// ==========================================================================
+
+
+// Base settings ( default styles in "base" folder )
+// ==========================================================================
+
+// Scaffolding
+
+$site-width: 1140px;
+$site-color: $color-black;
+$site-bg-color: $color-white;
+$site-font-family: $font-family-sans;
+$site-line-height: $line-height-base;
+$link-color: $color-blue;
+$link-hover-color: $color-blue;
+$border-color-1: $color-gray;
+
+
+// Forms
+
+$control-padding-horizontal: 9px;
+$control-padding-vertical: 7.5px;
+$control-font-size: $font-size-base;
+$control-line-height: 1.2; // don't set in px, em, rem
+$control-border-color: $color-gray;
+$control-color: $color-black;
+$control-invalid-color: $color-red;
+$control-readonly-color: lighten( $control-color, 40% );
+$control-disabled-color: lighten( $control-color, 40% );
+$control-placeholder-color: $color-gray;
+
+
+// Utilities and mixins settings
+// ==========================================================================
+
+// Media queries for mixins and utilities responsive sizes
+
+$utilities-media-queries: $media-queries;
+
+
+// Sets number of proportional width utilities
+
+$utilities-sizes-number: 12;

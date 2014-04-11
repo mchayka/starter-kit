@@ -1,10 +1,12 @@
-/* ==========================================================================
-   Mixin to remove whitespace between `inline-block` child elements
-   ========================================================================== */
+// ==========================================================================
+// Inline-block whitespace removing
+// ==========================================================================
 
-/**
- * Font-family based method
- */
+// set of mixin to remove whitespace between `inline-block` child elements
+// Font-family based method
+
+
+// parent element
 
 @mixin inline-block-wrapper() {
     display: block;
@@ -19,6 +21,9 @@
         }
     }
 }
+
+
+// for inline-block elements
 
 @mixin inline-block-element($font-family: sans-serif) {
     display: inline-block;

@@ -1,5 +1,3 @@
-/* github.com/suitcss */
-
 /* ==========================================================================
    Responsive Display utilities
    ========================================================================== */
@@ -12,9 +10,11 @@ $utilities-media-queries: (
 
 @each $prefix, $media-query in $utilities-media-queries {
     @media #{$media-query} {
+
         /**
          * Completely remove from the flow and screen readers.
          */
+
         .u-#{$prefix}-hidden {
             display: none !important;
             visibility: hidden !important;
@@ -24,6 +24,7 @@ $utilities-media-queries: (
         /**
          * Completely remove from the flow but leave available to screen readers.
          */
+
         .u-#{$prefix}-hiddenVisually {
             position: absolute !important;
             overflow: hidden !important;

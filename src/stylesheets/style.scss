@@ -1,17 +1,38 @@
-// Core variables and mixins
+
+// Variables and mixins
+// ==========================================================================
+
 @import "variables";
 @import "mixins/media-queries";
 @import "mixins/inline-block-hack";
 @import "mixins/ie";
 
-// CSS Base
+
+// Utilities
+// ==========================================================================
+
+@import "utilities/display";
+@import "utilities/layout";
+@import "utilities/display";
+@import "utilities/display-responsive";
+@import "utilities/text";
+@import "utilities/size";
+@import "utilities/size-responsive";
+
+
+// Base styles
+// ==========================================================================
+
 @import "base/normalize";
 @import "base/forms";
 @import "base/scaffolding";
 @import "base/typography";
 @import "base/print";
 
+
 // Components
+// ==========================================================================
+
 @import "components/button-ui";
 @import "components/button-clean";
 @import "components/button-link";
@@ -22,14 +43,8 @@
 @import "components/table";
 @import "components/radio-checkbox";
 
-// Non modular
-@import "partials/browser-warning";
 
-// Utilities
-@import "utilities/display";
-@import "utilities/layout";
-@import "utilities/display";
-@import "utilities/display-responsive";
-@import "utilities/text";
-@import "utilities/size";
-@import "utilities/size-responsive";
+// Partials
+// ==========================================================================
+
+@import "partials/browser-warning";

@@ -1,10 +1,9 @@
-/* ==========================================================================
-   IE Helplers
-   ========================================================================== */
+// ==========================================================================
+// IE Helplers
+// ==========================================================================
 
-/**
- * Opacity IE fallback
- */
+
+// Opacity IE fallback
 
 @mixin opacity($opacity) {
     opacity: $opacity;
@@ -14,9 +13,7 @@
 }
 
 
-/**
- * rgba IE fallback
- */
+// rgba IE fallback
 
 @mixin rgba-bg($color, $opacity: 0.5) {
     $rgba: rgba($color, $opacity);
@@ -30,22 +27,18 @@
 }
 
 
-/**
- * Reset filters for IE
- */
+// Reset filters for IE
 
 @mixin reset-filter() {
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
 
-/*
-   Gradients
-   ========================================================================== */
+// Gradients
+// ==========================================================================
 
-/**
- * Horizontal gradient, from left to right
- */
+
+// Horizontal gradient, from left to right
 
 @mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
     background-image:  unquote("linear-gradient(to right, #{$start-color} #{$start-percent}, #{$end-color} #{$end-percent})");
@@ -54,9 +47,7 @@
 }
 
 
-/**
- * Vertical gradient, from top to bottom
- */
+// Vertical gradient, from top to bottom
 
 @mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
     background-image: unquote("linear-gradient(to bottom, #{$start-color} #{$start-percent}, #{$end-color} #{$end-percent})");
