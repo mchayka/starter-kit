@@ -1,6 +1,6 @@
 # Starter kit
 
-A minimal html/css boilerplate, great starting point to your next web project.
+A minimal html/css boilerplate. Starting point to your next web project.
 
 Based on [Sass](http://sass-lang.com) & automated with [Grunt](http://gruntjs.com).
 
