@@ -10,8 +10,9 @@ $btn-default-background: #079ae8 !default;
 
 
 /**
- * base class for button
- * 1
+ * Core class for button
+ *
+ * 1. Reset unusual Firefox-on-Android default style
  */
 
 .btn {
@@ -27,9 +28,10 @@ $btn-default-background: #079ae8 !default;
     white-space: normal;
     cursor: pointer;
     -webkit-user-drag: none;
-    background-image: none; // Reset unusual Firefox-on-Android default style
+    background-image: none; /* 1 */
     user-select: none;
     -webkit-appearance: none;
+
 
     /**
     * UI states
