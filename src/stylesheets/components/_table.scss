@@ -2,11 +2,17 @@
    Table
    ========================================================================== */
 
+// component default variables
+
 $table-color: #000 !default;
 $table-border-color: #bababa !default;
 $table-background: #fff !default;
 $table-head-background: lighten( #bababa, 15% ) !default;
 
+
+/**
+ * Table core styles
+ */
 
 .table {
     empty-cells: show;

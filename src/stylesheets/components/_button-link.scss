@@ -1,15 +1,23 @@
 /* ==========================================================================
-   Button behaves like link
+   Button link
    ========================================================================== */
+
+// component default variables
 
 $link-color: #079ae8 !default;
 $link-hover-color: inherit !default;
 
+
+/**
+ * Button looks like a anchor
+ *
+ * 1. Prevent IOS forms default styling
+ */
+
 .btnLink {
-    // Prevent IOS forms default styling
-    -webkit-appearance: none;
-    box-shadow: none;
-    -webkit-border-radius: 0;
+    -webkit-appearance: none; /* 1 */
+    box-shadow: none; /* 1 */
+    -webkit-border-radius: 0; /* 1 */
 
     padding: 0;
     border: none;

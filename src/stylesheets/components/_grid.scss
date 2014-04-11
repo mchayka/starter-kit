@@ -2,8 +2,11 @@
    Grid
    ========================================================================== */
 
+// component default variables
+
 $grid-child-font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
 $grid-gutter-default: 20px !default;
+
 
 /**
  * Example HTML:
@@ -20,6 +23,13 @@ $grid-gutter-default: 20px !default;
 /* Grid container
    ========================================================================== */
 
+/**
+ * All content must be contained within child `grid-cell` elements.
+ *
+ * 1. Remove extra space between 'inline-block' child elements
+ * 2. Prevent grid collapse in all major devices
+ */
+
 .grid {
     box-sizing: border-box;
     display: block;
@@ -27,10 +37,10 @@ $grid-gutter-default: 20px !default;
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    letter-spacing: -0.31em; /* remove extra space between 'inline-block' child elements */
+    letter-spacing: -0.31em; /* 1 */
     text-align: left;
     text-rendering: optimizespeed;
-    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* prevent grid collapse in all major devices */
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* 2 */
     list-style: none;
 
     /* Use flexbox when possible to avoid `letter-spacing` side-effects. */
@@ -64,7 +74,8 @@ $grid-gutter-default: 20px !default;
 
 /**
  * Modifiers: grid cell alignment
- * 1 - For browsers with flexbox support
+ *
+ * 1. For browsers with flexbox support
  */
 
 .grid--alignMiddle {
@@ -100,12 +111,16 @@ $grid-gutter-default: 20px !default;
 /**
  * No explicit width by default. Rely on combining `Grid-cell` with a size & offset
  * utility.
+ *
+ * 1. Prevent collapsing when cell is empty
+ * 2. Resets parent properties
+ * 3. Resets the font family
  */
 
 .grid-cell {
     display: inline-block;
     width: 100%;
-    min-height: 1px; /* Prevent collapsing when cell is empty */
+    min-height: 1px; /* 1 */
     margin-left: 0;
     margin-right: 0;
     padding-left: $grid-gutter-default;
@@ -113,9 +128,8 @@ $grid-gutter-default: 20px !default;
     vertical-align: top;
     text-align: left;
 
-    /* Reset parent styles */
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    font-family: $grid-child-font-family; /* Resets the font family */
+    text-rendering: auto; /* 2 */
+    letter-spacing: normal; /* 2 */
+    word-spacing: normal; /* 2 */
+    font-family: $grid-child-font-family; /* 3 */
 }
