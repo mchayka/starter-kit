@@ -12,7 +12,7 @@ It provides you:
 * Set of helper classes (utilities): clearfix, sizes, display;
 * Common useful & independent css patterns ( components ) which you can use optionally in your project;
 * Automated workflow with Grunt. Contains useful tasks like watching, autoprefixer, validation, img compression;
-* Editorconfig file to keep consistent indentions;
+* [Editorconfig](http://editorconfig.org) file to keep consistent indentions;
 
 ## Requirement
 
