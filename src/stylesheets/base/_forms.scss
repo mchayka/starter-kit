@@ -2,18 +2,20 @@
    Forms base styles
    ========================================================================== */
 
-/*
-   NORMALIZE Non control form elements
+/* NORMALIZE Non control form elements
    ========================================================================== */
 
 label {
     display: block;
 }
 
+/**
+ * 1. Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
+ *    so we reset that to ensure it behaves more like a standard block element.
+ */
+
 fieldset {
-    // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
-    // so we reset that to ensure it behaves more like a standard block element.
-    min-width: 0;
+    min-width: 0; /* 1 */
     margin: 0 0 $line-height-base-px/2;
     border-color: $color-gray;
 }
@@ -26,37 +28,53 @@ legend {
 }
 
 
-/*
-   NORMALIZE Control form elements
+/* NORMALIZE Control form elements
    ========================================================================== */
 
-// Override content-box in Normalize
+/**
+ * Override content-box in Normalize
+ */
+
 input[type="search"] {
     box-sizing: border-box;
 }
 
-// Set the height of file controls to match text inputs
+/**
+ * Set the height of file controls to match text inputs
+ */
+
 input[type="file"] {
     display: block;
 }
 
-// Make range inputs behave like textual form controls
+/**
+ * Make range inputs behave like textual form controls
+ */
+
 input[type="range"] {
     display: block;
     width: 100%;
 }
 
-// Make multiple select elements height not fixed
+/**
+ * Make multiple select elements height not fixed
+ */
+
 select[multiple],
 select[size] {
     height: auto;
 }
 
-// Position radios and checkboxes better
+/**
+ * Position radios and checkboxes better
+ *
+ * 1. IE8-9 hack
+ */
+
 input[type="radio"],
 input[type="checkbox"] {
     margin: 4px 0 0;
-    margin-top: 1px \9; /* IE8-9 */
+    margin-top: 1px \9; /* 1 */
     line-height: normal;
 }
 
@@ -65,11 +83,13 @@ textarea {
 }
 
 
-/*
-   Common styles for control form elements
+/* Common styles for control form elements
    ========================================================================== */
 
-// Prevent IOS forms default styling
+/**
+ * Prevent IOS forms default styling
+ */
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type="text"],
     input[type="password"],
@@ -117,7 +137,7 @@ textarea {
     border: 1px solid $control-border-color;
     color: $control-color;
     background-color: $color-white;
-    background-image: none; // Reset Firefox-on-Android default style
+    background-image: none; /* Reset Firefox-on-Android default style */
     transition: 0.3s linear border;
 
     &:focus {
@@ -128,16 +148,14 @@ textarea {
 
 
 /**
- * States
+ * Ui States
  */
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-    // Default
-    outline: thin dotted $control-border-color;
-    // Webkit
-    outline: 5px auto -webkit-focus-ring-color;
+    outline: thin dotted $control-border-color; /* Default */
+    outline: 5px auto -webkit-focus-ring-color; /*  Webkit */
     outline-offset: -2px;
 
     &:invalid:focus {

@@ -8,7 +8,6 @@ $btn-font-size: 16px !default;
 $btn-default-color: #fff !default;
 $btn-default-background: #079ae8 !default;
 
-
 /**
  * Core class for button
  *
@@ -31,7 +30,6 @@ $btn-default-background: #079ae8 !default;
     background-image: none; /* 1 */
     user-select: none;
     -webkit-appearance: none;
-
 
     /**
     * UI states
@@ -59,7 +57,6 @@ $btn-default-background: #079ae8 !default;
         box-shadow: none;
     }
 }
-
 
 /**
  * Modifiers: default styles

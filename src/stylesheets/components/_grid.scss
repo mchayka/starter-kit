@@ -7,7 +7,6 @@
 $grid-child-font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
 $grid-gutter-default: 20px !default;
 
-
 /**
  * Example HTML:
  *
@@ -43,7 +42,10 @@ $grid-gutter-default: 20px !default;
     font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* 2 */
     list-style: none;
 
-    /* Use flexbox when possible to avoid `letter-spacing` side-effects. */
+    /**
+     * Use flexbox when possible to avoid `letter-spacing` side-effects.
+     */
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -52,12 +54,14 @@ $grid-gutter-default: 20px !default;
     direction: ltr;
 }
 
-/* Opera hack for parent to prevent inline-block extra space*/
+/**
+ * Opera hack for parent to prevent inline-block extra space
+ */
+
 .opera-only :-o-prefocus,
 .grid {
     word-spacing: -0.43em;
 }
-
 
 /**
  * Modifiers: No gutter
@@ -70,7 +74,6 @@ $grid-gutter-default: 20px !default;
         padding-left: 0;
     }
 }
-
 
 /**
  * Modifiers: grid cell alignment
@@ -103,7 +106,6 @@ $grid-gutter-default: 20px !default;
     justify-content: flex-end; /* 1 */
     text-align: right;
 }
-
 
 /* Grid cell
    ========================================================================== */

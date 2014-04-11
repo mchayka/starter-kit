@@ -20,7 +20,6 @@ $utilities-media-queries: (
             visibility: hidden !important;
         }
 
-
         /**
          * Completely remove from the flow but leave available to screen readers.
          */
@@ -34,7 +33,6 @@ $utilities-media-queries: (
             border: 0 !important;
             clip: rect(1px, 1px, 1px, 1px) !important;
         }
-
 
         /**
          * Control visibility without affecting flow.

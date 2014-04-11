@@ -9,7 +9,6 @@ $table-border-color: #bababa !default;
 $table-background: #fff !default;
 $table-head-background: lighten( #bababa, 15% ) !default;
 
-
 /**
  * Table core styles
  */
@@ -49,7 +48,6 @@ $table-head-background: lighten( #bababa, 15% ) !default;
         background-color: $table-background;
     }
 }
-
 
 /**
  * Modifier: Vertical bordered table

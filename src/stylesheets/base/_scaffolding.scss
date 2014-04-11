@@ -2,8 +2,10 @@
    Scaffolding
    ========================================================================== */
 
+/**
+ * Reset the box-sizing
+ */
 
-// Reset the box-sizing
 * {
     box-sizing: border-box;
 
@@ -13,12 +15,15 @@
     }
 }
 
-// Body reset
+/**
+ * Body reset
+ *
+ * 1. Prevent grey overlay on touchstart in mobile Safari
+ */
 
 html {
     font-size: 62.5%;
-    // Prevent grey overlay on touchstart in mobile Safari
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* 1 */
 }
 
 body {
@@ -29,8 +34,9 @@ body {
     background-color: $site-bg-color;
 }
 
-
-// Links
+/**
+ * Links
+ */
 
 a {
     color: $link-color;
@@ -43,15 +49,17 @@ a {
     }
 }
 
-
-// Table
+/**
+ * Table
+ */
 
 table {
     max-width: 100%;
 }
 
-
-// Horizontal rule
+/**
+ * Horizontal rule
+ */
 
 hr {
     margin-top: 20px;
@@ -60,13 +68,17 @@ hr {
     border-top: 1px solid $border-color-1;
 }
 
-// Figure
+/**
+ * Figure
+ */
 
 figure {
     margin: 0;
 }
 
-// Images
+/**
+ * Images
+ */
 
 img {
     vertical-align: middle;

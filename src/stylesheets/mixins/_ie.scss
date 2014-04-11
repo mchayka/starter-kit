@@ -2,7 +2,6 @@
 // IE Helplers
 // ==========================================================================
 
-
 // Opacity IE fallback
 
 @mixin opacity($opacity) {
@@ -11,7 +10,6 @@
     $opacity-ie: ($opacity * 100);
     filter: "alpha(opacity=#{$opacity-ie})";
 }
-
 
 // rgba IE fallback
 
@@ -26,17 +24,14 @@
     zoom: 1;
 }
 
-
 // Reset filters for IE
 
 @mixin reset-filter() {
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
-
 // Gradients
 // ==========================================================================
-
 
 // Horizontal gradient, from left to right
 
@@ -45,7 +40,6 @@
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
 }
-
 
 // Vertical gradient, from top to bottom
 
