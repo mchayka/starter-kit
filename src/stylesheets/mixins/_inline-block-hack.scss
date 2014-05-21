@@ -5,13 +5,16 @@
 // set of mixin to remove whitespace between `inline-block` child elements
 // Font-family based method
 
+$mixin-inline-block-hack: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
+
 // parent element
+// 1. prevent grid collapse in all major devices
 
 @mixin inline-block-wrapper() {
     display: block;
     letter-spacing: -0.31em;
     text-rendering: optimizespeed;
-    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* prevent grid collapse in all major devices */
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; // 1 //
 
     @at-root {
         .opera-only :-o-prefocus,
@@ -22,12 +25,13 @@
 }
 
 // for inline-block elements
+// 1. Resets the font family
 
-@mixin inline-block-element($font-family: sans-serif) {
+@mixin inline-block-element($font-family: $mixin-inline-block-hack) {
     display: inline-block;
     vertical-align: middle;
     text-rendering: auto;
     letter-spacing: normal;
     word-spacing: normal;
-    font-family: $font-family; /* Resets the font family */
+    font-family: $font-family; // 1 //
 }

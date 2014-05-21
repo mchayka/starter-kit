@@ -2,7 +2,6 @@
 // Setting
 // ==========================================================================
 
-
 // Base settings ( default styles in "base" folder )
 // ==========================================================================
 
@@ -17,7 +16,6 @@ $link-color: $color-blue;
 $link-hover-color: $color-blue;
 $border-color-1: $color-gray;
 
-
 // Forms
 
 $control-padding-horizontal: 9px;
@@ -31,7 +29,6 @@ $control-readonly-color: lighten( $control-color, 40% );
 $control-disabled-color: lighten( $control-color, 40% );
 $control-placeholder-color: $color-gray;
 
-
 // Utilities and mixins settings
 // ==========================================================================
 
@@ -39,7 +36,10 @@ $control-placeholder-color: $color-gray;
 
 $utilities-media-queries: $media-queries;
 
-
 // Sets number of proportional width utilities
 
 $utilities-sizes-number: 12;
+
+// Default font-family value for inline-block hack mixin
+
+$mixin-inline-block-hack: $font-family-sans;
