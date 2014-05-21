@@ -5,7 +5,7 @@
 // set of mixin to remove whitespace between `inline-block` child elements
 // Font-family based method
 
-$mixin-inline-block-hack: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
+$mixin-inline-block-hack-font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
 
 // parent element
 // 1. prevent grid collapse in all major devices
@@ -27,7 +27,7 @@ $mixin-inline-block-hack: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", s
 // for inline-block elements
 // 1. Resets the font family
 
-@mixin inline-block-element($font-family: $mixin-inline-block-hack) {
+@mixin inline-block-element($font-family: $mixin-inline-block-hack-font) {
     display: inline-block;
     vertical-align: middle;
     text-rendering: auto;
