@@ -21,6 +21,16 @@
 }
 
 /**
+ * Hide text
+ */
+
+.u-textHidden {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/**
  * Text truncation
  *
  * Prevent text from wrapping onto multiple lines, and truncate with an
