@@ -156,7 +156,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('html', 'Compile html', ['includereplace']);
 	grunt.registerTask('css', 'Compile sass', ['sass:expanded']);
 	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
-	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass:compressed', 'img']);
+	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass:compressed', 'autoprefixer', 'img']);
 	grunt.registerTask('prefix', 'Add vendor prefixes to css', ['css', 'autoprefixer']);
 
 };
