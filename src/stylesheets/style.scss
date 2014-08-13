@@ -1,13 +1,11 @@
-
 // Variables and mixins
 // ==========================================================================
 
-@import "variables";
-@import "settings";
+@import "vars";
+@import "vars-map";
 @import "mixins/media-queries";
 @import "mixins/inline-block-hack";
 @import "mixins/ie";
-
 
 // Utilities
 // ==========================================================================
@@ -20,7 +18,6 @@
 @import "utilities/size";
 @import "utilities/size-responsive";
 
-
 // Base styles
 // ==========================================================================
 
@@ -29,7 +26,6 @@
 @import "base/scaffolding";
 @import "base/typography";
 @import "base/print";
-
 
 // Components
 // ==========================================================================
@@ -43,7 +39,6 @@
 @import "components/list-unstyled";
 @import "components/table";
 @import "components/radio-checkbox";
-
 
 // Partials
 // ==========================================================================

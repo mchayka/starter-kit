@@ -1,10 +1,8 @@
 // ==========================================================================
-// Common variables
+// Variables
 // ==========================================================================
 
-// DO NOT use these variables directly in components.
-// Assign them to component specific variables in settings
-
+// Define variables here. Apply it to components/site in vars-map.scss/
 
 // Colors
 // ==========================================================================
@@ -16,28 +14,20 @@ $color-blue: #079ae8;
 $color-green: #5fc5ac;
 $color-red: #af4435;
 
-
-// Typography
+// Fonts
 // ==========================================================================
 
 $font-family-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
 $font-size-base: 16px;
-$font-size-h1: 30px;
-$font-size-h2: 25px;
-$font-size-h3: 20px;
-$font-size-h4: 18px;
-$font-size-h5: 16px;
-$font-size-h6: 14px;
 $line-height-base: 1.5;
 $line-height-base-px: $line-height-base * $font-size-base;
 
-
-// Media queries
+// Breakpoints
 // ==========================================================================
 
-$media-queries:(
+$breakpoints:(
     sm: "only screen and (max-width: 767px)",
     md: "only screen and (min-width: 768px) and (max-width: 1023px)",
     lg: "only screen and (min-width: 1024px)"
