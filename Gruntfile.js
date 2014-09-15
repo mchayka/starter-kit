@@ -28,6 +28,9 @@ module.exports = function (grunt) {
 		clean: {
 			all: {
 				src: [ 'build/**/*' ]
+			},
+			images: {
+				src: [ 'build/images/**/*' ]
 			}
 		},
 
