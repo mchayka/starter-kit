@@ -16,13 +16,13 @@ label {
 
 fieldset {
     min-width: 0; /* 1 */
-    margin: 0 0 $line-height-base-px/2;
+    margin: 0 0 1em;
     border-color: $control-border-color;
 }
 
 legend {
     display: block;
-    margin: 0 0 $line-height-base-px/2;
+    margin: 0 0 1em;
     font-weight: bold;
     line-height: inherit;
 }
@@ -133,7 +133,7 @@ textarea {
     font-size: $control-font-size;
     border: 1px solid $control-border-color;
     color: $control-color;
-    background-color: $color-white;
+    background-color: $control-bg;
     background-image: none; /* Reset Firefox-on-Android default style */
     transition: 0.3s linear border;
 

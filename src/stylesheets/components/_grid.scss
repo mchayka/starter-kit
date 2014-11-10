@@ -1,137 +1,114 @@
-/* ==========================================================================
-   Grid
-   ========================================================================== */
-
-// component default variables
-
-$grid-child-font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif !default;
-$grid-gutter-default: 20px !default;
-
 /**
- * Example HTML:
+ * Core grid component
  *
- * <div class="grid [grid--gutterNone|grid--gutterSm] [grid--alignMiddle|grid--alignBottom]">
- *     <div class="grid-cell u-size2"></div>
- *     <div class="grid-cell u-size4"></div>
- *     <div class="grid-cell u-size2"></div>
- *     <div class="grid-cell u-size4"></div>
- * </div>
+ * DO NOT apply dimension or offset utilities to the `grid` element. All cell
+ * widths and offsets should be applied to child grid cells.
  */
 
+$grid-gutter-size: 20px;
+$grid-font-size: 1rem;
 
-/* Grid container
+/* grid container
    ========================================================================== */
 
 /**
  * All content must be contained within child `grid-cell` elements.
  *
- * 1. Remove extra space between 'inline-block' child elements
- * 2. Prevent grid collapse in all major devices
+ * 1. Account for browser defaults of elements that might be the root node of
+ *    the component.
+ * 2. Remove inter-cell whitespace that appears between `inline-block` child
+ *    elements.
+ * 3. Ensure consistent default alignment.
  */
 
 .grid {
-    box-sizing: border-box;
-    display: block;
-    margin-left: -$grid-gutter-default;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-    letter-spacing: -0.31em; /* 1 */
-    text-align: left;
-    text-rendering: optimizespeed;
-    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* 2 */
-    list-style: none;
-
-    /**
-     * Use flexbox when possible to avoid `letter-spacing` side-effects.
-     */
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flext-start;
-    direction: ltr;
+  display: block; /* 1 */
+  font-size: 0; /* 2 */
+  margin: 0; /* 1 */
+  padding: 0; /* 1 */
+  text-align: left; /* 3 */
 }
 
 /**
- * Opera hack for parent to prevent inline-block extra space
+ * Modifier: center align all grid cells
  */
-
-.opera-only :-o-prefocus,
-.grid {
-    word-spacing: -0.43em;
-}
-
-/**
- * Modifiers: No gutter
- */
-
-.grid--gutterNone {
-    margin-left: 0;
-
-    > .grid-cell {
-        padding-left: 0;
-    }
-}
-
-/**
- * Modifiers: grid cell alignment
- *
- * 1. For browsers with flexbox support
- */
-
-.grid--alignMiddle {
-    align-items: center; /* 1 */
-
-    > .grid-cell {
-        vertical-align: middle;
-    }
-}
-
-.grid--alignBottom {
-    align-items: flext-end; /* 1 */
-
-    > .grid-cell {
-        vertical-align: bottom;
-    }
-}
 
 .grid--alignCenter {
-    justify-content: center; /* 1 */
-    text-align: center;
+  text-align: center;
 }
+
+/**
+ * Modifier: right align all grid cells
+ */
 
 .grid--alignRight {
-    justify-content: flex-end; /* 1 */
-    text-align: right;
+  text-align: right;
 }
 
-/* Grid cell
+/**
+ * Modifier: middle-align grid cells
+ */
+
+.grid--alignMiddle > .grid-cell {
+  vertical-align: middle;
+}
+
+/**
+ * Modifier: bottom-align grid cells
+ */
+
+.grid--alignBottom > .grid-cell {
+  vertical-align: bottom;
+}
+
+/**
+ * Modifier: gutters
+ *
+ * NOTE: this can trigger a horizontal scrollbar if the component is as wide as
+ * the viewport. Use padding on a container, or `overflow-x:hidden` to protect
+ * against it.
+ */
+
+.grid--withGutter {
+  margin: 0 0 0 (-1 * $grid-gutter-size);
+}
+
+.grid--withGutter > .grid-cell {
+  padding: 0 0 0 $grid-gutter-size;
+}
+
+/* grid cell
    ========================================================================== */
 
 /**
- * No explicit width by default. Rely on combining `Grid-cell` with a size & offset
- * utility.
+ * No explicit width by default. Rely on combining `grid-cell` with a dimension
+ * utility or a component class that extends 'grid'.
  *
- * 1. Prevent collapsing when cell is empty
- * 2. Resets parent properties
- * 3. Resets the font family
+ * 1. Fundamentals of the non-float grid layout.
+ * 2. Reset font size change made in `grid`.
+ * 3. Keeps content correctly aligned with the grid direction.
+ * 4. Controls vertical positioning of units.
+ * 5. Make cells full-width by default.
  */
 
 .grid-cell {
-    display: inline-block;
-    width: 100%;
-    min-height: 1px; /* 1 */
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: $grid-gutter-default;
-    padding-right: 0;
-    vertical-align: top;
-    text-align: left;
+  box-sizing: border-box;
+  display: inline-block; /* 1 */
+  font-size: $grid-font-size; /* 2 */
+  margin: 0;
+  padding: 0;
+  text-align: left; /* 3 */
+  vertical-align: top; /* 4 */
+  width: 100%; /* 5 */
+}
 
-    text-rendering: auto; /* 2 */
-    letter-spacing: normal; /* 2 */
-    word-spacing: normal; /* 2 */
-    font-family: $grid-child-font-family; /* 3 */
+/**
+ * Modifier: horizontally center one unit
+ * Set a specific unit to be horizontally centered. Doesn't affect
+ * any other units. Can still contain a child `grid` object.
+ */
+
+.grid-cell--center {
+  display: block;
+  margin: 0 auto;
 }
