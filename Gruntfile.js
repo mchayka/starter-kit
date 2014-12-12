@@ -86,14 +86,14 @@ module.exports = function (grunt) {
 		},
 
 		// sync changes with browser
-		browser_sync: {
+		browserSync: {
 			dev: {
 				bsFiles: {
 					src : [
-						'build/stylesheets/*.css',
-						'build/**/*.html',
-						'build/images/**/*.{png,jpg,gif,svg,ico}',
-						'build/javascript/**/*.js'
+					'build/stylesheets/*.css',
+					'build/**/*.html',
+					'build/images/**/*.{png,jpg,gif,svg,ico}',
+					'build/javascript/**/*.js'
 					]
 				},
 				options: {
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
 
 	// Tasks
 	grunt.registerTask('default', 'Watch files', ['watch']);
-	grunt.registerTask('start', 'Starts local server and watch files', ['browser_sync', 'default']);
+	grunt.registerTask('dev', 'Starts local server and watch files', ['browserSync', 'default']);
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
 	grunt.registerTask('html', 'Compile html', ['includereplace']);
 	grunt.registerTask('css', 'Compile sass', ['sass:expanded']);
