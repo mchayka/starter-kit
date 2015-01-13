@@ -32,7 +32,7 @@ $utilities-sizes-number: 12 !default;
 @for $i from 1 through $utilities-sizes-number {
     @for $j from 1 through $i {
         @if $j < $i {
-            .u-before#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            .u-before#{$j}of#{$i} { margin-left: $j/$i * 100% !important; }
         }
     }
 }
@@ -43,7 +43,7 @@ $utilities-sizes-number: 12 !default;
 @for $i from 1 through $utilities-sizes-number {
     @for $j from 1 through $i {
         @if $j < $i {
-            .u-after#{$j}of#{$i} { width: $j/$i * 100% !important; }
+            .u-after#{$j}of#{$i} { margin-right: $j/$i * 100% !important; }
         }
     }
 }
