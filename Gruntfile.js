@@ -89,6 +89,8 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// Static site generator using the Handlebars template engine
+		//https://github.com/assemble
 		assemble: {
 			options: {
 				flatten: true,
