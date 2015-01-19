@@ -35,12 +35,7 @@ module.exports = function (grunt) {
 		},
 
 		clean: {
-			all: {
-				src: [ 'build/**/*' ]
-			},
-			images: {
-				src: [ 'build/images/**/*' ]
-			}
+			src: [ 'build/**/*' ]
 		},
 
 		sass: {
@@ -180,7 +175,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
 	grunt.registerTask('html', 'Compile html', ['includereplace']);
 	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
-	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy', 'includereplace', 'sass:build', 'autoprefixer', 'img']);
+	grunt.registerTask('build', 'Prepare build files', ['clean', 'copy', 'includereplace', 'sass:build', 'autoprefixer', 'img']);
 	grunt.registerTask('prefix', 'Add vendor prefixes to css', ['css', 'autoprefixer']);
 
 };
