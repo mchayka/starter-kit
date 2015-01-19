@@ -1,8 +1,24 @@
 module.exports = function (grunt) {
+
+	// load all grunt tasks matching the `grunt-*` pattern
+	// https://github.com/sindresorhus/load-grunt-tasks
+	require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		// Copy
+		// == Grunt Dev Update
+		// https://npmjs.org/package/grunt-dev-update
+		// http://pgilad.github.io/grunt-dev-update
+		devUpdate: {
+			main: {
+				options: {
+					reportUpdated: false, // Report updated dependencies: 'false' | 'true'
+					updateType   : "force" // 'force'|'report'|'prompt'
+				}
+			}
+		},
+
 		copy: {
 			all: {
 				cwd: 'src',
@@ -24,7 +40,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Clean
 		clean: {
 			all: {
 				src: [ 'build/**/*' ]
@@ -34,7 +49,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Sass
 		sass: {
 			expanded: {
 				options: {
@@ -65,7 +79,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Watch files changes
 		watch: {
 			sass: {
 				files: 'src/stylesheets/**/*.scss',
@@ -109,12 +122,12 @@ module.exports = function (grunt) {
 		imagemin: {
 			all: {
 				files: [
-					{
-						expand: true,
-						cwd: 'src/images/',
-						src: ['**/*.{png,jpg,gif}'],
-						dest: 'build/images/'
-					}
+				{
+					expand: true,
+					cwd: 'src/images/',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'build/images/'
+				}
 				]
 			}
 		},
@@ -131,28 +144,28 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// css autoprefixer
+		// https://github.com/nDmitry/grunt-autoprefixer
 		autoprefixer: {
-			options: {},
+			options: {
+				browsers: [
+				"Android 2.3",
+				"Android >= 4",
+				"Chrome >= 20",
+				"Firefox >= 24",
+				"Explorer >= 8",
+				"iOS >= 6",
+				"Opera >= 12",
+				"Safari >= 6"
+				]
+			},
 			css: {
 				src: 'build/stylesheets/**/*.css'
 			}
-		}
+		},
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-include-replace');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-notify');
-	grunt.loadNpmTasks('grunt-html-validation');
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-browser-sync');
-
-	// Tasks
+	grunt.registerTask('update', ['devUpdate']);
 	grunt.registerTask('default', 'Watch files', ['watch']);
 	grunt.registerTask('dev', 'Starts local server and watch files', ['browserSync', 'default']);
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
