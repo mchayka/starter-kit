@@ -13,8 +13,8 @@ module.exports = function (grunt) {
 		devUpdate: {
 			main: {
 				options: {
-					reportUpdated: false, // Report updated dependencies: 'false' | 'true'
-					updateType   : "force" // 'force'|'report'|'prompt'
+					reportUpdated: true, // Report updated dependencies: 'false' | 'true'
+					updateType   : "prompt" // 'force'|'report'|'prompt'
 				}
 			}
 		},
@@ -69,16 +69,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// html includes
-		includereplace: {
-			build: {
-				expand: true,
-				cwd: 'src',
-				src: '*.html',
-				dest: 'build/'
-			}
-		},
-
 		watch: {
 			sass: {
 				files: 'src/stylesheets/**/*.scss',
@@ -98,7 +88,19 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// html includes
+		// https://github.com/alanshaw/grunt-include-replace
+		includereplace: {
+			build: {
+				expand: true,
+				cwd: 'src',
+				src: '*.html',
+				dest: 'build/'
+			}
+		},
+
 		// sync changes with browser
+		// http://www.browsersync.io/docs/grunt/
 		browserSync: {
 			dev: {
 				bsFiles: {
@@ -118,21 +120,22 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Image optimization
+		// https://github.com/gruntjs/grunt-contrib-imagemin
 		imagemin: {
 			all: {
 				files: [
-				{
-					expand: true,
-					cwd: 'src/images/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'build/images/'
-				}
+					{
+						expand: true,
+						cwd: 'src/images/',
+						src: ['**/*.{png,jpg,gif}'],
+						dest: 'build/images/'
+					}
 				]
 			}
 		},
 
 		// HTML validation
+		// https://www.npmjs.com/package/grunt-html-validation
 		validation: {
 			options: {
 				reset: grunt.option('reset') || false,
