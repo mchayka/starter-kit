@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 		copy: {
 			javascript: {
 				cwd: 'src',
-				src: [ 'javascript/**/*' ],
+				src: [ '**/*.js' ],
 				dest: 'build',
 				expand: true
 			},
@@ -72,20 +72,35 @@ module.exports = function (grunt) {
 
 		watch: {
 			sass: {
-				files: 'src/stylesheets/**/*.scss',
+				files: 'src/**/*.scss',
 				tasks: [ 'sass:dev', 'autoprefixer' ]
 			},
 			html: {
-				files: 'src/**/*.html',
-				tasks: [ 'includereplace' ]
+				files: 'src/**/*.hbs',
+				tasks: [ 'assemble' ]
 			},
 			img: {
-				files: 'src/images/**/*.{png,jpg,gif,svg,ico}',
+				files: 'src/**/*.{png,jpg,gif,svg,ico}',
 				tasks: [ 'copy:images' ]
 			},
 			javascript: {
-				files: 'src/javascript/**/*.js',
+				files: 'src/**/*.js',
 				tasks: [ 'copy:javascript' ]
+			}
+		},
+
+		assemble: {
+			options: {
+				flatten: true,
+				layout: 'layout.hbs',
+				layoutdir: 'src/templates/layouts',
+				assets: 'build',
+				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs']
+			},
+			demo: {
+				files: {
+					'build/': ['src/templates/pages/*.hbs']
+				}
 			}
 		},
 
@@ -106,10 +121,10 @@ module.exports = function (grunt) {
 			dev: {
 				bsFiles: {
 					src : [
-					'build/stylesheets/*.css',
+					'build/**/*.css',
 					'build/**/*.html',
-					'build/images/**/*.{png,jpg,gif,svg,ico}',
-					'build/javascript/**/*.js'
+					'build/**/*.{png,jpg,gif,svg,ico}',
+					'build/**/*.js'
 					]
 				},
 				options: {
@@ -169,13 +184,10 @@ module.exports = function (grunt) {
 
 	});
 
+	grunt.loadNpmTasks('assemble');
+
 	grunt.registerTask('update', ['devUpdate']);
-	grunt.registerTask('default', 'Watch files', ['watch']);
-	grunt.registerTask('dev', 'Starts local server and watch files', ['browserSync', 'default']);
-	grunt.registerTask('validate', 'Validate html files', ['validation']);
-	grunt.registerTask('html', 'Compile html', ['includereplace']);
-	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
-	grunt.registerTask('build', 'Prepare build files', ['clean', 'copy', 'includereplace', 'sass:build', 'autoprefixer', 'img']);
-	grunt.registerTask('prefix', 'Add vendor prefixes to css', ['css', 'autoprefixer']);
+	grunt.registerTask('default', 'Starts local server and watch files', ['browserSync', 'watch']);
+	grunt.registerTask('build', 'Prepare build files', ['clean', 'copy', 'assemble', 'sass:build', 'autoprefixer', 'imagemin']);
 
 };
