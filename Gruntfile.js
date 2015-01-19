@@ -20,12 +20,6 @@ module.exports = function (grunt) {
 		},
 
 		copy: {
-			all: {
-				cwd: 'src',
-				src: [ '**/*.{png,jpg,gif,svg,ico}', 'javascript/**/*' ],
-				dest: 'build',
-				expand: true
-			},
 			javascript: {
 				cwd: 'src',
 				src: [ 'javascript/**/*' ],
@@ -186,7 +180,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
 	grunt.registerTask('html', 'Compile html', ['includereplace']);
 	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
-	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass:build', 'autoprefixer', 'img']);
+	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy', 'includereplace', 'sass:build', 'autoprefixer', 'img']);
 	grunt.registerTask('prefix', 'Add vendor prefixes to css', ['css', 'autoprefixer']);
 
 };
