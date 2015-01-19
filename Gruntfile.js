@@ -50,21 +50,33 @@ module.exports = function (grunt) {
 		},
 
 		sass: {
-			expanded: {
-				options: {
-					style: 'expanded',
+			dev: {
+				files : [
+					{
+						src : ['**/*.scss', '!**/_*.scss'],
+						cwd : 'src/stylesheets',
+						dest : 'build/stylesheets',
+						ext : '.css',
+						expand : true
+					}
+				],
+				options : {
+					style : 'expanded',
 					sourcemap: true
-				},
-				files: {
-					'build/stylesheets/style.css': 'src/stylesheets/style.scss'
 				}
 			},
-			compressed: {
-				options: {
-					style: 'compressed'
-				},
-				files: {
-					'build/stylesheets/style.css': 'src/stylesheets/style.scss'
+			build: {
+				files : [
+					{
+						src : ['**/*.scss', '!**/_*.scss'],
+						cwd : 'src/stylesheets',
+						dest : 'build/stylesheets',
+						ext : '.css',
+						expand : true
+					}
+				],
+				options : {
+					style : 'compressed'
 				}
 			}
 		},
@@ -72,7 +84,7 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 				files: 'src/stylesheets/**/*.scss',
-				tasks: [ 'sass:expanded', 'autoprefixer' ]
+				tasks: [ 'sass:dev', 'autoprefixer' ]
 			},
 			html: {
 				files: 'src/**/*.html',
@@ -173,9 +185,8 @@ module.exports = function (grunt) {
 	grunt.registerTask('dev', 'Starts local server and watch files', ['browserSync', 'default']);
 	grunt.registerTask('validate', 'Validate html files', ['validation']);
 	grunt.registerTask('html', 'Compile html', ['includereplace']);
-	grunt.registerTask('css', 'Compile sass', ['sass:expanded']);
 	grunt.registerTask('img', 'Optimize image files', ['imagemin']);
-	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass:compressed', 'autoprefixer', 'img']);
+	grunt.registerTask('build', 'Prepare build files', ['clean:all', 'copy:all', 'includereplace', 'sass:build', 'autoprefixer', 'img']);
 	grunt.registerTask('prefix', 'Add vendor prefixes to css', ['css', 'autoprefixer']);
 
 };
