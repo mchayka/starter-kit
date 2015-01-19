@@ -1,6 +1,6 @@
 {
-  "name": "D-theme",
-  "description": "ThemeForest theme",
+  "name": "starter-kit",
+  "description": "Starting plate for static site",
   "version": "1.0.0",
   "devDependencies": {
     "assemble": "^0.4.42",
