@@ -106,28 +106,18 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// html includes
-		// https://github.com/alanshaw/grunt-include-replace
-		includereplace: {
-			build: {
-				expand: true,
-				cwd: 'src',
-				src: '*.html',
-				dest: 'build/'
-			}
-		},
-
 		// sync changes with browser
 		// http://www.browsersync.io/docs/grunt/
 		browserSync: {
 			dev: {
 				bsFiles: {
 					src : [
-					'build/**/*.css',
-					'build/**/*.html',
-					'build/**/*.{png,jpg,gif,svg,ico}',
-					'build/**/*.js'
-					]
+					'**/*.css',
+					'**/*.html',
+					'**/*.{png,jpg,gif,svg,ico}',
+					'**/*.js'
+					],
+					cwd : 'build'
 				},
 				options: {
 					watchTask: true,
