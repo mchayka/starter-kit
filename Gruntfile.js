@@ -175,7 +175,7 @@ module.exports = function (grunt) {
 			css: {
 				src: '<%= site.destination %>/stylesheets/**/*.css'
 			}
-		},
+		}
 
 	});
 
