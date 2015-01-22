@@ -1,6 +1,6 @@
 {
-  "name": "starter-kit",
-  "description": "Starting plate for static site",
+  "name": "Starter kit",
+  "description": "A minimal html/css boilerplate. Starting point to your next web project.",
   "version": "1.0.0",
   "devDependencies": {
     "assemble": "^0.4.42",

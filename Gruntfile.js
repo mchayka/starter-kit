@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		site: grunt.file.readYAML('_config.yml'),
 
 		// == Grunt Dev Update
 		// https://npmjs.org/package/grunt-dev-update
@@ -21,21 +22,21 @@ module.exports = function (grunt) {
 
 		copy: {
 			javascript: {
-				cwd: 'src',
+				cwd: '<%= site.source %>',
 				src: [ '**/*.js' ],
-				dest: 'build',
+				dest: '<%= site.destination %>',
 				expand: true
 			},
 			images: {
-				cwd: 'src',
+				cwd: '<%= site.source %>',
 				src: [ '**/*.{png,jpg,gif,svg,ico}' ],
-				dest: 'build',
+				dest: '<%= site.destination %>',
 				expand: true
 			}
 		},
 
 		clean: {
-			src: [ 'build/**/*' ]
+			src: [ '<%= site.destination %>/**/*' ]
 		},
 
 		sass: {
@@ -43,8 +44,8 @@ module.exports = function (grunt) {
 				files : [
 					{
 						src : ['**/*.scss', '!**/_*.scss'],
-						cwd : 'src/stylesheets',
-						dest : 'build/stylesheets',
+						cwd : '<%= site.source %>/stylesheets',
+						dest : '<%= site.destination %>/stylesheets',
 						ext : '.css',
 						expand : true
 					}
@@ -58,8 +59,8 @@ module.exports = function (grunt) {
 				files : [
 					{
 						src : ['**/*.scss', '!**/_*.scss'],
-						cwd : 'src/stylesheets',
-						dest : 'build/stylesheets',
+						cwd : '<%= site.source %>/stylesheets',
+						dest : '<%= site.destination %>/stylesheets',
 						ext : '.css',
 						expand : true
 					}
@@ -72,19 +73,19 @@ module.exports = function (grunt) {
 
 		watch: {
 			sass: {
-				files: 'src/**/*.scss',
+				files: '<%= site.source %>/**/*.scss',
 				tasks: [ 'sass:dev', 'autoprefixer' ]
 			},
 			html: {
-				files: 'src/**/*.hbs',
+				files: '<%= site.source %>/**/*.hbs',
 				tasks: [ 'assemble' ]
 			},
 			img: {
-				files: 'src/**/*.{png,jpg,gif,svg,ico}',
+				files: '<%= site.source %>/**/*.{png,jpg,gif,svg,ico}',
 				tasks: [ 'copy:images' ]
 			},
 			javascript: {
-				files: 'src/**/*.js',
+				files: '<%= site.source %>/**/*.js',
 				tasks: [ 'copy:javascript' ]
 			}
 		},
@@ -93,16 +94,18 @@ module.exports = function (grunt) {
 		//https://github.com/assemble
 		assemble: {
 			options: {
-				flatten: true,
-				layout: 'layout.hbs',
-				layoutdir: 'src/templates/layouts',
-				assets: 'build',
-				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs']
+				prettify: {indent: 2},
+				production: true,
+				data: '<%= site.source %>/**/*.{json,yml}',
+				layoutdir: '<%= site.layouts %>',
+				assets: '<%= site.destination %>',
+				partials: ['<%= site.includes %>']
 			},
-			demo: {
-				files: {
-					'build/': ['src/templates/pages/*.hbs']
-				}
+			site: {
+				options: {layout: 'default.hbs'},
+				files: [
+					{ expand: true, cwd: '<%= site.pages %>', src: ['*.hbs'], dest: '<%= site.destination %>/' }
+				]
 			}
 		},
 
@@ -117,12 +120,12 @@ module.exports = function (grunt) {
 					'**/*.{png,jpg,gif,svg,ico}',
 					'**/*.js'
 					],
-					cwd : 'build'
+					cwd : '<%= site.destination %>'
 				},
 				options: {
 					watchTask: true,
 					server: {
-						baseDir: "build"
+						baseDir: '<%= site.destination %>'
 					}
 				}
 			}
@@ -134,9 +137,9 @@ module.exports = function (grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'src/images/',
+						cwd: '<%= site.source %>/images/',
 						src: ['**/*.{png,jpg,gif}'],
-						dest: 'build/images/'
+						dest: '<%= site.destination %>/images/'
 					}
 				]
 			}
@@ -151,7 +154,7 @@ module.exports = function (grunt) {
 				relaxerror: ["Bad value X-UA-Compatible for attribute http-equiv on element meta."]
 			},
 			files: {
-				src: ['build/**/*.html']
+				src: ['<%= site.destination %>/**/*.html']
 			}
 		},
 
@@ -170,7 +173,7 @@ module.exports = function (grunt) {
 				]
 			},
 			css: {
-				src: 'build/stylesheets/**/*.css'
+				src: '<%= site.destination %>/stylesheets/**/*.css'
 			}
 		},
 

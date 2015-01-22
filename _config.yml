@@ -1,0 +1,12 @@
+# =============================================
+# Build config
+# =============================================
+
+destination: build
+source: src
+
+# Assemble config templates
+templates:        <%= site.source %>/templates
+includes:         <%= site.templates %>/_includes/*.hbs
+layouts:          <%= site.templates %>/_layouts
+pages:            <%= site.templates %>/pages
